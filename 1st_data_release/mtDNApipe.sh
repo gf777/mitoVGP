@@ -3,6 +3,9 @@
 #this script (mtDNApipe.sh) is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
 #generated in the framework of the Vertebrate Genomes Project and assemble them using Canu
 
+#it requires the following dependencies installed:
+#blasR, bedtools2 (bamToFastq), Canu, blastn
+
 #sequence retrieval is based on a search by similarity using BLASR alignment
 #all Pacbio raw data files are first downloaded from the Genomeark and then individually
 #aligned to a reference genome provided by the user
@@ -62,7 +65,7 @@ fi
 if ! [[ -e "fq" ]]; then
 
 #convert to fq and merge into a single read file
-for f in aligned_pb_raw_reads/aligned_*.bam; do filename=$(basename -- "$f"); filename="${filename%.*}"; /home/gformenti/bin/bedtools2/bin/bamToFastq -i $f -fq "${filename}.fq"; done
+for f in aligned_pb_raw_reads/aligned_*.bam; do filename=$(basename -- "$f"); filename="${filename%.*}"; bamToFastq -i $f -fq "${filename}.fq"; done
 
 mkdir fq
 mv *.fq fq/
@@ -79,7 +82,7 @@ fi
 if ! [[ -e "${ABBR}_canu" ]]; then
 
 #assemble mtDNA reads with canu
-/home/gformenti/bin/canu-1.8/Linux-amd64/bin/canu \
+canu \
  -p ${ABBR} -d ${ABBR}_canu \
  genomeSize=${SIZE} \
  -pacbio-raw ${ABBR}.fastq \
