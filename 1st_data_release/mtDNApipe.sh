@@ -3,8 +3,8 @@
 #this script (mtDNApipe.sh) is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
 #generated in the framework of the Vertebrate Genomes Project and assemble them using Canu
 
-#it requires the following dependencies installed:
-#blasR, bedtools2 (bamToFastq), Canu, blastn
+#it requires the following software (and their dependencies) installed:
+#aws-cli/1.16.101, blasr/5.3.2-06c9543, bedtools2/2.18 (bamToFastq), Canu/1.8, blastn/2.7.1+
 
 #sequence retrieval is based on a search by similarity using BLASR alignment
 #all Pacbio raw data files are first downloaded from the Genomeark and then individually
@@ -29,25 +29,31 @@
 
 set -e
 
-#set variables species abbreviation
+#set variables species abbreviation size
 SPECIES=$1
 ABBR=$2
 SIZE=$3
 
+#record Pacbio raw data files available in the cloud at the time of the analysis
 dw_date=`date "+%Y%m%d-%H%M%S"`; aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${SPECIES}/file_list_$dw_date.txt
 
+#for each Pacbio raw data file do
 while read p; do
 
 if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e "${SPECIES}/aligned_${p}" ]] && ! [[ -e "${SPECIES}/aligned_pb_raw_reads/aligned_${p}" ]]; then
 
+#download
 aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/pacbio/$p ${SPECIES}
+#align
 blasr --bestn 1 ${SPECIES}/$p ${SPECIES}/mtDNA_${SPECIES}.fasta --bam --out ${SPECIES}/aligned_$p --nproc 16
+#remove
 rm ${SPECIES}/$p
 
 fi
 
 done <${SPECIES}/file_list_$dw_date.txt
 
+#organize the files
 cd ${SPECIES}
 
 if ! [[ -e "aligned_pb_raw_reads" ]]; then
@@ -62,9 +68,9 @@ mv aligned_*.bam aligned_pb_raw_reads/
 
 fi
 
+#convert to fastq
 if ! [[ -e "fq" ]]; then
 
-#convert to fq and merge into a single read file
 for f in aligned_pb_raw_reads/aligned_*.bam; do filename=$(basename -- "$f"); filename="${filename%.*}"; bamToFastq -i $f -fq "${filename}.fq"; done
 
 mkdir fq
@@ -72,16 +78,16 @@ mv *.fq fq/
 
 fi
 
-
+#merge into a single read file
 if ! [[ -e "${ABBR}.fastq" ]]; then
 
 cat fq/*.fq > ${ABBR}.fastq
 
 fi
 
+#assemble mtDNA reads with canu
 if ! [[ -e "${ABBR}_canu" ]]; then
 
-#assemble mtDNA reads with canu
 canu \
  -p ${ABBR} -d ${ABBR}_canu \
  genomeSize=${SIZE} \
@@ -96,7 +102,7 @@ cd ${ABBR}_blast
 #build blast db
 makeblastdb -in ../${ABBR}_canu/${ABBR}.contigs.fasta -parse_seqids -dbtype nucl -out ${ABBR}.db
 
-#blastn
+#search the putative mitocontig using blastn
 blastn -query ../mtDNA_${SPECIES}.fasta -db ${ABBR}.db -out ${ABBR}.out
 blastn -query ../mtDNA_${SPECIES}.fasta -db ${ABBR}.db -outfmt 6 -out ${ABBR}.tb
 sed -i "1iquery_acc.ver\tsubject_acc.ver\t%_identity\talignment_length\tmismatches\tgap_opens\tq.start\tq.end\ts.start\ts.end\tevalue\tbitscore" ${ABBR}.tb
