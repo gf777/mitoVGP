@@ -1,0 +1,19 @@
+This folder contains the scripts used to generate the mitogenome assemblies for the first data release of the Vertebrate Genomes Project.
+
+First data release included the following species:
+
+Calypte_anna
+Rhinatrema_bivittatum
+Ornithorhynchus_anatinus
+Anabas_testudineus
+Gopherus_evgoodei
+Lynx_canadensis
+Phyllostomus_discolor
+Taeniopygia_guttata
+Taeniopygia_guttata
+Archocentrus_centrarchus
+Rhinolophus_ferrumequinum
+Strigops_habroptilus
+Gouania_willdenowi
+Mastacembelus_armatus
+Astatotilapia_calliptera
