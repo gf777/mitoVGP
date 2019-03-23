@@ -1,5 +1,20 @@
 #!/bin/bash
 
+#this script is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
+#generated in the framework of the Vertebrate Genomes Project and assemble them using Canu
+
+#sequence retrieval is based on a search by similarity using BLASR alignment all Pacbio
+#raw data files are first downloaded from the Genomeark and then individually aligned
+#to a reference genome provided by the user
+#the approach is similar to that of Organelle_PBA described in:
+#Soorni et al. BMC Genomics (2017) DOI 10.1186/s12864-016-3412-9
+
+#in the second steps reads are use to generate assemblies using Canu assembler
+#the reference genome provided by the user is then blasted to the contigs generated 
+#by Canu to identify the putative mitocontig
+
+#
+
 set -e
 
 #set variables species abbreviation
