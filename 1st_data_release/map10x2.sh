@@ -2,7 +2,9 @@
 
 #this script (map10x2.sh) is used for the final step of short read polishing. This step
 #requires the output of the script map10x1.sh to be trimmed at the overlapping ends. This
-#can be achieved using mummer or BLAST to determine the coordinates for trimming.
+#can be achieved using mummer or BLAST to determine the coordinates for trimming. Ends
+#should be trimmed leaving about 100 bp of overlapping ends, in order to achieve a good
+#alignment, and those overlapping ends should be removed from the final assembly.
 
 #it requires the following software (and their dependencies) installed:
 #bowtie2/2.1.0, samtools/1.7
