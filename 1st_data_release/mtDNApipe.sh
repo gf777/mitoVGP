@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#this script is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
+#this script (mtDNApipe.sh) is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
 #generated in the framework of the Vertebrate Genomes Project and assemble them using Canu
 
 #sequence retrieval is based on a search by similarity using BLASR alignment
@@ -11,7 +11,10 @@
 #the approach is similar to that of Organelle_PBA described in:
 #Soorni et al. BMC Genomics (2017) DOI 10.1186/s12864-016-3412-9
 
-#in the second steps reads are use to generate assemblies using Canu assembler
+#in the second steps reads are used to generate assemblies using Canu assembler
+#usually with default parameters
+#(for rGopEvg1 and mRhiFer1 minOverlapLength=300 correctedErrorRate=0.105 were used, respectively)
+
 #the reference genome provided by the user is then blasted to the contigs generated 
 #by Canu to identify the putative mitocontig
 
