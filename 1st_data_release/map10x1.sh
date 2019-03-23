@@ -10,7 +10,12 @@
 #bowtie2/2.1.0, #aws-cli/1.16.101, samtools/1.7
 
 #reads are aligned to the reference, and if reads are above <1.5M they are downsampled to
-#about this number.
+#about this number. A final round of freebayes and bcftools consensus is required to
+#obtain the polished contig using the aligned outcome of the script (this step is
+#currently not included in the script).
+
+#in addition, the script provides the fw and rv reads (extracted from the alignment)
+#required for the final polishing step (map10x.sh).
 
 #required positional arguments are:
 #the species name (e.g. Calypte_anna)
@@ -35,6 +40,7 @@ cp ${SPECIES}/${ABBR}_arrow/${CONTIG} ${SPECIES}/${ABBR}_10x1/
 
 fi
 
+#record 10x raw data files available in the cloud at the time of the analysis
 cd ${SPECIES}/${ABBR}_10x1
 
 dw_date=`date "+%Y%m%d-%H%M%S"`; aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/10x/ > file_list_$dw_date.txt
@@ -46,6 +52,7 @@ echo "--Index successfully built."
 
 fi
 
+#determine fw and rv reads
 if ! [[ -e "p_fw.txt" ]]; then
 
 grep -o -E "${ABBR}.*_R1_.*" file_list_${dw_date}.txt | sort | uniq > p_fw.txt
@@ -76,6 +83,7 @@ mkdir aligned_10x1_raw_reads
 
 fi
 
+#for each 10x PE raw data do
 for ((i=0; i<${#p1[*]}; i++));
 do
 
@@ -86,22 +94,28 @@ echo "--Retrieve and align:"
 echo "s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/10x/${p1[i]}"
 echo "s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/10x/${p2[i]}"
 
+#download
 aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/10x/${p1[i]} .
 aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ABBR}/genomic_data/10x/${p2[i]} .
 
+#align
 bowtie2 -x ${ABBR} -1 ${p1[i]} -2 ${p2[i]} -p 12 | samtools view -bSF4 - > "aligned_10x1_raw_reads/aligned_${ABBR}_${i}.bam"
+
+#remove
 rm ${p1[i]} ${p2[i]}
 
 fi
 
 done
 
+#generate single alignment file out of all raw data
 if ! [[ -e "aligned_${ABBR}_all.bam" ]]; then
 
 samtools merge aligned_${ABBR}_all.bam aligned_10x1_raw_reads/*.bam
 
 fi
 
+#downsample the file if >1.5M reads
 READ_N=$(bedtools bamtobed -i aligned_${ABBR}_all.bam | cut -f 4 | wc -l)
 
 if (("$READ_N" >= "1500000")); then
@@ -117,6 +131,7 @@ mv aligned_${ABBR}_all_sub.bam aligned_${ABBR}_all.bam
 
 fi
 
+#split the fw and rv reads in the alignment for next step (map10x2.sh)
 if ! [[ -e "fq" ]]; then
 
 samtools fastq aligned_${ABBR}_all.bam -1 aligned_${ABBR}_all_1.fq -2 aligned_${ABBR}_all_2.fq -s aligned_${ABBR}_all_s.fq
@@ -125,6 +140,7 @@ mv *.fq fq/
 
 fi
 
+#sort and index the alignment
 if ! [[ -e "aligned_${ABBR}_all_sorted.bam" ]]; then
 
 samtools sort aligned_${ABBR}_all.bam -o aligned_${ABBR}_all_sorted.bam -@ 12
