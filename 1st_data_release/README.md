@@ -12,8 +12,7 @@ Anabas testudineus <br/>
 Gopherus evgoodei <br/>
 Lynx canadensis <br/>
 Phyllostomus discolor <br/>
-Taeniopygia guttata <br/>
-Taeniopygia guttata <br/>
+Taeniopygia guttata (x2) <br/>
 Archocentrus centrarchus <br/>
 Rhinolophus ferrumequinum <br/>
 Strigops habroptilus <br/>
