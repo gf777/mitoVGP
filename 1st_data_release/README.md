@@ -2,6 +2,7 @@ This folder contains the scripts used to generate the mitogenome assemblies for 
 
 First data release included the following species:
 
+<i>
 Calypte anna <br/>
 Rhinatrema bivittatum <br/>
 Ornithorhynchus anatinus <br/>
@@ -17,3 +18,4 @@ Strigops habroptilus <br/>
 Gouania willdenowi <br/>
 Mastacembelus armatus <br/>
 Astatotilapia calliptera
+</i>
