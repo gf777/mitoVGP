@@ -2,18 +2,18 @@ This folder contains the scripts used to generate the mitogenome assemblies for 
 
 First data release included the following species:
 
-Calypte_anna <br/>
-Rhinatrema_bivittatum <br/>
-Ornithorhynchus_anatinus <br/>
-Anabas_testudineus <br/>
-Gopherus_evgoodei <br/>
-Lynx_canadensis <br/>
-Phyllostomus_discolor <br/>
-Taeniopygia_guttata <br/>
-Taeniopygia_guttata <br/>
-Archocentrus_centrarchus <br/>
-Rhinolophus_ferrumequinum <br/>
-Strigops_habroptilus <br/>
-Gouania_willdenowi <br/>
-Mastacembelus_armatus <br/>
-Astatotilapia_calliptera
+Calypte anna <br/>
+Rhinatrema bivittatum <br/>
+Ornithorhynchus anatinus <br/>
+Anabas testudineus <br/>
+Gopherus evgoodei <br/>
+Lynx canadensis <br/>
+Phyllostomus discolor <br/>
+Taeniopygia guttata <br/>
+Taeniopygia guttata <br/>
+Archocentrus centrarchus <br/>
+Rhinolophus ferrumequinum <br/>
+Strigops habroptilus <br/>
+Gouania willdenowi <br/>
+Mastacembelus armatus <br/>
+Astatotilapia calliptera
