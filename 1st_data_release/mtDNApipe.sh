@@ -3,9 +3,11 @@
 #this script is used to retrieve mitochondrial-like sequences from the raw Pacbio data 
 #generated in the framework of the Vertebrate Genomes Project and assemble them using Canu
 
-#sequence retrieval is based on a search by similarity using BLASR alignment all Pacbio
-#raw data files are first downloaded from the Genomeark and then individually aligned
-#to a reference genome provided by the user
+#sequence retrieval is based on a search by similarity using BLASR alignment
+#all Pacbio raw data files are first downloaded from the Genomeark and then individually
+#aligned to a reference genome provided by the user
+#the reference genome can be from the same species if available, or from a
+#closely-to-distantly related species
 #the approach is similar to that of Organelle_PBA described in:
 #Soorni et al. BMC Genomics (2017) DOI 10.1186/s12864-016-3412-9
 
@@ -13,7 +15,11 @@
 #the reference genome provided by the user is then blasted to the contigs generated 
 #by Canu to identify the putative mitocontig
 
-#
+#required positional arguments are:
+#the species name (e.g. Calypte_anna)
+#the VGP species ID (e.g. bCalAnn1)
+#the putative mitogenome size (potentially, that of the reference genome). It does not
+#need to be precise
 
 set -e
 
