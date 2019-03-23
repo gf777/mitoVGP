@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #this script (map10x1.sh) is used for short read polishing of the long-read assembly 
-#resulting from Canu (mtDNApipe.sh) and Arrow (ArrowPolish.sh).
+#resulting from Canu (mtDNApipe.sh) and Arrow polishing (ArrowPolish.sh).
 #In the VGP pipeline it uses 10x data (currently with random barcodes) but it can be used
-#with any short read data containing mitogenomic reads
-#using information from Canu intermediate files.
+#with any short read data containing mitogenomic reads using information from Canu
+#intermediate files.
 
 #it requires the following software (and their dependencies) installed:
 #bowtie2/2.1.0, #aws-cli/1.16.101, samtools/1.7
