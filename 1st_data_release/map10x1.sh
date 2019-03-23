@@ -7,7 +7,7 @@
 #intermediate files.
 
 #it requires the following software (and their dependencies) installed:
-#bowtie2/2.1.0, #aws-cli/1.16.101, samtools/1.7
+#bowtie2/2.1.0, aws-cli/1.16.101, samtools/1.7
 
 #reads are aligned to the reference, and if reads are above <1.5M they are downsampled to
 #about this number. A final round of freebayes and bcftools consensus is required to
