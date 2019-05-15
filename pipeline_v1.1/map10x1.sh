@@ -7,7 +7,7 @@
 #intermediate files.
 
 #it requires the following software (and their dependencies) installed:
-#bowtie2/2.1.0, aws-cli/1.16.101, samtools/1.7, freebayes/1.2.0-2-g29c4002, bcftools/1.9
+#bowtie2/2.1.0, aws-cli/1.16.101, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
 
 #reads are aligned to the reference, and if reads are >1.5M they are downsampled to
 #about this number. A final round of freebayes and bcftools consensus is required to
@@ -155,7 +155,7 @@ if ! [[ -e "${W_URL}/freebayes_round1/" ]]; then
 
 mkdir ${W_URL}/freebayes_round1/
 
-freebayes -f ${W_URL}/arrow/arrow_round2/${CONTIG} -b ${W_URL}/bowtie2_round1/aligned_${ABBR}_all_sorted.bam --ploidy 1 -v ${W_URL}/freebayes_round1/aligned_${ABBR}_all_sorted.vcf
+~/miniconda3/bin/freebayes -f ${W_URL}/arrow/arrow_round2/${CONTIG} -b ${W_URL}/bowtie2_round1/aligned_${ABBR}_all_sorted.bam --ploidy 1 -v ${W_URL}/freebayes_round1/aligned_${ABBR}_all_sorted.vcf
 
 bgzip ${W_URL}/freebayes_round1/aligned_${ABBR}_all_sorted.vcf
 
