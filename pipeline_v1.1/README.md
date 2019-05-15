@@ -1,6 +1,6 @@
 This folder contains the scripts used to generate the mitogenome assemblies for the first data release of the Vertebrate Genomes Project. The pipeline, only partially automated, works as follows:
 
-<img src="https://github.com/GiulioF1/mitoVGP/blob/master/1st_data_release/pipeline.png" />
+<img src="https://github.com/GiulioF1/mitoVGP/blob/master/pipeline_v1.1/pipeline.png" />
 
 First data release included the following species:
 
