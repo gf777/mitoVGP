@@ -7,21 +7,21 @@
 #aws-cli/1.16.101, blasr/5.3.2-06c9543, bedtools2/2.18 (bamToFastq), Canu/1.8, blastn/2.7.1+
 
 #sequence retrieval is based on a search by similarity using BLASR alignment.
-#all Pacbio raw data files are first downloaded from the Genomeark and then individually
-#aligned to a reference genome provided by the user.
+#all Pacbio raw data files are individually aligned to a reference genome provided by the user.
 #the reference genome can be from the same species if available, or from a
 #closely-to-distantly related species.
+
 #the approach is similar to that of Organelle_PBA described in:
 #Soorni et al. BMC Genomics (2017) DOI 10.1186/s12864-016-3412-9
 
 #in the second steps reads are used to generate assemblies using Canu assembler
-#usually with default parameters.
-#(for rGopEvg1 and mRhiFer1 minOverlapLength=300 correctedErrorRate=0.105 were used, respectively)
+#usually with default parameters (for rGopEvg1 and mRhiFer1 minOverlapLength=300 
+#correctedErrorRate=0.105 were used, respectively).
 
 #the reference genome provided by the user is then blasted to the contigs generated 
 #by Canu to identify the putative mitocontig.
 
-#required positional arguments are:
+#required inputs are:
 #1) the species name (e.g. Calypte_anna)
 #2) the VGP species ID (e.g. bCalAnn1)
 #3) the reference sequence fasta file
