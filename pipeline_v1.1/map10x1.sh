@@ -9,10 +9,9 @@
 #it requires the following software (and their dependencies) installed:
 #bowtie2/2.1.0, aws-cli/1.16.101, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
 
-#reads are aligned to the reference, and if reads are >1.5M they are downsampled to
-#about this number. A final round of freebayes and bcftools consensus is required to
-#obtain the polished contig using the aligned outcome of the script (this step is
-#currently not included in the script).
+#reads are aligned to the reference, and if aligned reads are >1.5M they are downsampled to
+#about this number. A final round of freebayes and bcftools consensus is performed to
+#obtain the polished contig using the aligned outcome of the script.
 
 #in addition, the script provides the fw and rv reads (extracted from the alignment)
 #required for the final polishing step (map10x2.sh).
@@ -150,6 +149,8 @@ samtools index ${W_URL}/bowtie2_round1/aligned_${ABBR}_all_sorted.bam
 rm ${W_URL}/bowtie2_round1/aligned_${ABBR}_all.bam
 
 fi
+
+#call variants and consensus
 
 if ! [[ -e "${W_URL}/freebayes_round1/" ]]; then
 

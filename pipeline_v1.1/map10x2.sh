@@ -10,9 +10,9 @@
 #it requires the following software (and their dependencies) installed:
 #bowtie2/2.1.0, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
 
-#reads are aligned to the reference, Similarly to script map10x1.sh, a final round of
-#freebayes and bcftools consensus is required to obtain the polished contig using the 
-#aligned outcome of the script (this step is currently not included in the script).
+#reads are aligned to the new reference and, similarly to script map10x1.sh, a final round of
+#freebayes and bcftools consensus is performed to obtain the polished contig using the 
+#aligned outcome of the script.
 
 #required positional arguments are:
 #1) the species name (e.g. Calypte_anna)

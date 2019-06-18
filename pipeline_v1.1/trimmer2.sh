@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #this script allows to generate a trimmed version of the Canu mitocontig after short read
-#polishing (map10x1.sh). The resulting contig has 100 bp overlapping ends on both sides.
+#polishing (map10x2.sh). The resulting contig has 100 bp overlapping ends on both sides.
 #The script is still experimental.
 
 #it requires the following software (and their dependencies) installed:
-#bowtie2/2.1.0, samtools/1.7, mummer/3
+#bowtie2/2.1.0, samtools/1.7, mummer/3, muscle
 
 #required positional arguments are:
 #1) the species name (e.g. Calypte_anna)

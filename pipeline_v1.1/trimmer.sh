@@ -5,7 +5,7 @@
 #The script is still experimental.
 
 #it requires the following software (and their dependencies) installed:
-#bowtie2/2.1.0, samtools/1.7, mummer/3
+#bowtie2/2.1.0, samtools/1.7, mummer/3, #muscle
 
 #required positional arguments are:
 #1) the species name (e.g. Calypte_anna)
