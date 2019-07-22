@@ -6,7 +6,7 @@
 #using information from Canu intermediate files.
 
 #it requires the following software (and their dependencies) installed:
-#samtools/1.7, pbalign/0.3.1, variantCaller/2.2.2, picard/2.18.22, smrtlink6
+#samtools/1.7, pbalign/0.3.1, variantCaller/2.2.2, picard/2.18.22
 
 #for picard to work, it requires the absolute file to the jar to be defined in the code.
 
