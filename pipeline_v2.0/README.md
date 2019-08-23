@@ -6,7 +6,7 @@
 
 The pipeline workflow is as follows:
 
-<img src="https://github.com/GiulioF1/mitoVGP/blob/master/pipeline_v2.0/pipeline.png" />
+<img src="https://github.com/GiulioF1/mitoVGP/blob/master/pipeline_v2.0/MitoVGP_pipeline_Rockefeller_v.2.0.png" />
 
 To date, mitogenomes assembled using mitoVGP pipeline are:
 
