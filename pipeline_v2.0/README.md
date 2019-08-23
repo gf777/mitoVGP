@@ -1,9 +1,8 @@
-Content description:<br/>
+<b>Content description:</b><br/>
 
-mitoVGP.sh - the wrapper to run the full pipeline<br/>
-scripts/ - the intermediate scripts required by mitoVGP.sh<br/>
-
--
+- mitoVGP.sh - the wrapper to run the full pipeline<br/>
+- scripts/ - the intermediate scripts required by mitoVGP.sh<br/>
+- mitoVGP_conda_env.yml - conda environment containing all required software<br/>
 
 The pipeline workflow is as follows:
 
