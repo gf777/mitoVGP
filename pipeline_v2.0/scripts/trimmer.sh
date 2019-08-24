@@ -34,11 +34,18 @@ exit 0
 
 fi
 
+printf "\n\n++++ running: trimmer.sh ++++\n\n"
+
+if [[ -e "${W_URL}/trimmed/${FNAME}_trim1.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
+
 #set options
 
 while getopts ":s:i:n:c:t:" opt; do
-
-printf "\n"
 
 	case $opt in
 		s)
@@ -66,8 +73,18 @@ printf "\n"
 			exit 1
 			;;
 	esac
+	
+printf "\n"
 
 done
+
+if [[  ${GRID} == "SLURM" ]]; then
+
+echo Starting at `date`
+echo This is job $SLURM_JOB_ID
+echo Running on `hostname`
+
+fi
 
 printf "\n"
 
@@ -75,7 +92,7 @@ printf "\n"
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
-FNAME="${ID}.contig${CONTIG}_arrow2_10x1"
+FNAME="${ID}.${CONTIG}_arrow2_10x1"
 
 CONTIG_NAME=$(cat ${W_URL}/freebayes_round1/${FNAME}.fasta | awk '$0 ~ ">" {print substr($0,2)}')
 
@@ -87,10 +104,11 @@ if ! [[ -e "${W_URL}/trimmed" ]]; then
 
 	samtools sort -n ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam -o ${W_URL}/trimmed/aligned_${ID}_all_paired.bam
 	samtools fastq ${W_URL}/trimmed/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed/aligned_${ID}_all_s.fq
-	bowtie2-build ${W_URL}/freebayes_round1/${FNAME} ${W_URL}/trimmed/${ID}
+	bowtie2-build ${W_URL}/freebayes_round1/${FNAME}.fasta ${W_URL}/trimmed/${ID}
 	bowtie2 -x ${W_URL}/trimmed/${ID} -1 ${W_URL}/trimmed/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed/realigned_${ID}_all.bam"
 	samtools sort ${W_URL}/trimmed/realigned_${ID}_all.bam -o ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam -@ ${NPROC}
 	samtools index ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam
+	printf "\n"
 
 fi
 
@@ -188,7 +206,8 @@ if ! [[ -z ${NUCMER_OUT} ]]; then
 	arrCOV2=($(samtools depth -aa -r ${CONTIG_NAME}:${END1}-${END2} --reference ${CONTIG_NEW} ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam | awk '{print $3}'))
 
 	if ! [[ -e "${W_URL}/trimmed/${FNAME}_ends_aligned.fasta" ]]; then
-
+		
+		printf "\n"
 		muscle -in ${W_URL}/trimmed/${FNAME}_ends.fasta -out ${W_URL}/trimmed/${FNAME}_ends_aligned.fasta
 
 	fi

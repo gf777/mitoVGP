@@ -41,11 +41,18 @@ exit 0
 
 fi
 
+printf "\n\n++++ running: map10x2.sh ++++\n\n"
+
+if [[ -e "${W_URL}/freebayes_round2/${FNAME}_10x2.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
+
 #set options
 
 while getopts ":s:i:n:c:t:" opt; do
-
-printf "\n"
 
 	case $opt in
 		s)
@@ -74,9 +81,17 @@ printf "\n"
 			;;
 	esac
 
+printf "\n"
+
 done
 
-printf "\n"
+if [[  ${GRID} == "SLURM" ]]; then
+
+echo Starting at `date`
+echo This is job $SLURM_JOB_ID
+echo Running on `hostname`
+
+fi
 
 #define working directory
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
@@ -86,7 +101,7 @@ if ! [[ -e "${W_URL}/bowtie2_round2" ]]; then
 
 	mkdir ${W_URL}/bowtie2_round2
 
-	FNAME="${ID}.contig${CONTIG}_arrow2_10x1_trim1"
+	FNAME="${ID}.${CONTIG}_arrow2_10x1_trim1"
 
 	#align
 	bowtie2-build ${W_URL}/trimmed/${FNAME}.fasta ${W_URL}/bowtie2_round2/${ID}
@@ -101,7 +116,7 @@ fi
 
 if ! [[ -e "${W_URL}/freebayes_round2/" ]]; then
 
-mkdir ${W_URL}/freebayes_round2/
+	mkdir ${W_URL}/freebayes_round2/
 
 	freebayes --bam ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam --fasta-reference ${W_URL}/trimmed/${FNAME}.fasta --vcf ${W_URL}/freebayes_round2/aligned_${ID}_all_trimmed_sorted.vcf --theta 0.001 --ploidy 1 --region $(sed -n 1p ${W_URL}/trimmed/${FNAME}.fasta | tr -d '>'):50-$(( $(sed -n 2p ${W_URL}/trimmed/${FNAME}.fasta | tr -d '\n' | wc -c) - 50 ))
 

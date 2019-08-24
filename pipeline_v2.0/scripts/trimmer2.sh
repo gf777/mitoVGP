@@ -34,11 +34,18 @@ exit 0
 
 fi
 
+printf "\n\n++++ running: trimmer2.sh ++++\n\n"
+
+if [[ -e "${W_URL}/trimmed2/${FNAME}_trim2.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"	
+	exit 0
+
+fi
+
 #set options
 
 while getopts ":s:i:n:c:t:" opt; do
-
-printf "\n"
 
 	case $opt in
 		s)
@@ -67,35 +74,48 @@ printf "\n"
 			;;
 	esac
 
+printf "\n"
+
 done
 
-printf "\n"
+if [[  ${GRID} == "SLURM" ]]; then
+
+echo Starting at `date`
+echo This is job $SLURM_JOB_ID
+echo Running on `hostname`
+
+fi
 
 #define working directory
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
 
-FNAME="${ID}.contig${CONTIG}_arrow2_10x1_trim1_10x2"
+FNAME="${ID}.${CONTIG}_arrow2_10x1_trim1_10x2"
 
-CONTIG_NAME=$(cat ${W_URL}/freebayes_round1/${FNAME}.fasta | awk '$0 ~ ">" {print substr($0,2)}')
+CONTIG_NAME=$(cat ${W_URL}/freebayes_round2/${FNAME}.fasta | awk '$0 ~ ">" {print substr($0,2)}')
 
 if ! [[ -e "${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam" ]]; then
 
 mkdir ${W_URL}/trimmed2
 
+cp ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2
+
+sed -i '2 s/^\(.\{4\}\)./\1/' ${W_URL}/trimmed2/${FNAME}.fasta
+
 samtools sort -n ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -o ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam
 samtools fastq ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed2/aligned_${ID}_all_s.fq
-bowtie2-build ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
+bowtie2-build ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
 bowtie2 -x ${W_URL}/trimmed2/${ID} -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed2/realigned_${ID}_all.bam"
 samtools sort ${W_URL}/trimmed2/realigned_${ID}_all.bam -o ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam -@ ${NPROC}
 samtools index ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam
+printf "\n"
 
 fi
 
 if ! [[ -e "${W_URL}/trimmed2/${FNAME}.delta" ]]; then
 
-nucmer --maxmatch --nosimplify ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/freebayes_round2/${FNAME}.fasta -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
+nucmer --maxmatch --nosimplify ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${FNAME}.fasta -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
 
 fi
 
@@ -106,7 +126,7 @@ END1=$(echo $NUCMER_OUT | awk '{print $3}')
 
 if (( ${BEGIN2} > ${END1} )); then
 
-echo ">${FNAME}" > "${W_URL}/trimmed2/${FNAME}_new.fasta" & grep -v ">" ${W_URL}/freebayes_round2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_new.fasta"
+echo ">${FNAME}" > "${W_URL}/trimmed2/${FNAME}_new.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_new.fasta"
 
 nucmer --maxmatch --nosimplify "${W_URL}/trimmed2/${FNAME}_new.fasta" "${W_URL}/trimmed2/${FNAME}_new.fasta" -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
 
@@ -122,16 +142,17 @@ fi
 END2=$(echo $NUCMER_OUT | awk '{print $4}')
 MIDDLE="$(( ${BEGIN2} + 1 ))-$(( ${END1} - 1 ))"
 
-echo ">${FNAME}" > "${W_URL}/trimmed2/${FNAME}_final.fasta" & grep -v ">" ${W_URL}/freebayes_round2/${FNAME}.fasta | tr -d '\n' | cut -c${MIDDLE} >> "${W_URL}/trimmed2/${FNAME}_final.fasta"
+echo ">${ID}" > "${W_URL}/trimmed2/${FNAME}_trim2.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${MIDDLE} >> "${W_URL}/trimmed2/${FNAME}_trim2.fasta"
 
-echo ">${FNAME}_begin_${BEGIN1}-${BEGIN2}" > "${W_URL}/trimmed2/${FNAME}_ends.fasta" & grep -v ">" ${W_URL}/freebayes_round2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_ends.fasta"
-echo ">${FNAME}_end_${END1}-${END2}" >> "${W_URL}/trimmed2/${FNAME}_ends.fasta" & grep -v ">" ${W_URL}/freebayes_round2/${FNAME}.fasta | tr -d '\n' | cut -c${END1}-${END2} >> "${W_URL}/trimmed2/${FNAME}_ends.fasta"
+echo ">${FNAME}_begin_${BEGIN1}-${BEGIN2}" > "${W_URL}/trimmed2/${FNAME}_ends.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_ends.fasta"
+echo ">${FNAME}_end_${END1}-${END2}" >> "${W_URL}/trimmed2/${FNAME}_ends.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${END1}-${END2} >> "${W_URL}/trimmed2/${FNAME}_ends.fasta"
 
-arrCOV1=($(samtools depth -aa -r ${CONTIG_NAME}:${BEGIN1}-${BEGIN2} --reference ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam | awk '{print $3}'))
-arrCOV2=($(samtools depth -aa -r ${CONTIG_NAME}:${END1}-${END2} --reference ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam | awk '{print $3}'))
+arrCOV1=($(samtools depth -aa -r ${CONTIG_NAME}:${BEGIN1}-${BEGIN2} --reference ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam | awk '{print $3}'))
+arrCOV2=($(samtools depth -aa -r ${CONTIG_NAME}:${END1}-${END2} --reference ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam | awk '{print $3}'))
 
 if ! [[ -e "${W_URL}/trimmed2/${FNAME}_ends_aligned.fasta" ]]; then
 
+printf "\n"
 muscle -in ${W_URL}/trimmed2/${FNAME}_ends.fasta -out ${W_URL}/trimmed2/${FNAME}_ends_aligned.fasta
 
 fi
@@ -233,3 +254,10 @@ while [  $COUNTER -lt ${#arrN1[@]} ]
 	done
 
 sed -i "$ s/$/$S/" ${W_URL}/trimmed2/${FNAME}_trim2.fasta
+
+printf "\nFinal sequence:\n\n"
+cat ${W_URL}/trimmed2/${FNAME}_trim2.fasta
+
+SIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/trimmed2/${FNAME}_trim2.fasta)
+	
+printf "\nMitogenome size: ${SIZE} bp\n"

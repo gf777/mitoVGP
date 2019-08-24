@@ -18,7 +18,7 @@ elif [ $1 == "-h" ]; then
 	It requires the following software (and their dependencies) installed:
 	aws-cli/1.16.101, blasr/5.3.2-06c9543 | minimap2/2.17 | pbmm2/1.0.0, bam2fastx, Canu/1.8, blastn/2.7.1+, pbindex
 
-	Sequence retrieval is based on a search by similarity using BLASR alignment.
+	Sequence retrieval is based on a search by similarity using a long read aligner.
 	Pacbio raw data files are individually downloaded from the Genomeark
 	and aligned to a reference genome provided by the user.
 
@@ -44,6 +44,7 @@ elif [ $1 == "-h" ]; then
 	-t the number of threads
 	
 	Optional arguments are:
+	-d multithreaded download of files (true/false default: false) !! warning: it may require considerable amount of space.
 	-l use files from list of files (default looks into aws)
 	-m the aligner (blasr|minimap2|pbmm2). Default is pbmm2
 	-f filter reads by size prior to assembly (reduces the number of NUMT reads and helps the assembly)
@@ -58,11 +59,18 @@ exit 0
 
 fi
 
+printf "\n\n++++ running: mtDNApipe.sh ++++\n\n"
+
+if [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
+
 #set options
 
-printf "\n"
-
-while getopts ":l:s:i:r:g:c:f:o:m:t:" opt; do
+while getopts ":l:s:i:r:g:c:f:o:m:t:d:" opt; do
 
 	case $opt in
 		l)
@@ -91,7 +99,7 @@ while getopts ":l:s:i:r:g:c:f:o:m:t:" opt; do
 			;;
 		f)
             FL=$OPTARG
-			echo "Canu options: -f $OPTARG"
+			echo "Read length filter: -f $OPTARG"
 			;;
 		o)
             OPTS=$OPTARG
@@ -105,6 +113,10 @@ while getopts ":l:s:i:r:g:c:f:o:m:t:" opt; do
 			NPROC=$OPTARG
 			echo "Number of threads: -t $OPTARG"
             ;;
+		d)
+			DOWNL=$OPTARG
+			echo "Multithreaded download: -d $OPTARG"
+            ;;
 		\?)
 			echo "ERROR - Invalid option: -$OPTARG" >&2
 			exit 1
@@ -115,13 +127,12 @@ printf "\n"
 
 done
 
-printf "\n"
-
 if [[  ${GRID} == "SLURM" ]]; then
 
 echo Starting at `date`
 echo This is job $SLURM_JOB_ID
 echo Running on `hostname`
+printf "\n"
 
 fi
 
@@ -129,32 +140,13 @@ fi
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
-if ! [[ -e "${W_URL}" ]]; then
-
-	mkdir -p ${W_URL}
-
-fi
-
-#copy the user-provided reference mitogenome to the reference folder
-if ! [[ -e "${W_URL}/reference" ]]; then
-
-	mkdir ${W_URL}/reference
-	cp ${REF} ${W_URL}/reference/${REF%.*}.fasta
-
-fi
-
-if ! [[ -e "${W_URL}/log" ]]; then
-
-	mkdir ${W_URL}/log
-
-fi
-
 dw_date=`date "+%Y%m%d-%H%M%S"`;
 
 if [[ -z ${LIST} ]]; then
 
 	#record Pacbio raw data files available in the cloud at the time of the analysis
-	aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
+	printf "Collecting data using: aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/\n\n"
+	aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
 
 else
 
@@ -178,6 +170,12 @@ if [[  ${ALN} == "pbmm2" ]] && ! [[ -e ${W_URL}/reference/${REF%.*}.fasta.mmi ]]
 
 fi
 
+if [[ ${DOWNL} == true ]] && ! [[ "$(ls -A ${W_URL}/pacbio_bam)" ]] ; then
+
+	aws s3 cp --recursive --exclude="*scrap*" --exclude="*bai*" --exclude="*pbi*" --include="*.subreads.bam" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ ${W_URL}/
+
+fi
+
 #for each Pacbio raw data file do
 while read p; do
 
@@ -185,9 +183,13 @@ if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e
 	
 	if [[ -z ${LIST} ]]; then
 
-		#if vgp mode download
-		aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
-		#align
+		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
+
+			#if vgp mode download
+			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
+			#align
+			
+		fi
 
 	else
 		
@@ -223,7 +225,7 @@ rm ${W_URL}/${p%.*}.bam
 
 fi
 
-done <${W_URL}/log/file_list_$dw_date.txt
+done < ${W_URL}/log/file_list_$dw_date.txt
 
 #organize the files
 
@@ -276,7 +278,7 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
 	fi
 	
-	CANU="${CANU} -p ${ID} -d ${W_URL}/canu"
+	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false"
 	CANU="${CANU} genomeSize=${SIZE}"
 #	CANU="${CANU} -gridEngineResourceOption=\"-R\\\"select[mem>${LSF_MEM}] rusage[mem=${LSF_MEM}]\\\" -M${LSF_MEM} -n ${NPROC}\""
 
@@ -290,7 +292,7 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 	
 	fi
 	
-	echo ${CANU}
+	printf "\n${CANU}\n"
 	eval ${CANU}
 fi
 
