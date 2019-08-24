@@ -11,7 +11,7 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 The pipeline workflow is as follows:
 
-<img src="https://github.com/GiulioF1/mitoVGP/blob/master/pipeline_v2.0/MitoVGP_pipeline_Rockefeller_v.2.0.png" />
+<img src="MitoVGP_pipeline_Rockefeller_v.2.0.png" />
 
 To date, mitogenomes assembled using mitoVGP pipeline are:
 
