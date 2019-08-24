@@ -1,13 +1,34 @@
 # mitoVGP
 This repository contains scripts used to generate mitochondrial sequences for the <a href="http://www.vertebrategenomesproject.org">Vertebrate Genomes Project</a>.
 
-<b>Data Use Policy</b><br/>
+<b>Data Use Policy</b>
+
 VGP samples and data come from a variety of sources. To support fair and productive use of this data, please abide by the <a href="https://genome10k.soe.ucsc.edu/data-use-policies/">Data Use Policy</a> and contact us with any questions.
 
 <b>Content description:</b>
-- mitoVGP.sh - the wrapper to run the full pipeline<br/>
-- scripts/ - the intermediate scripts required by mitoVGP.sh<br/>
-- mitoVGP_conda_env.yml - conda environment containing all the software required to run the pipeline<br/>
+- mitoVGP.sh - the wrapper to run the full pipeline
+
+- scripts/ - the intermediate scripts required by mitoVGP.sh
+
+- mitoVGP_conda_env.yml - conda environment containing all the software required to run the pipeline on Unix systems
+
+<b>Quick start</b>
+
+```
+git clone https://github.com/gf777/mitoVGP.git #clone this git repository
+cd mitoVGP #get into mitoVGP folder
+
+conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
+conda activate mitoVGP #activate mitoVGP conda environment
+
+#run mitoVGP pipeline using 24 cores (example with M. armatus)
+sh mitoVGP.sh -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembalus_armatus.fasta -t 24
+```
+
+For additional instructions you can type:
+```
+sh mitoVGP.sh -h
+```
 
 The pipeline workflow is as follows:
 
