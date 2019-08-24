@@ -146,7 +146,7 @@ if [[ -z ${LIST} ]]; then
 
 	#record Pacbio raw data files available in the cloud at the time of the analysis
 	printf "Collecting data using: aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/\n\n"
-	aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
+	aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
 
 else
 
@@ -170,9 +170,10 @@ if [[  ${ALN} == "pbmm2" ]] && ! [[ -e ${W_URL}/reference/${REF%.*}.fasta.mmi ]]
 
 fi
 
+#if vgp mode download
 if [[ ${DOWNL} == true ]] && ! [[ "$(ls -A ${W_URL}/pacbio_bam)" ]] ; then
 
-	aws s3 --no-sign-request cp --recursive --exclude="*scrap*" --exclude="*bai*" --exclude="*pbi*" --include="*.subreads.bam" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ ${W_URL}/
+	aws s3 cp --recursive --exclude="*scrap*" --exclude="*bai*" --exclude="*pbi*" --include="*.subreads.bam" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ ${W_URL}/
 
 fi
 
@@ -186,7 +187,7 @@ if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
 
 			#if vgp mode download
-			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
+			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
 			#align
 			
 		fi

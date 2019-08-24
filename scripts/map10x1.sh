@@ -123,7 +123,7 @@ fi
 
 if ! [[ -e "${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt" ]]; then
 
-	aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ > ${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt
+	aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ > ${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt
 
 fi
 
@@ -168,7 +168,7 @@ fi
 
 if [[ ${DOWNL} == true ]] && ! [[ "$(ls -A ${W_URL}/bowtie2_round1/aligned_raw_reads)" ]] ; then
 
-	aws s3 --no-sign-request cp --recursive --include="*.fastq.gz" --exclude="*I1*" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ ${W_URL}
+	aws s3 cp --recursive --include="*.fastq.gz" --exclude="*I1*" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ ${W_URL}
 
 fi
 
@@ -185,8 +185,8 @@ do
 
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
 			#download
-			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p1[i]} ${W_URL}
-			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p2[i]} ${W_URL}
+			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p1[i]} ${W_URL}
+			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p2[i]} ${W_URL}
 		fi
 		
 		#align
