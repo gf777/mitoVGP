@@ -16,7 +16,7 @@ elif [ $1 == "-h" ]; then
 	using information from Canu intermediate files.
 
 	It requires the following software (and their dependencies) installed:
-	samtools/1.7, pbalign/0.3.1, variantCaller/2.2.2, picard/2.18.22
+	samtools/1.9, pbmm2/1.0.0, variantCaller/2.2.2, picard/2.18.22
 
 	For picard to work, it requires the absolute file to the jar to be defined in the code.
 
@@ -103,83 +103,80 @@ printf "Working directory: $W_URL\n\n"
 
 if ! [[ -e "${W_URL}/arrow" ]]; then
 
-mkdir -p ${W_URL}/arrow
+	mkdir -p ${W_URL}/arrow
 
 fi
 
 if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
-mkdir -p ${W_URL}/arrow/arrow_round1
+	mkdir -p ${W_URL}/arrow/arrow_round1
 
-#retrieve the names of Pacbio reads used in Canu assembly
-awk '$2 == "'$(echo "${CONTIG}" | sed -e 's/tig0*//g' -e 's/tig0*//g')'" {print $1}' ${W_URL}/canu/${ID}.contigs.layout.readToTig > ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_IDs.txt
+	#retrieve the names of Pacbio reads used in Canu assembly
+	awk '$2 == "'$(echo "${CONTIG}" | sed -e 's/tig0*//g' -e 's/tig0*//g')'" {print $1}' ${W_URL}/canu/${ID}.contigs.layout.readToTig > ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_IDs.txt
 
-gunzip -c ${W_URL}/canu/${ID}.trimmedReads.fasta.gz > ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta
+	gunzip -c ${W_URL}/canu/${ID}.trimmedReads.fasta.gz > ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta
 
-READS=$(grep -c ">" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta)
+	READS=$(grep -c ">" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta)
 
-echo "$READS reads were trimmed by Canu"
+	echo "$READS reads were trimmed by Canu"
 
-while read IDs; do grep -A 1 "id=\b${IDs}\b" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta; done < ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_IDs.txt > ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.${CONTIG}.fasta
+	while read IDs; do grep -A 1 "id=\b${IDs}\b" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta; done < ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_IDs.txt > ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.${CONTIG}.fasta
 
-grep -o -P '(?<=>)(\S*)' ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.${CONTIG}.fasta | uniq -u > ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt
+	grep -o -P '(?<=>)(\S*)' ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.${CONTIG}.fasta | uniq -u > ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt
 
-READS_AS_U=$(grep -c "m" ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt)
+	READS_AS_U=$(grep -c "m" ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt)
 
-echo "of which $READS_AS_U were used in the assembly of contig ${CONTIG}\n"
+	echo "of which $READS_AS_U were used in the assembly of contig ${CONTIG}\n"
 
-sed ':a;N;/>/!s/\n//;ta;P;D' ${W_URL}/canu/${ID}.contigs.fasta | grep -A1 "${CONTIG} " > ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
+	sed ':a;N;/>/!s/\n//;ta;P;D' ${W_URL}/canu/${ID}.contigs.fasta | grep -A1 "${CONTIG} " > ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
 
-#generate dataset of all Pacbio bam files
-for i in ${W_URL}/pacbio_bam/*.subreads.bam; do pbindex $i; done
+	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi 
 
-dataset create --type SubreadSet --name ${ID} ${W_URL}/arrow/arrow_round1/${ID}_read_set.xml ${W_URL}/pacbio_bam/*.subreads.bam
-blasr --bestn 1 ${W_URL}/arrow/arrow_round1/${ID}_read_set.xml ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta --bam --out ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam --nproc ${NPROC}
+	pbmm2 align ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/pacbio_bam/*.subreads.bam ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC} secondary=no
 
-if ! [[ -e "${W_URL}/arrow/arrow_round1/picard" ]]; then
+	if ! [[ -e "${W_URL}/arrow/arrow_round1/picard" ]]; then
 
-mkdir -p ${W_URL}/arrow/arrow_round1/picard
+		mkdir -p ${W_URL}/arrow/arrow_round1/picard
 
-fi
+	fi
 
-#extract reads used by Canu using their names
-samtools view -H ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam | sed "s/SO:UNKNOWN/SO:unknown/g" | samtools reheader - ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam > ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh.bam
-picard FilterSamReads I=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh.bam O=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam READ_LIST_FILE=${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt FILTER=includeReadList VALIDATION_STRINGENCY=STRICT
+	#extract reads used by Canu using their names
+	samtools view -H ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam | sed "s/SO:UNKNOWN/SO:unknown/g" | samtools reheader - ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam > ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh.bam
+	picard FilterSamReads I=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh.bam O=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam READ_LIST_FILE=${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt FILTER=includeReadList VALIDATION_STRINGENCY=STRICT
 
-#Arrow polishing using only reads from the Canu assembly
-samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
+	#Arrow polishing using only reads from the Canu assembly
+	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
 
-samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
+	samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
 
-rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam  
+	rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam  
 
-pbindex ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
+	pbindex ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
 
-variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta -o ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta --algorithm=arrow --numWorkers ${NPROC}
+	variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta -o ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta --algorithm=arrow --numWorkers ${NPROC}
 
 fi
 
 if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 
-echo "pbalign --bestn 1 ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_a
-rrow.fasta --bam --out ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam --nproc ${NPROC}"
+	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi 
+	pbmm2 align ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -j ${NPROC} secondary=no
 
-#second round of Arrow polishing
-blasr --bestn 1 ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta --bam --out ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam --nproc ${NPROC}
+	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta
 
-samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta
+	samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
 
-samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
+	rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam
 
-rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam
+	pbindex  ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
 
-pbindex  ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
+	mkdir -p ${W_URL}/arrow/arrow_round2
 
-mkdir -p ${W_URL}/arrow/arrow_round2
+	variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta -o ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta --algorithm=arrow --numWorkers ${NPROC}
 
-variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta -o ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta --algorithm=arrow --numWorkers ${NPROC}
+	#generate a final alignment for debugging
 
-#generate a final alignment
-pbalign --maxHits 1 ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/arrow/arrow_round2/${ID}.realigned_raw_reads_rh_${CONTIG}_pl2.bam --nproc ${NPROC}
+	pbmm2 index ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi 
+	pbmm2 align ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam ${W_URL}/arrow/arrow_round2/${ID}.realigned_raw_reads_rh_${CONTIG}_pl2.bam -j ${NPROC} secondary=no
 
 fi

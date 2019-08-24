@@ -17,7 +17,7 @@ elif [ $1 == "-h" ]; then
 	intermediate files.
 
 	It requires the following software (and their dependencies) installed:
-	bowtie2/2.1.0, aws-cli/1.16.101, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
+	bowtie2/2.3.5, aws-cli/1.16.101, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
 
 	Reads are aligned to the reference. A final round of freebayes and bcftools consensus
 	is required to obtain the polished contig using the aligned outcome of the script (this step is
@@ -123,7 +123,7 @@ fi
 
 if ! [[ -e "${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt" ]]; then
 
-	aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ > ${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt
+	aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ > ${W_URL}/bowtie2_round1/log/file_list_$dw_date.txt
 
 fi
 
@@ -168,7 +168,7 @@ fi
 
 if [[ ${DOWNL} == true ]] && ! [[ "$(ls -A ${W_URL}/bowtie2_round1/aligned_raw_reads)" ]] ; then
 
-	aws s3 cp --recursive --include="*.fastq.gz" --exclude="*I1*" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ ${W_URL}
+	aws s3 --no-sign-request cp --recursive --include="*.fastq.gz" --exclude="*I1*" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/ ${W_URL}
 
 fi
 
@@ -185,8 +185,8 @@ do
 
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
 			#download
-			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p1[i]} ${W_URL}
-			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p2[i]} ${W_URL}
+			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p1[i]} ${W_URL}
+			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/10x/${p2[i]} ${W_URL}
 		fi
 		
 		#align

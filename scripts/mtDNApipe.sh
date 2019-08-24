@@ -16,7 +16,7 @@ elif [ $1 == "-h" ]; then
 	generated in the framework of the Vertebrate Genomes Project and assemble them using Canu.
 
 	It requires the following software (and their dependencies) installed:
-	aws-cli/1.16.101, blasr/5.3.2-06c9543 | minimap2/2.17 | pbmm2/1.0.0, bam2fastx, Canu/1.8, blastn/2.7.1+, pbindex
+	aws-cli/1.16.101, blasr/5.3.2-06c9543 | pbmm2/1.0.0, bam2fastx, Canu/1.8, blastn/2.7.1+, pbindex
 
 	Sequence retrieval is based on a search by similarity using a long read aligner.
 	Pacbio raw data files are individually downloaded from the Genomeark
@@ -46,7 +46,7 @@ elif [ $1 == "-h" ]; then
 	Optional arguments are:
 	-d multithreaded download of files (true/false default: false) !! warning: it may require considerable amount of space.
 	-l use files from list of files (default looks into aws)
-	-m the aligner (blasr|minimap2|pbmm2). Default is pbmm2
+	-m the aligner for mitoread identification (blasr|pbmm2). Default is pbmm2
 	-f filter reads by size prior to assembly (reduces the number of NUMT reads and helps the assembly)
 	-o the options for Canu
 	-c if run on cluster. Supported options are:
@@ -90,7 +90,7 @@ while getopts ":l:s:i:r:g:c:f:o:m:t:d:" opt; do
 			echo "Reference: -r $OPTARG"
 			;;
 		g)
-			SIZE=$OPTARG
+			GSIZE=$OPTARG
 			echo "Genome size: -g $OPTARG"
             ;;
 		c)
@@ -146,7 +146,7 @@ if [[ -z ${LIST} ]]; then
 
 	#record Pacbio raw data files available in the cloud at the time of the analysis
 	printf "Collecting data using: aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/\n\n"
-	aws s3 ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
+	aws s3 --no-sign-request ls s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ | grep -oP "m.*.subreads.bam" | uniq > ${W_URL}/log/file_list_$dw_date.txt
 
 else
 
@@ -172,7 +172,7 @@ fi
 
 if [[ ${DOWNL} == true ]] && ! [[ "$(ls -A ${W_URL}/pacbio_bam)" ]] ; then
 
-	aws s3 cp --recursive --exclude="*scrap*" --exclude="*bai*" --exclude="*pbi*" --include="*.subreads.bam" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ ${W_URL}/
+	aws s3 --no-sign-request cp --recursive --exclude="*scrap*" --exclude="*bai*" --exclude="*pbi*" --include="*.subreads.bam" s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/ ${W_URL}/
 
 fi
 
@@ -186,7 +186,7 @@ if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
 
 			#if vgp mode download
-			aws s3 cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
+			aws s3 --no-sign-request cp s3://genomeark/species/${SPECIES}/${ID}/genomic_data/pacbio/$p ${W_URL}/
 			#align
 			
 		fi
@@ -196,24 +196,14 @@ if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e
 		ln -s $p ${W_URL}/$(basename -- "$p")
 		p=$(basename -- "$p")
 	fi
-
-	if [[  ${ALN} == "minimap2" ]]; then
-
-		pbindex ${W_URL}/${p%.*}.bam
-
-		bam2fastq ${W_URL}/${p%.*}.bam -o ${W_URL}/${p%.*}
-
-		minimap2 -ax map-pb --secondary=no ${W_URL}/reference/${REF%.*}.fasta ${W_URL}/${p%.*}.fastq.gz -t ${NPROC} -R "$(samtools view -H ${W_URL}/${p%.*}.bam | grep "@RG" | tr -d '\n' | sed 's/	/\\t/g')" | samtools view -hbS -F2048 -F4 - > ${W_URL}/pacbio_bam/aligned_${p%.*}.bam
-		rm ${W_URL}/${p%.*}.fastq.gz
-		rm ${W_URL}/${p%.*}.bam.pbi
-
-	elif [[  ${ALN} == "blasr" ]]; then
+	
+	if [[  ${ALN} == "blasr" ]]; then
 
 		blasr --bestn 1 ${W_URL}/$p ${W_URL}/reference/${REF%.*}.fasta --bam --out ${W_URL}/pacbio_bam/aligned_${p%.*}.bam --nproc ${NPROC}
 
 	elif [[  ${ALN} == "pbmm2" ]]; then
 	
-		pbmm2 align ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/$p ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC} -N 1
+		pbmm2 align ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/$p ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC} secondary=no
 		
 	else
 
@@ -279,7 +269,7 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 	fi
 	
 	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false"
-	CANU="${CANU} genomeSize=${SIZE}"
+	CANU="${CANU} genomeSize=${GSIZE}"
 #	CANU="${CANU} -gridEngineResourceOption=\"-R\\\"select[mem>${LSF_MEM}] rusage[mem=${LSF_MEM}]\\\" -M${LSF_MEM} -n ${NPROC}\""
 
 	if ! [[ -z ${FL} ]]; then

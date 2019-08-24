@@ -18,7 +18,7 @@ elif [ $1 == "-h" ]; then
 	alignment, and those overlapping ends should then be removed from the final assembly.
 
 	It requires the following software (and their dependencies) installed:
-	bowtie2/2.1.0, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
+	bowtie2/2.3.5, samtools/1.7, freebayes/1.1.0-46-g8d2b3a0-dirty, bcftools/1.9
 
 	Reads are aligned to the reference, Similarly to script map10x1.sh, a final round of
 	freebayes and bcftools consensus is required to obtain the polished contig using the 

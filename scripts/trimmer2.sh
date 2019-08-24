@@ -258,6 +258,6 @@ sed -i "$ s/$/$S/" ${W_URL}/trimmed2/${FNAME}_trim2.fasta
 printf "\nFinal sequence:\n\n"
 cat ${W_URL}/trimmed2/${FNAME}_trim2.fasta
 
-SIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/trimmed2/${FNAME}_trim2.fasta)
+GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/trimmed2/${FNAME}_trim2.fasta)
 	
-printf "\nMitogenome size: ${SIZE} bp\n"
+printf "\nMitogenome size: ${GSIZE} bp\n"
