@@ -1,18 +1,20 @@
 # mitoVGP
 This repository contains scripts used to generate mitochondrial sequences for the <a href="http://www.vertebrategenomesproject.org">Vertebrate Genomes Project</a>.
 
-<b>Data Use Policy</b>
+<b>Software and Data Use Policy</b>
+
+mitoVGP is distributed under the <a href="LICENSE.txt">BSD 3-Clause License</a>.
 
 VGP samples and data come from a variety of sources. To support fair and productive use of this data, please abide by the <a href="https://genome10k.soe.ucsc.edu/data-use-policies/">Data Use Policy</a> and contact us with any questions.
 
-<b>Content description:</b>
+<b>Content Description:</b>
 - mitoVGP.sh - the wrapper to run the full pipeline
 
 - scripts/ - the intermediate scripts required by mitoVGP.sh
 
 - mitoVGP_conda_env.yml - conda environment containing all the software required to run the pipeline on Unix systems
 
-<b>Quick start</b>
+<b>Quick Start</b>
 
 ```
 git clone https://github.com/gf777/mitoVGP.git #clone this git repository
