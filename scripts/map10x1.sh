@@ -181,7 +181,7 @@ do
 		printf "\n--Align:\n"
 
 		printf "${p1[i]}\n"
-		printf "${p2[i]}"
+		printf "${p2[i]}\n\n"
 
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then
 			#download
