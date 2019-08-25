@@ -19,6 +19,8 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 <b>Quick Start</b>
 
+mitoVGP is available for Linux64. To install and run follow these instructions:
+
 ```
 git clone https://github.com/gf777/mitoVGP.git #clone this git repository
 cd mitoVGP #get into mitoVGP folder
