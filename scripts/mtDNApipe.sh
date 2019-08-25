@@ -244,13 +244,13 @@ done
 #merge into a single read file
 if ! [[ -e "${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq" ]]; then
 
-	zcat ${W_URL}/pacbio_MT_extracted_reads/*.subreads.fastq.gz > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+	cat ${W_URL}/pacbio_MT_extracted_reads/*.subreads > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
 	
 	gzip ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
 	
 fi
 
-	rm ${W_URL}/pacbio_MT_extracted_reads/*.subreads.fastq.gz
+	rm ${W_URL}/pacbio_MT_extracted_reads/*.subreads
 
 fi
 
@@ -265,7 +265,7 @@ fi
 #assemble mtDNA reads with canu
 if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
-	CANU=/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/canu/Linux-amd64/bin/canu
+	CANU=canu
 
 	if ! [[ -z  ${OPTS} ]]; then
 
@@ -273,7 +273,7 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
 	fi
 	
-	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false"
+	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false gnuplotTested=true"
 	CANU="${CANU} genomeSize=${GSIZE}"
 #	CANU="${CANU} -gridEngineResourceOption=\"-R\\\"select[mem>${LSF_MEM}] rusage[mem=${LSF_MEM}]\\\" -M${LSF_MEM} -n ${NPROC}\""
 

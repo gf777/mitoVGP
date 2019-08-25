@@ -230,6 +230,8 @@ if ! [[ -e "${W_URL}/bowtie2_round1/fq" ]]; then
 
 fi
 
+printf "\n--Sort and index the alignment:\n"
+
 #sort and index the alignment
 if ! [[ -e "${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam" ]]; then
 
@@ -239,6 +241,10 @@ if ! [[ -e "${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam" ]]; then
 rm ${W_URL}/bowtie2_round1/aligned_${ID}_all.bam
 
 fi
+
+printf "\n--Sorting and indexing completed:\n"
+
+printf "\n--Variant calling and polishing:\n"
 
 if ! [[ -e "${W_URL}/freebayes_round1/" ]]; then
 
@@ -265,3 +271,5 @@ if ! [[ -e "${W_URL}/freebayes_round1/${ID}.${CONTIG}_arrow2_10x1.fasta" ]]; the
 	bcftools consensus ${W_URL}/freebayes_round1/aligned_${ID}_all_sorted.vcf.gz -f ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta -o ${W_URL}/freebayes_round1/${ID}.${CONTIG}_arrow2_10x1.fasta
 
 fi
+
+printf "\n--Variant calling and polishing completed:\n"

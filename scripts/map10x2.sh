@@ -103,9 +103,13 @@ if ! [[ -e "${W_URL}/bowtie2_round2" ]]; then
 
 	mkdir ${W_URL}/bowtie2_round2
 
+	printf "\n--Align:\n"
+
 	#align
 	bowtie2-build ${W_URL}/trimmed/${FNAME}.fasta ${W_URL}/bowtie2_round2/${ID}
 	bowtie2 -x ${W_URL}/bowtie2_round2/${ID} -1 ${W_URL}/bowtie2_round1/fq/aligned_${ID}_all_1.fq -2 ${W_URL}/bowtie2_round1/fq/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam"
+
+	printf "\n--Sort and index the alignment:\n"
 
 	#sort and index the alignment
 	samtools sort -@ ${NPROC} ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam -o ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -@ ${NPROC}
@@ -113,6 +117,10 @@ if ! [[ -e "${W_URL}/bowtie2_round2" ]]; then
 	rm ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam
 
 fi
+
+printf "\n--Sorting and indexing completed:\n"
+
+printf "\n--Variant calling and polishing:\n"
 
 if ! [[ -e "${W_URL}/freebayes_round2/" ]]; then
 
@@ -127,3 +135,5 @@ if ! [[ -e "${W_URL}/freebayes_round2/" ]]; then
 	bcftools consensus ${W_URL}/freebayes_round2/aligned_${ID}_all_trimmed_sorted.vcf.gz -f ${W_URL}/trimmed/${FNAME}.fasta -o ${W_URL}/freebayes_round2/${FNAME}_10x2.fasta
 
 fi
+
+printf "\n--Variant calling and polishing completed:\n"
