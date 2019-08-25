@@ -23,7 +23,7 @@ cd mitoVGP #get into mitoVGP folder
 conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
 conda activate mitoVGP #activate mitoVGP conda environment
 
-#run mitoVGP pipeline using 24 cores (example with <i>M. armatus</i>)
+#run mitoVGP pipeline using 24 cores (example with M. armatus)
 sh mitoVGP.sh -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembalus_armatus.fasta -t 24
 ```
 
