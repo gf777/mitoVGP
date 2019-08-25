@@ -90,6 +90,8 @@ fi
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
+FNAME="${ID}.${CONTIG}_arrow2_10x1_trim1"
+
 if [[ -e "${W_URL}/freebayes_round2/${FNAME}_10x2.fasta" ]]; then
 
 	printf "\n\noutput already present: skipping.\n\n"
@@ -100,8 +102,6 @@ fi
 if ! [[ -e "${W_URL}/bowtie2_round2" ]]; then
 
 	mkdir ${W_URL}/bowtie2_round2
-
-	FNAME="${ID}.${CONTIG}_arrow2_10x1_trim1"
 
 	#align
 	bowtie2-build ${W_URL}/trimmed/${FNAME}.fasta ${W_URL}/bowtie2_round2/${ID}

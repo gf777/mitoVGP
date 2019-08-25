@@ -96,25 +96,25 @@ CONTIG_NAME=$(cat ${W_URL}/freebayes_round2/${FNAME}.fasta | awk '$0 ~ ">" {prin
 
 if ! [[ -e "${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam" ]]; then
 
-mkdir ${W_URL}/trimmed2
+	mkdir ${W_URL}/trimmed2
 
-cp ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2
+	cp ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2
 
-sed -i '2 s/^\(.\{4\}\)./\1/' ${W_URL}/trimmed2/${FNAME}.fasta
+	sed -i '2 s/^\(.\{4\}\)./\1/' ${W_URL}/trimmed2/${FNAME}.fasta
 
-samtools sort -@ ${NPROC} -n ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -o ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam
-samtools fastq -@ ${NPROC} ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed2/aligned_${ID}_all_s.fq
-bowtie2-build --threads ${NPROC} ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
-bowtie2 -x ${W_URL}/trimmed2/${ID} -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed2/realigned_${ID}_all.bam"
-samtools sort -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all.bam -o ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam -@ ${NPROC}
-samtools index -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam
-printf "\n"
+	samtools sort -@ ${NPROC} -n ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -o ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam
+	samtools fastq -@ ${NPROC} ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed2/aligned_${ID}_all_s.fq
+	bowtie2-build --threads ${NPROC} ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
+	bowtie2 -x ${W_URL}/trimmed2/${ID} -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed2/realigned_${ID}_all.bam"
+	samtools sort -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all.bam -o ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam -@ ${NPROC}
+	samtools index -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam
+	printf "\n"
 
 fi
 
 if ! [[ -e "${W_URL}/trimmed2/${FNAME}.delta" ]]; then
 
-nucmer --maxmatch --nosimplify ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${FNAME}.fasta -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
+	nucmer --maxmatch --nosimplify ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${FNAME}.fasta -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
 
 fi
 
@@ -125,16 +125,16 @@ END1=$(echo $NUCMER_OUT | awk '{print $3}')
 
 if (( ${BEGIN2} > ${END1} )); then
 
-echo ">${FNAME}" > "${W_URL}/trimmed2/${FNAME}_new.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_new.fasta"
+	echo ">${FNAME}" > "${W_URL}/trimmed2/${FNAME}_new.fasta" & grep -v ">" ${W_URL}/trimmed2/${FNAME}.fasta | tr -d '\n' | cut -c${BEGIN1}-${BEGIN2} >> "${W_URL}/trimmed2/${FNAME}_new.fasta"
 
-nucmer --maxmatch --nosimplify "${W_URL}/trimmed2/${FNAME}_new.fasta" "${W_URL}/trimmed2/${FNAME}_new.fasta" -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
+	nucmer --maxmatch --nosimplify "${W_URL}/trimmed2/${FNAME}_new.fasta" "${W_URL}/trimmed2/${FNAME}_new.fasta" -f -p "${W_URL}/trimmed2/${FNAME}" -b 500 
 
-CONTIG="${W_URL}/trimmed2/${FNAME}_new.fasta"
+	CONTIG="${W_URL}/trimmed2/${FNAME}_new.fasta"
 
-NUCMER_OUT=$(show-coords "${W_URL}/trimmed2/${FNAME}.delta" -lrcTHo | grep "BEGIN" | head -1)
-BEGIN1=$(echo $NUCMER_OUT | awk '{print $1}')
-BEGIN2=$(echo $NUCMER_OUT | awk '{print $2}')
-END1=$(echo $NUCMER_OUT | awk '{print $3}')
+	NUCMER_OUT=$(show-coords "${W_URL}/trimmed2/${FNAME}.delta" -lrcTHo | grep "BEGIN" | head -1)
+	BEGIN1=$(echo $NUCMER_OUT | awk '{print $1}')
+	BEGIN2=$(echo $NUCMER_OUT | awk '{print $2}')
+	END1=$(echo $NUCMER_OUT | awk '{print $3}')
 	
 fi
 
@@ -151,8 +151,8 @@ arrCOV2=($(samtools depth -aa -r ${CONTIG_NAME}:${END1}-${END2} --reference ${W_
 
 if ! [[ -e "${W_URL}/trimmed2/${FNAME}_ends_aligned.fasta" ]]; then
 
-printf "\n"
-muscle -in ${W_URL}/trimmed2/${FNAME}_ends.fasta -out ${W_URL}/trimmed2/${FNAME}_ends_aligned.fasta
+	printf "\n"
+	muscle -in ${W_URL}/trimmed2/${FNAME}_ends.fasta -out ${W_URL}/trimmed2/${FNAME}_ends_aligned.fasta
 
 fi
 

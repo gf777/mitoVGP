@@ -85,14 +85,14 @@ printf "\n"
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
+FNAME="${ID}.${CONTIG}_arrow2_10x1"
+
 if [[ -e "${W_URL}/trimmed/${FNAME}_trim1.fasta" ]]; then
 
 	printf "\n\noutput already present: skipping.\n\n"
 	exit 0
 
 fi
-
-FNAME="${ID}.${CONTIG}_arrow2_10x1"
 
 CONTIG_NAME=$(cat ${W_URL}/freebayes_round1/${FNAME}.fasta | awk '$0 ~ ">" {print substr($0,2)}')
 
