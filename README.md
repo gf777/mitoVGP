@@ -19,7 +19,7 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 <b>Quick Start</b>
 
-mitoVGP is available for Linux64. To install and run follow these instructions:
+mitoVGP is available for Linux64 and requires <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/#regular-installation">Conda</a>. To install and run follow these instructions:
 
 ```
 git clone https://github.com/gf777/mitoVGP.git #clone this git repository
