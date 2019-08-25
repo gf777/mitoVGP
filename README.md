@@ -12,7 +12,7 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 - scripts/ - the intermediate scripts required by mitoVGP.sh
 
-- mitoVGP_conda_env.yml - conda environment containing all the software required to run the pipeline on Unix systems
+- mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
 
 <b>Quick Start</b>
 
