@@ -265,7 +265,7 @@ fi
 #assemble mtDNA reads with canu
 if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
-	CANU=canu
+	CANU=canu-1.8/Linux-amd64/bin/canu
 
 	if ! [[ -z  ${OPTS} ]]; then
 
