@@ -8,17 +8,22 @@ mitoVGP is distributed under the <a href="LICENSE.txt">BSD 3-Clause License</a>.
 VGP samples and data come from a variety of sources. To support fair and productive use of this data, please abide by the <a href="https://genome10k.soe.ucsc.edu/data-use-policies/">Data Use Policy</a> and contact us with any questions.
 
 <b>Content Description:</b>
+
+- canu-1.8.Linux-amd64.tar.xz - the popular long read assembler used in the pipeline
+
+- mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
+
 - mitoVGP.sh - the wrapper to run the full pipeline
 
 - scripts/ - the intermediate scripts required by mitoVGP.sh
-
-- mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
 
 <b>Quick Start</b>
 
 ```
 git clone https://github.com/gf777/mitoVGP.git #clone this git repository
 cd mitoVGP #get into mitoVGP folder
+
+tar -xvf canu-1.8.Linux-amd64.tar.xz #install canu assembler
 
 conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
 #Note: as alternative to mitoVGP_conda_env.yml you may try 
