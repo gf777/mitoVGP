@@ -180,7 +180,7 @@ do
 
 		printf "\n--Align:\n"
 
-		printf "${p1[i]}"
+		printf "${p1[i]}\n"
 		printf "${p2[i]}"
 
 		if [[ -z ${DOWNL} ]] || ! [[  ${DOWNL} == true ]]; then

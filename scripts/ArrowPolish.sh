@@ -107,6 +107,8 @@ if ! [[ -e "${W_URL}/arrow" ]]; then
 
 fi
 
+printf "--First round of arrow polishing:\n"
+
 if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
 	mkdir -p ${W_URL}/arrow/arrow_round1
@@ -163,6 +165,10 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
 fi
 
+printf "\n--First round completed.\n"
+
+printf "\n--Second round of arrow polishing:\n"
+
 if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 	
 	picard RevertSam I=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam O=${W_URL}/arrow/arrow_round1/uBAM2.bam MAX_DISCARD_FRACTION=0.005 ATTRIBUTE_TO_CLEAR=XT ATTRIBUTE_TO_CLEAR=XN ATTRIBUTE_TO_CLEAR=AS ATTRIBUTE_TO_CLEAR=OC ATTRIBUTE_TO_CLEAR=OP SORT_ORDER=unsorted RESTORE_ORIGINAL_QUALITIES=true REMOVE_DUPLICATE_INFORMATION=true REMOVE_ALIGNMENT_INFORMATION=true
@@ -183,3 +189,5 @@ if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 	variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta -o ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta --algorithm=arrow --numWorkers ${NPROC}
 
 fi
+
+printf "\n--Second round completed.\n"
