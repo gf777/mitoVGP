@@ -37,7 +37,7 @@ conda activate mitoVGP #activate mitoVGP conda environment
 sh mitoVGP.sh -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembalus_armatus.fasta -t 24
 ```
 
-For additional instructions you can type:
+For additional options and specifications you can type:
 ```
 sh mitoVGP.sh -h
 ```
