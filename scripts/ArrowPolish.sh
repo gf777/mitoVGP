@@ -131,8 +131,7 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 	sed ':a;N;/>/!s/\n//;ta;P;D' ${W_URL}/canu/${ID}.contigs.fasta | grep -A1 "${CONTIG} " > ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
 
 	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi 
-
-	pbmm2 align ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/pacbio_bam/*.subreads.bam ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC}
+	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi ${W_URL}/pacbio_bam/*.subreads.bam ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC}
 
 	if ! [[ -e "${W_URL}/arrow/arrow_round1/picard" ]]; then
 
@@ -160,7 +159,7 @@ fi
 if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 
 	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi 
-	pbmm2 align ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -j ${NPROC}
+	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -j ${NPROC}
 
 	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta
 
@@ -177,6 +176,6 @@ if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 	#generate a final alignment for debugging
 
 	pbmm2 index ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi 
-	pbmm2 align ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam ${W_URL}/arrow/arrow_round2/${ID}.realigned_raw_reads_rh_${CONTIG}_pl2.bam -j ${NPROC}
+	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam ${W_URL}/arrow/arrow_round2/${ID}.realigned_raw_reads_rh_${CONTIG}_pl2.bam -j ${NPROC}
 
 fi

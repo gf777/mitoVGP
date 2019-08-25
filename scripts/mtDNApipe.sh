@@ -204,7 +204,7 @@ if ! [[ $p == *scraps* ]] && ! [[ $p == *.pbi ]] && [[ $p == *.bam ]] && ! [[ -e
 
 	elif [[  ${ALN} == "pbmm2" ]]; then
 	
-		pbmm2 align ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/$p ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC}
+		pbmm2 align --best-n 1 ${W_URL}/reference/${REF%.*}.fasta.mmi ${W_URL}/$p ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC}
 		
 	else
 
