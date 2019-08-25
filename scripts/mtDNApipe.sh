@@ -244,18 +244,22 @@ done
 #merge into a single read file
 if ! [[ -e "${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq" ]]; then
 
-	zcat ${W_URL}/pacbio_MT_extracted_reads/*.fastq.gz > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
-
+	zcat ${W_URL}/pacbio_MT_extracted_reads/*.subreads.fastq.gz > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+	
+	gzip ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+	
 fi
 
-	rm ${W_URL}/pacbio_MT_extracted_reads/*.fastq.gz
+	rm ${W_URL}/pacbio_MT_extracted_reads/*.subreads.fastq.gz
 
 fi
 
 if ! [[ -z ${FL} ]]; then
 
 	awk 'BEGIN {FS = "\t" ; OFS = "\n"} {header = $0 ; getline seq ; getline qheader ; getline qseq ; if (length(seq) <= '${FL}') {print header, seq, qheader, qseq}}' < ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq > ${W_URL}/pacbio_MT_extracted_reads/filtered_${ID}.fastq
-
+	
+	gzip ${W_URL}/pacbio_MT_extracted_reads/filtered_${ID}.fastq
+	
 fi
 
 #assemble mtDNA reads with canu
@@ -275,11 +279,11 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
 	if ! [[ -z ${FL} ]]; then
 
-		CANU="${CANU} -pacbio-raw ${W_URL}/pacbio_MT_extracted_reads/filtered_${ID}.fastq"
+		CANU="${CANU} -pacbio-raw ${W_URL}/pacbio_MT_extracted_reads/filtered_${ID}.fastq.gz"
 	
 	else
 	
-		CANU="${CANU} -pacbio-raw ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq"
+		CANU="${CANU} -pacbio-raw ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq.gz"
 	
 	fi
 	

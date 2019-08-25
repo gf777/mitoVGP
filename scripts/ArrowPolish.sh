@@ -107,7 +107,7 @@ if ! [[ -e "${W_URL}/arrow" ]]; then
 
 fi
 
-printf "--First round of arrow polishing:\n"
+printf "\n--First round of arrow polishing:\n\n"
 
 if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
@@ -167,7 +167,7 @@ fi
 
 printf "\n--First round completed.\n"
 
-printf "\n--Second round of arrow polishing:\n"
+printf "\n--Second round of arrow polishing:\n\n"
 
 if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 	

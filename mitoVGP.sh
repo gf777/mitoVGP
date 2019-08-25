@@ -118,7 +118,7 @@ if [[ -z  ${GSIZE} ]]; then
 	
 	GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/reference/${REF%.*}.fasta)
 	
-	printf "\nGenome size not provided, using: ${GSIZE} bp\n"
+	printf "\nGenome size not provided, using reference genome size: ${GSIZE} bp\n"
 	
 fi
 
