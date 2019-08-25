@@ -102,12 +102,12 @@ cp ${W_URL}/freebayes_round2/${FNAME}.fasta ${W_URL}/trimmed2
 
 sed -i '2 s/^\(.\{4\}\)./\1/' ${W_URL}/trimmed2/${FNAME}.fasta
 
-samtools sort -n ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -o ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam
-samtools fastq ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed2/aligned_${ID}_all_s.fq
-bowtie2-build ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
+samtools sort -@ ${NPROC} -n ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -o ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam
+samtools fastq -@ ${NPROC} ${W_URL}/trimmed2/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed2/aligned_${ID}_all_s.fq
+bowtie2-build --threads ${NPROC} ${W_URL}/trimmed2/${FNAME}.fasta ${W_URL}/trimmed2/${ID}
 bowtie2 -x ${W_URL}/trimmed2/${ID} -1 ${W_URL}/trimmed2/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed2/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed2/realigned_${ID}_all.bam"
-samtools sort ${W_URL}/trimmed2/realigned_${ID}_all.bam -o ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam -@ ${NPROC}
-samtools index ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam
+samtools sort -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all.bam -o ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam -@ ${NPROC}
+samtools index -@ ${NPROC} ${W_URL}/trimmed2/realigned_${ID}_all_sorted.bam
 printf "\n"
 
 fi

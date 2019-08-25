@@ -102,12 +102,12 @@ if ! [[ -e "${W_URL}/trimmed" ]]; then
 
 	mkdir ${W_URL}/trimmed
 
-	samtools sort -n ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam -o ${W_URL}/trimmed/aligned_${ID}_all_paired.bam
-	samtools fastq ${W_URL}/trimmed/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed/aligned_${ID}_all_s.fq
-	bowtie2-build ${W_URL}/freebayes_round1/${FNAME}.fasta ${W_URL}/trimmed/${ID}
+	samtools sort -@ ${NPROC} -n ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam -o ${W_URL}/trimmed/aligned_${ID}_all_paired.bam
+	samtools fastq -@ ${NPROC} ${W_URL}/trimmed/aligned_${ID}_all_paired.bam -1 ${W_URL}/trimmed/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed/aligned_${ID}_all_2.fq -s ${W_URL}/trimmed/aligned_${ID}_all_s.fq
+	bowtie2-build --threads ${NPROC} ${W_URL}/freebayes_round1/${FNAME}.fasta ${W_URL}/trimmed/${ID}
 	bowtie2 -x ${W_URL}/trimmed/${ID} -1 ${W_URL}/trimmed/aligned_${ID}_all_1.fq -2 ${W_URL}/trimmed/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/trimmed/realigned_${ID}_all.bam"
-	samtools sort ${W_URL}/trimmed/realigned_${ID}_all.bam -o ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam -@ ${NPROC}
-	samtools index ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam
+	samtools sort -@ ${NPROC} ${W_URL}/trimmed/realigned_${ID}_all.bam -o ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam -@ ${NPROC}
+	samtools index -@ ${NPROC} ${W_URL}/trimmed/realigned_${ID}_all_sorted.bam
 	printf "\n"
 
 fi

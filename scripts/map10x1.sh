@@ -129,7 +129,7 @@ fi
 
 if ! [[ -e "${W_URL}/bowtie2_round1/${ID}.1.bt2" ]]; then
 
-bowtie2-build ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/bowtie2_round1/${ID}
+bowtie2-build --threads ${NPROC} ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/bowtie2_round1/${ID}
 
 fi
 
@@ -233,8 +233,8 @@ fi
 #sort and index the alignment
 if ! [[ -e "${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam" ]]; then
 
-	samtools sort ${W_URL}/bowtie2_round1/aligned_${ID}_all.bam -o ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam -@ ${NPROC}
-	samtools index ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam
+	samtools sort -@ ${NPROC} ${W_URL}/bowtie2_round1/aligned_${ID}_all.bam -o ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam -@ ${NPROC}
+	samtools index -@ ${NPROC} ${W_URL}/bowtie2_round1/aligned_${ID}_all_sorted.bam
 
 rm ${W_URL}/bowtie2_round1/aligned_${ID}_all.bam
 

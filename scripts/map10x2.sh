@@ -108,8 +108,8 @@ if ! [[ -e "${W_URL}/bowtie2_round2" ]]; then
 	bowtie2 -x ${W_URL}/bowtie2_round2/${ID} -1 ${W_URL}/bowtie2_round1/fq/aligned_${ID}_all_1.fq -2 ${W_URL}/bowtie2_round1/fq/aligned_${ID}_all_2.fq -p ${NPROC} --no-mixed | samtools view -bSF4 - > "${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam"
 
 	#sort and index the alignment
-	samtools sort ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam -o ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -@ ${NPROC}
-	samtools index ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam
+	samtools sort -@ ${NPROC} ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam -o ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam -@ ${NPROC}
+	samtools index -@ ${NPROC} ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed_sorted.bam
 	rm ${W_URL}/bowtie2_round2/aligned_${ID}_all_trimmed.bam
 
 fi

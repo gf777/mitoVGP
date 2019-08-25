@@ -89,6 +89,7 @@ dependencies:
   - mkl_fft=1.0.14
   - mkl_random=1.0.2
   - mummer=3.23
+  - muscle=3.8.1551
   - ncurses=6.1
   - numpy=1.16.4
   - numpy-base=1.16.4

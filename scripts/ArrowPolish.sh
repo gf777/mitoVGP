@@ -155,7 +155,7 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 	#Arrow polishing using only reads from the Canu assembly
 	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
 
-	samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
+	samtools sort -@ ${NPROC} ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam
 
 	rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}.bam  
 
@@ -178,11 +178,11 @@ if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 
 	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta
 
-	samtools sort ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
+	samtools sort -@ ${NPROC} ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -o ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
 
 	rm ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam
 
-	pbindex  ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
+	pbindex ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam
 
 	mkdir -p ${W_URL}/arrow/arrow_round2
 
