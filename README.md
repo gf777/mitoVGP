@@ -9,7 +9,7 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 <b>Content Description:</b>
 
-- canu-1.8.Linux-amd64.tar.xz - the popular long read assembler used in the pipeline
+- canu-1.8.Linux-amd64.tar.xz - the popular long read assembler employed in the pipeline
 
 - mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
 
