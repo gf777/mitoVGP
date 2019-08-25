@@ -21,7 +21,8 @@ git clone https://github.com/gf777/mitoVGP.git #clone this git repository
 cd mitoVGP #get into mitoVGP folder
 
 conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
-#Note: as alternative to mitoVGP_conda_env.yml you may try mitoVGP_conda_env_nobuilds.yml to maximize compatibility.
+#Note: as alternative to mitoVGP_conda_env.yml you may try 
+#mitoVGP_conda_env_nobuilds.yml to maximize compatibility.
 
 conda activate mitoVGP #activate mitoVGP conda environment
 
