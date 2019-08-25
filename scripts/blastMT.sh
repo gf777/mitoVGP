@@ -127,8 +127,6 @@ printf "\n"
 
 awk 'FNR==NR{a[$1]=$2;next}{if ($2 in a) {print $1 "\t" $2 "\t" $3 a[$2]}}' ${W_URL}/blast/${ID%.*.*}_tig_IDs_circularity.ls ${W_URL}/blast/${ID%.*.*}_candidates.ls > ${W_URL}/blast/${ID%.*.*}_candidates_to_circular.ls
 
-cat
-
 candidate=$(head -1 ${W_URL}/blast/${ID%.*.*}_candidates_to_circular.ls | awk '{print $2}')
 
 head -1 ${W_URL}/blast/${ID%.*.*}_candidates_to_circular.ls | awk '{print $2}' > ${W_URL}/blast/${ID%.*.*}_candidate_mitocontig.txt
