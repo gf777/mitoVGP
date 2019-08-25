@@ -45,13 +45,6 @@ fi
 
 printf "\n\n++++ running: map10x1.sh ++++\n\n"
 
-if [[ -e "${W_URL}/freebayes_round1/${ID}.${CONTIG}_arrow2_10x1.fasta" ]]; then
-
-	printf "\n\noutput already present: skipping.\n\n"
-	exit 0
-
-fi
-
 #set options
 
 while getopts ":s:i:n:c:t:d:" opt; do
@@ -104,6 +97,13 @@ fi
 #define working directory
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
+
+if [[ -e "${W_URL}/freebayes_round1/${ID}.${CONTIG}_arrow2_10x1.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
 
 if ! [[ -e "${W_URL}/bowtie2_round1" ]]; then
 

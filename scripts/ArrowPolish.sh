@@ -45,13 +45,6 @@ fi
 
 printf "\n\n++++ running: ArrowPolish.sh ++++\n\n"
 
-if [[ -e "${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta" ]]; then
-
-	printf "\n\noutput already present: skipping.\n\n"
-	exit 0
-
-fi
-
 #set options
 
 while getopts ":s:i:c:n:t:" opt; do
@@ -101,6 +94,13 @@ printf "\n"
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
+if [[ -e "${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
+
 if ! [[ -e "${W_URL}/arrow" ]]; then
 
 	mkdir -p ${W_URL}/arrow
@@ -118,7 +118,7 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
 	READS=$(grep -c ">" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta)
 
-	echo "$READS reads were trimmed by Canu"
+	printf "$READS reads were trimmed by Canu\n"
 
 	while read IDs; do grep -A 1 "id=\b${IDs}\b" ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.fasta; done < ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_IDs.txt > ${W_URL}/arrow/arrow_round1/${ID}.trimmedReads.${CONTIG}.fasta
 
@@ -126,12 +126,19 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 
 	READS_AS_U=$(grep -c "m" ${W_URL}/arrow/arrow_round1/${ID}_${CONTIG}_names.txt)
 
-	echo "of which $READS_AS_U were used in the assembly of contig ${CONTIG}\n"
+	printf "of which $READS_AS_U were used in the assembly of contig ${CONTIG}\n"
 
 	sed ':a;N;/>/!s/\n//;ta;P;D' ${W_URL}/canu/${ID}.contigs.fasta | grep -A1 "${CONTIG} " > ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta
 
 	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi 
-	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi ${W_URL}/pacbio_bam/*.subreads.bam ${W_URL}/pacbio_bam/aligned_${p%.*}.bam -j ${NPROC}
+	
+	dataset create --type SubreadSet --name ${ID} ${W_URL}/arrow/arrow_round1/${ID}_read_set.xml ${W_URL}/pacbio_bam/*.subreads.bam
+	
+	pbmerge ${W_URL}/arrow/arrow_round1/${ID}_read_set.xml -o ${W_URL}/arrow/arrow_round1/BAM1.bam
+	
+	picard RevertSam I=${W_URL}/arrow/arrow_round1/BAM1.bam O=${W_URL}/arrow/arrow_round1/uBAM1.bam MAX_DISCARD_FRACTION=0.005 ATTRIBUTE_TO_CLEAR=XT ATTRIBUTE_TO_CLEAR=XN ATTRIBUTE_TO_CLEAR=AS ATTRIBUTE_TO_CLEAR=OC ATTRIBUTE_TO_CLEAR=OP SORT_ORDER=unsorted RESTORE_ORIGINAL_QUALITIES=true REMOVE_DUPLICATE_INFORMATION=true REMOVE_ALIGNMENT_INFORMATION=true
+	
+	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}.fasta.mmi ${W_URL}/arrow/arrow_round1/uBAM1.bam ${W_URL}/arrow/arrow_round1/${ID}.realigned_raw_reads.bam -j ${NPROC}
 
 	if ! [[ -e "${W_URL}/arrow/arrow_round1/picard" ]]; then
 
@@ -157,9 +164,11 @@ if ! [[ -e "${W_URL}/arrow/arrow_round1" ]]; then
 fi
 
 if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
-
+	
+	picard RevertSam I=${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam O=${W_URL}/arrow/arrow_round1/uBAM2.bam MAX_DISCARD_FRACTION=0.005 ATTRIBUTE_TO_CLEAR=XT ATTRIBUTE_TO_CLEAR=XN ATTRIBUTE_TO_CLEAR=AS ATTRIBUTE_TO_CLEAR=OC ATTRIBUTE_TO_CLEAR=OP SORT_ORDER=unsorted RESTORE_ORIGINAL_QUALITIES=true REMOVE_DUPLICATE_INFORMATION=true REMOVE_ALIGNMENT_INFORMATION=true
+		
 	pbmm2 index ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi 
-	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -j ${NPROC}
+	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta.mmi ${W_URL}/arrow/arrow_round1/uBAM2.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam -j ${NPROC}
 
 	samtools faidx ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta
 
@@ -172,10 +181,5 @@ if ! [[ -e "${W_URL}/arrow/arrow_round2" ]]; then
 	mkdir -p ${W_URL}/arrow/arrow_round2
 
 	variantCaller ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam -r ${W_URL}/arrow/arrow_round1/${ID}.${CONTIG}_arrow.fasta -o ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta --algorithm=arrow --numWorkers ${NPROC}
-
-	#generate a final alignment for debugging
-
-	pbmm2 index ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi 
-	pbmm2 align --best-n 1 ${W_URL}/arrow/arrow_round2/${ID}.${CONTIG}_arrow2.fasta.mmi ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl_sorted.bam ${W_URL}/arrow/arrow_round1/picard/${ID}.realigned_raw_reads_rh_${CONTIG}_pl.bam ${W_URL}/arrow/arrow_round2/${ID}.realigned_raw_reads_rh_${CONTIG}_pl2.bam -j ${NPROC}
 
 fi

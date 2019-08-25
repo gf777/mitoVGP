@@ -36,13 +36,6 @@ fi
 
 printf "\n\n++++ running: trimmer2.sh ++++\n\n"
 
-if [[ -e "${W_URL}/trimmed2/${FNAME}_trim2.fasta" ]]; then
-
-	printf "\n\noutput already present: skipping.\n\n"	
-	exit 0
-
-fi
-
 #set options
 
 while getopts ":s:i:n:c:t:" opt; do
@@ -90,6 +83,12 @@ fi
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
 
+if [[ -e "${W_URL}/trimmed2/${FNAME}_trim2.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"	
+	exit 0
+
+fi
 
 FNAME="${ID}.${CONTIG}_arrow2_10x1_trim1_10x2"
 

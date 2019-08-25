@@ -32,13 +32,6 @@ fi
 
 printf "\n\n++++ running: blastMT.sh ++++\n\n"
 
-if [[ -e "${W_URL}/blast/${ID%.*.*}_candidate_mitocontig.txt" ]]; then
-
-	printf "\n\noutput already present: skipping.\n\n"
-	exit 0
-
-fi
-
 #set options
 
 while getopts "s:i:c:a:r:o:" opt; do
@@ -84,6 +77,13 @@ printf "\n"
 #define working directory
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
+
+if [[ -e "${W_URL}/blast/${ID%.*.*}_candidate_mitocontig.txt" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
 
 if ! [[ -e "${W_URL}/blast" ]]; then
 

@@ -61,13 +61,6 @@ fi
 
 printf "\n\n++++ running: mtDNApipe.sh ++++\n\n"
 
-if [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
-
-	printf "\n\noutput already present: skipping.\n\n"
-	exit 0
-
-fi
-
 #set options
 
 while getopts ":l:s:i:r:g:c:f:o:m:t:d:" opt; do
@@ -139,6 +132,13 @@ fi
 #define working directory
 W_URL=${SPECIES}/assembly_MT_rockefeller/intermediates
 printf "Working directory: $W_URL\n\n"
+
+if [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
+
+	printf "\n\noutput already present: skipping.\n\n"
+	exit 0
+
+fi
 
 dw_date=`date "+%Y%m%d-%H%M%S"`;
 

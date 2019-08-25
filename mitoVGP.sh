@@ -18,6 +18,7 @@ elif [ $1 == "-h" ]; then
 	which are then employed in de novo genome assembly.
 	
 	Check the github page https://github.com/GiulioF1/mitoVGP for a description of the pipeline.
+	A complete Conda environment with all dependencies is available to run the pipeline in the same github page.
 	
 	This script a simple wrapper of the scripts found in the scripts/ folder. You can find more information
 	on each step in the help (-h) of each script.
@@ -58,7 +59,7 @@ while getopts ":s:i:r:g:t:d:l:m:f:o:" opt; do
 			REF=$OPTARG
 			;;
 		g)
-			SIZE=$OPTARG
+			GSIZE=$OPTARG
             ;;
 		t)
 			NPROC=$OPTARG
@@ -113,16 +114,16 @@ if ! [[ -e "${W_URL}/reference" ]]; then
 
 fi
 
-if [[ -z  ${SIZE} ]]; then
+if [[ -z  ${GSIZE} ]]; then
 	
-	SIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/reference/${REF%.*}.fasta)
+	GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/reference/${REF%.*}.fasta)
 	
-	printf "\nGenome size not provided, using: ${SIZE} bp\n"
+	printf "\nGenome size not provided, using: ${GSIZE} bp\n"
 	
 fi
 
 #retrieve mito-like reads and assemble
-sh -e scripts/mtDNApipe.sh -s ${SPECIES} -i ${ID} -r ${REF} -g ${SIZE} -t ${NPROC} -d ${DOWNL} -o ${OPTS} 2>&1 | tee ${W_URL}/log/${ID}_mtDNApipe_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/mtDNApipe.sh -s ${SPECIES} -i ${ID} -r ${REF} -g ${GSIZE} -t ${NPROC} -d ${DOWNL} -o ${OPTS} 2>&1 | tee ${W_URL}/log/${ID}_mtDNApipe_$(date "+%Y%m%d-%H%M%S").out &&
 
 #identify the mitocontig
 sh -e scripts/blastMT.sh -s ${SPECIES} -i ${ID} -r ${REF} 2>&1 | tee ${W_URL}/log/${ID}_blastMT_$(date "+%Y%m%d-%H%M%S").out &&
@@ -141,7 +142,7 @@ sh -e scripts/trimmer.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1
 sh -e scripts/map10x2.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_map10x2._$(date "+%Y%m%d-%H%M%S")out &&
 
 #perform final end trimming
-sh -e scripts/trimmer2.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer2_$(date "+%Y%m%d-%H%M%S").out
+sh -e scripts/trimmer2.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer2_$(date "+%Y%m%d-%H%M%S").out &&
 
-printf "\n\nDone!"
+printf "\n\nDone!" &&
 printf "\n$(date "+%Y%m%d-%H%M%S")"
