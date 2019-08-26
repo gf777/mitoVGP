@@ -273,7 +273,7 @@ if ! [[ -e "${W_URL}/canu/${ID}.contigs.fasta" ]]; then
 
 	fi
 	
-	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false gnuplotTested=true"
+	CANU="${CANU} -p ${ID} -d ${W_URL}/canu useGrid=false"
 	CANU="${CANU} genomeSize=${GSIZE}"
 #	CANU="${CANU} -gridEngineResourceOption=\"-R\\\"select[mem>${LSF_MEM}] rusage[mem=${LSF_MEM}]\\\" -M${LSF_MEM} -n ${NPROC}\""
 
