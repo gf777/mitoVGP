@@ -57,6 +57,7 @@ dependencies:
   - intel-openmp=2019.4
   - ipaddress=1.0.22
   - iso8601=0.1.12
+  - java-jdk=7.0.91
   - jmespath=0.9.4
   - jpeg=9b
   - krb5=1.16.1
