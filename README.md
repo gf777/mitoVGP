@@ -13,9 +13,9 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 - mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
 
-- mitoVGP.sh - the wrapper to run the full pipeline
+- mitoVGP - the pipeline
 
-- scripts/ - the intermediate scripts required by mitoVGP.sh
+- scripts/ - the intermediate scripts required by mitoVGP
 
 <b>Quick Start</b>
 
@@ -34,7 +34,7 @@ conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
 conda activate mitoVGP #activate mitoVGP conda environment
 
 #run mitoVGP pipeline using 24 cores (example with M. armatus)
-sh mitoVGP.sh -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembalus_armatus.fasta -t 24
+./mitoVGP -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembalus_armatus.fasta -t 24
 ```
 
 For additional options and specifications you can type:

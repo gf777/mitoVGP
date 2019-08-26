@@ -123,26 +123,26 @@ if [[ -z  ${GSIZE} ]]; then
 fi
 
 #retrieve mito-like reads and assemble
-sh -e scripts/mtDNApipe.sh -s ${SPECIES} -i ${ID} -r ${REF} -g ${GSIZE} -t ${NPROC} -d ${DOWNL} -o ${OPTS} 2>&1 | tee ${W_URL}/log/${ID}_mtDNApipe_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/mtDNApipe -s ${SPECIES} -i ${ID} -r ${REF} -g ${GSIZE} -t ${NPROC} -d ${DOWNL} -o ${OPTS} 2>&1 | tee ${W_URL}/log/${ID}_mtDNApipe_$(date "+%Y%m%d-%H%M%S").out &&
 
 #identify the mitocontig
 sh -e scripts/blastMT.sh -s ${SPECIES} -i ${ID} -r ${REF} 2>&1 | tee ${W_URL}/log/${ID}_blastMT_$(date "+%Y%m%d-%H%M%S").out &&
 CONTIG_ID=$(cat ${W_URL}/blast/${ID%.*.*}_candidate_mitocontig.txt) &&
 
 #polish the mitocontig with long reads
-sh -e scripts/ArrowPolish.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_ArrowPolish_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/ArrowPolish -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_ArrowPolish_$(date "+%Y%m%d-%H%M%S").out &&
 
 #polish the mitocontig with short reads
-sh -e scripts/map10x1.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} -d ${DOWNL} 2>&1 | tee ${W_URL}/log/${ID}_map10x1_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/map10x1 -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} -d ${DOWNL} 2>&1 | tee ${W_URL}/log/${ID}_map10x1_$(date "+%Y%m%d-%H%M%S").out &&
 
 #trim the mitocontig
-sh -e scripts/trimmer.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/trimmer -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer_$(date "+%Y%m%d-%H%M%S").out &&
 
 #polish the trimmed mitocontig with short reads
-sh -e scripts/map10x2.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_map10x2._$(date "+%Y%m%d-%H%M%S")out &&
+sh -e scripts/map10x2 -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_map10x2._$(date "+%Y%m%d-%H%M%S")out &&
 
 #perform final end trimming
-sh -e scripts/trimmer2.sh -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer2_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/trimmer2 -s ${SPECIES} -i ${ID} -n ${CONTIG_ID} -t ${NPROC} 2>&1 | tee ${W_URL}/log/${ID}_trimmer2_$(date "+%Y%m%d-%H%M%S").out &&
 
 printf "\n\nDone!" &&
 printf "\n$(date "+%Y%m%d-%H%M%S")"
