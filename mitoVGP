@@ -2,6 +2,11 @@
 
 set -e -o pipefail
 
+#++++                  This script is part of:                    ++++
+#++++                        mitoVGP v2.0                         ++++
+#++++ The Vertebrate Genomes Project Mitogenome Assembly Pipeline ++++
+#++++     Credit: Giulio Formenti gformenti@rockefeller.edu       ++++
+
 if [ -z $1 ]; then
 
 	echo "use $0 -h for help"
@@ -126,7 +131,7 @@ fi
 sh -e scripts/mtDNApipe -s ${SPECIES} -i ${ID} -r ${REF} -g ${GSIZE} -t ${NPROC} -d ${DOWNL} -o ${OPTS} 2>&1 | tee ${W_URL}/log/${ID}_mtDNApipe_$(date "+%Y%m%d-%H%M%S").out &&
 
 #identify the mitocontig
-sh -e scripts/blastMT.sh -s ${SPECIES} -i ${ID} -r ${REF} 2>&1 | tee ${W_URL}/log/${ID}_blastMT_$(date "+%Y%m%d-%H%M%S").out &&
+sh -e scripts/blastMT -s ${SPECIES} -i ${ID} -r ${REF} 2>&1 | tee ${W_URL}/log/${ID}_blastMT_$(date "+%Y%m%d-%H%M%S").out &&
 CONTIG_ID=$(cat ${W_URL}/blast/${ID%.*.*}_candidate_mitocontig.txt) &&
 
 #polish the mitocontig with long reads

@@ -26,6 +26,7 @@ git clone https://github.com/gf777/mitoVGP.git #clone this git repository
 cd mitoVGP #get into mitoVGP folder
 
 tar -xvf canu-1.8.Linux-amd64.tar.xz #install canu assembler
+rm canu-1.8.Linux-amd64.tar.xz
 
 conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
 #Note: as alternative to mitoVGP_conda_env.yml you may try 
