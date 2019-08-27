@@ -228,32 +228,37 @@ done < ${W_URL}/log/file_list_$dw_date.txt
 #convert to fastq
 if ! [[ -e "${W_URL}/pacbio_MT_extracted_reads" ]]; then
 
-mkdir ${W_URL}/pacbio_MT_extracted_reads
+	mkdir ${W_URL}/pacbio_MT_extracted_reads
 
-for f in ${W_URL}/pacbio_bam/aligned_*.bam; do
-	filename=$(basename -- "$f")
-	filename="${filename%.*}"
-	if ! [[ -e "${f}.pbi" ]]; then
+	for f in ${W_URL}/pacbio_bam/aligned_*.bam; do
+		
+		filename=$(basename -- "$f")
+		filename="${filename%.*}"
+		
+		if ! [[ -e "${f}.pbi" ]]; then
 
-		pbindex ${f}
+			pbindex ${f}
 
-	fi
-
-	if ! [[ -e "{W_URL}/pacbio_MT_extracted_reads/${filename}.fastq.gz" ]]  && ! [[ -s  ${f} ]]; then
-
-		bam2fastq ${f} -o "${W_URL}/pacbio_MT_extracted_reads/${filename}"
-
-	fi
-done
-
-#merge into a single read file
-if ! [[ -e "${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq" ]]; then
-
-	cat ${W_URL}/pacbio_MT_extracted_reads/*.subreads > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+		fi
+		
+		if ! [[ -e "{W_URL}/pacbio_MT_extracted_reads/${filename}.fastq.gz" ]] && ! [[ $(samtools view -c ${f}) -eq 0 ]]; then
 	
-	gzip ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+			printf "convert: ${f} to fastq\n"
+
+			bam2fastq ${f} -o "${W_URL}/pacbio_MT_extracted_reads/${filename}"
+
+		fi
+		
+	done
+
+	#merge into a single read file
+	if ! [[ -e "${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq" ]]; then
+
+		cat ${W_URL}/pacbio_MT_extracted_reads/*.subreads > ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
 	
-fi
+		gzip ${W_URL}/pacbio_MT_extracted_reads/${ID}.fastq
+	
+	fi
 
 	rm ${W_URL}/pacbio_MT_extracted_reads/*.subreads
 
