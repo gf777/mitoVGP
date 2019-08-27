@@ -239,7 +239,7 @@ for f in ${W_URL}/pacbio_bam/aligned_*.bam; do
 
 	fi
 
-	if ! [[ -e "{W_URL}/pacbio_MT_extracted_reads/${filename}.fastq.gz" ]]; then
+	if ! [[ -e "{W_URL}/pacbio_MT_extracted_reads/${filename}.fastq.gz" ]]  && ! [[ -s  ${f} ]]; then
 
 		bam2fastq ${f} -o "${W_URL}/pacbio_MT_extracted_reads/${filename}"
 
