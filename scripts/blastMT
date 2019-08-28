@@ -35,7 +35,7 @@ exit 0
 
 fi
 
-printf "\n\n++++ running: blastMT.sh ++++\n\n"
+printf "\n\n++++ running: blastMT ++++\n\n"
 
 #set options
 
