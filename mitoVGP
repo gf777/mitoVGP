@@ -105,23 +105,28 @@ if ! [[ -e "${W_URL}" ]]; then
 
 fi
 
+#create log folder
 if ! [[ -e "${W_URL}/log" ]]; then
 
 	mkdir ${W_URL}/log
 
 fi
 
-#copy the user-provided reference mitogenome to the reference folder
+#create reference folder
 if ! [[ -e "${W_URL}/reference" ]]; then
-
+	
 	mkdir ${W_URL}/reference
-	cp ${REF} ${W_URL}/reference/${REF%.*}.fasta
 
 fi
 
+#copy the user-provided reference mitogenome to the reference folder
+filename=$(basename -- "${REF}")
+filename="${filename%.*}"
+cp ${REF} ${W_URL}/reference/${filename}.fasta
+
 if [[ -z  ${GSIZE} ]]; then
 	
-	GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/reference/${REF%.*}.fasta)
+	GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/reference/${filename}.fasta)
 	
 	printf "\nGenome size not provided, using reference genome size: ${GSIZE} bp\n"
 	
