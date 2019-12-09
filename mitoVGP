@@ -47,6 +47,7 @@ elif [ $1 == "-h" ]; then
 		-o the options for Canu
 		-v picard validation stringency (STRICT/LENIENT default: STRICT)
 		-z increase sensitivity of mummer overlap detection
+		-b use gcpp or variantCaller during arrow polishing for 2.0 or earlier chemistry respectively (gcpp/variantCaller default: gcpp)
 
 EOF
 
@@ -56,7 +57,7 @@ fi
 
 #set options
 
-while getopts ":s:i:r:g:t:d:1:2:m:f:o:n:v:p:z:" opt; do
+while getopts ":s:i:r:g:t:d:1:2:m:f:o:n:v:p:z:b:" opt; do
 
 	case $opt in
 		s)
@@ -104,6 +105,9 @@ while getopts ":s:i:r:g:t:d:1:2:m:f:o:n:v:p:z:" opt; do
 		z)
             SEN=$OPTARG
 			;;
+		b)
+			CAL=$OPTARG
+            ;;
 		\?)
 			echo "ERROR - Invalid option: -$OPTARG" >&2
 			exit 1
@@ -215,6 +219,12 @@ fi
 if ! [[ -z  ${VAL} ]]; then
 
 	SCRIPT3_OPTS="${SCRIPT3_OPTS}-v ${VAL} "
+
+fi
+
+if ! [[ -z  ${CAL} ]]; then
+
+	SCRIPT3_OPTS="${SCRIPT3_OPTS}-b ${CAL} "
 
 fi
 
