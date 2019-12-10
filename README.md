@@ -35,7 +35,7 @@ conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
 conda activate mitoVGP #activate mitoVGP conda environment
 
 #run mitoVGP pipeline using 24 cores (example with M. armatus)
-./mitoVGP -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembelus_armatus.fasta -t 24
+./mitoVGP -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembelus_armatus.fasta -t 24 -b variantCaller
 ```
 
 For additional options and specifications you can type:
