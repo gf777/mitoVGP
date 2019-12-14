@@ -11,9 +11,7 @@ VGP samples and data come from a variety of sources. To support fair and product
 
 - canu-1.8.Linux-amd64.tar.xz - the popular long read assembler employed in the pipeline
 
-- mitoVGP_conda_env_pacbio.yml - conda environment containing all software required to run the pipeline with Pacbio data on Linux
-
-- mitoVGP_conda_env_ONT.yml - conda environment containing all software required to run the pipeline with ONT data on Linux
+- mitoVGP_conda_env.yml - conda environment containing all software required to run the pipeline on Linux
 
 - mitoVGP - the pipeline
 
@@ -30,13 +28,9 @@ cd mitoVGP #get into mitoVGP folder
 tar -xvf canu-1.8.Linux-amd64.tar.xz #install canu assembler
 rm canu-1.8.Linux-amd64.tar.xz
 
-#create the mitoVGP pipeline software environment
-#please note: Pacbio software only runs on Python 2, while ONT software requires Python 3,
-#therefore two different environments must be set depending on data type.
-#Pacbio:
-conda env create -f mitoVGP_conda_env_Pacbio.yml
-#ONT:
-conda env create -f mitoVGP_conda_env_ONT.yml
+conda env create -f mitoVGP_conda_env.yml #install mitoVGP conda environment
+#Note: as alternative to mitoVGP_conda_env.yml you may try 
+#mitoVGP_conda_env_nobuilds.yml to maximize compatibility.
 
 conda activate mitoVGP #activate mitoVGP conda environment
 
@@ -46,18 +40,16 @@ conda activate mitoVGP #activate mitoVGP conda environment
 
 For additional options and specifications you can type:
 ```
-sh mitoVGP -h
+sh mitoVGP.sh -h
 ```
 
 <b> Pipeline workflow </b>
 
-An existing reference from closely to distantly related species is used to identify mito-like reads in pacbio/ONT WGS data, which are then employed in <i>de novo</i> genome assembly. The assembly is further polished using both long and short read data, and linearized to start with the conventional Phenylalanine tRNA sequence.
+An existing reference from closely to distantly related species is used to identify mito-like reads in pacbio WGS data, which are then employed in <i>de novo</i> genome assembly. The assembly is further polished using both long and short read data, and linearized to start with the conventional Phenylalanine tRNA.
 
 <img src="MitoVGP_pipeline_Rockefeller_v.2.0.png" />
 
-VGP mitogenomes assembled using mitoVGP pipeline can be found on <a href="https://vgp.github.io/genomeark/">GenomeArk</a> and include:
-
-<b>Pacbio</b><br/>
+To date, mitogenomes assembled using mitoVGP pipeline are:
 
 <i>
 Acanthisitta chloris<br/>
@@ -71,7 +63,6 @@ Aquila chrysaetos<br/>
 Archocentrus centrarchus<br/>
 Arvicanthis niloticus<br/>
 Astatotilapia calliptera<br/>
-Asterias rubens<br/>
 Balaenoptera musculus<br/>
 Bos taurus<br/>
 Bufo bufo<br/>
@@ -82,7 +73,6 @@ Cariama cristata<br/>
 Catharus ustulatus<br/>
 Chelmon rostratus<br/>
 Choloepus didactylus<br/>
-Ciconia maguari<br/>
 Corvus moneduloides<br/>
 Cyclopterus lumpus<br/>
 Cygnus olor<br/>
@@ -95,13 +85,11 @@ Echeneis naucrates<br/>
 Electrophorus electricus<br/>
 Erpetoichthys calabaricus<br/>
 Esox lucius<br/>
-Falco naumanni<br/>
 Falco rusticolus<br/>
 Gallus gallus<br/>
 Geotrypetes seraphini<br/>
 Gopherus evgoodei<br/>
 Gouania willdenowi<br/>
-Hemiprocne comata<br/>
 Hippoglossus hippoglossus<br/>
 Homo sapiens<br/>
 Lacerta agilis<br/>
@@ -115,7 +103,6 @@ Melopsittacus undulatus<br/>
 Merops nubicus<br/>
 Microcaecilia unicolor<br/>
 Mustela erminea<br/>
-Myotis myotis<br/>
 Notolabrus celidotus<br/>
 Nyctibius grandis<br/>
 Ornithorhynchus anatinus<br/>
@@ -123,36 +110,25 @@ Pan troglodytes<br/>
 Periophthalmus magnuspinnatus<br/>
 Phocoena sinus<br/>
 Phyllostomus discolor<br/>
-Pipistrellus kuhlii<br/>
 Pipistrellus pipistrellus<br/>
-Pluvialis apricaria<br/>
 Pristis pectinata<br/>
 Pterocles gutturalis<br/>
-Pygocentrus nattereri<br/>
 Rana temporaria<br/>
-Rattus norvegicus<br/>
 Rhinatrema bivittatum<br/>
 Rhinolophus ferrumequinum<br/>
 Salmo trutta<br/>
-Scatophagus argus <br/>
 Sciurus vulgaris<br/>
-Sebastes umbrosus<br/>
 Sparus aurata<br/>
 Sterna hirundo<br/>
 Strigops habroptilus<br/>
 Syngnathus acus<br/>
 Tachyglossus aculeatus<br/>
-Taeniopygia guttata<br/>
-Taeniopygia guttata<br/>
+Taeniopygia guttata</i> (x2) <i><br/>
 Takifugu rubripes<br/>
 Trachurus trachurus<br/>
 Trichosurus vulpecula<br/>
 Tursiops truncatus<br/>
 Xenentodon cancila<br/>
 Zalophus californianus<br/>
-Zeus faber<br/>
+Zeus faber
 </i>
-
-<b>Nanopore</b><br/>
-
-Notolabrus celidotus<br/>
