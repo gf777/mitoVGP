@@ -1,4 +1,4 @@
-name: mitoVGP
+name: mitoVGP_pacbio
 channels:
   - defaults
   - bioconda/label/cf201901

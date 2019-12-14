@@ -34,7 +34,7 @@ rm canu-1.8.Linux-amd64.tar.xz
 #please note: Pacbio software only runs on Python 2, while ONT software requires Python 3,
 #therefore two different environments must be set depending on data type.
 #Pacbio:
-conda env create -f mitoVGP_conda_env_Pacbio.yml
+conda env create -f mitoVGP_conda_env_pacbio.yml
 #ONT:
 conda env create -f mitoVGP_conda_env_ONT.yml
 
