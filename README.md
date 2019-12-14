@@ -155,4 +155,6 @@ Zeus faber<br/>
 <br/>
 
 <b>Nanopore</b><br/>
+<i>
 Notolabrus celidotus<br/>
+</i>
