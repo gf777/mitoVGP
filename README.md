@@ -57,7 +57,7 @@ An existing reference from closely to distantly related species is used to ident
 
 VGP mitogenomes assembled using mitoVGP pipeline can be found on <a href="https://vgp.github.io/genomeark/">GenomeArk</a> and include:
 
-<b>Pacbio</b><br/>
+<b>Pacbio</b>
 
 <i>
 Acanthisitta chloris<br/>
@@ -153,6 +153,8 @@ Zalophus californianus<br/>
 Zeus faber<br/>
 </i>
 
-<b>Nanopore</b><br/>
+<br/>
+
+<b>Nanopore</b>
 
 Notolabrus celidotus<br/>
