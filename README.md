@@ -1,4 +1,4 @@
-# mitoVGP
+# mitoVGP 2.2
 This repository contains scripts used to generate mitochondrial sequences for the <a href="http://www.vertebrategenomesproject.org">Vertebrate Genomes Project</a>.
 
 <b>Software and Data Use Policy</b>
@@ -41,19 +41,19 @@ conda env create -f mitoVGP_conda_env_ONT.yml
 conda activate mitoVGP_pacbio #activate mitoVGP conda environment, use mitoVGP_ONT
 
 #run mitoVGP pipeline using 24 cores (example with M. armatus, Pacbio data)
-./mitoVGP -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembelus_armatus.fasta -t 24 -b variantCaller
+./mitoVGP -a pacbio -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembelus_armatus.fasta -t 24 -b variantCaller
 ```
 
 For additional options and specifications you can type:
 ```
-sh mitoVGP -h
+./mitoVGP -h
 ```
 
 <b> Pipeline workflow </b>
 
 An existing reference from closely to distantly related species is used to identify mito-like reads in pacbio/ONT WGS data, which are then employed in <i>de novo</i> genome assembly. The assembly is further polished using both long and short read data, and linearized to start with the conventional Phenylalanine tRNA sequence.
 
-<img src="MitoVGP_pipeline_Rockefeller_v.2.0.png" />
+<img src="mitoVGP_pipeline_Rockefeller_v.2.2.png" />
 
 VGP mitogenomes assembled using mitoVGP pipeline can be found on <a href="https://vgp.github.io/genomeark/">GenomeArk</a> and include:
 
