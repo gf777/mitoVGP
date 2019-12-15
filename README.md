@@ -53,7 +53,7 @@ For additional options and specifications you can type:
 
 An existing reference from closely to distantly related species is used to identify mito-like reads in pacbio/ONT WGS data, which are then employed in <i>de novo</i> genome assembly. The assembly is further polished using both long and short read data, and linearized to start with the conventional Phenylalanine tRNA sequence.
 
-<img padding="0 auto 0 auto" src="mitoVGP_pipeline_Rockefeller_v.2.2.png" />
+<img padding="0 auto 0 auto" margin="0 auto 0 auto" src="mitoVGP_pipeline_Rockefeller_v.2.2.png" />
 
 VGP mitogenomes assembled using mitoVGP pipeline can be found on <a href="https://vgp.github.io/genomeark/">GenomeArk</a> and include:
 
