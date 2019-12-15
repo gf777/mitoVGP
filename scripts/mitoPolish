@@ -110,7 +110,7 @@ if [[ -z  ${VAL} ]]; then
 
 fi
 
-if [[ -z  ${POL} ]]; then
+if [[ -z  ${CAL} ]]; then
 
 	CAL="gcpp"
 

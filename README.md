@@ -49,6 +49,22 @@ For additional options and specifications you can type:
 ./mitoVGP -h
 ```
 
+Please note that depending on your Pacbio chemistry you will need to define a different polishing tool.
+For chemistry lower than 2.0 add:
+```
+./mitoVGP -b variantCaller
+```
+For chemistry 2.0 (default):
+```
+./mitoVGP -b gcpp
+```
+
+For very old RSII chemistries you may want to align reads using blasr:
+```
+./mitoVGP -m blasr
+```
+
+
 <b> Pipeline workflow </b>
 
 An existing reference from closely to distantly related species is used to identify mito-like reads in pacbio/ONT WGS data, which are then employed in <i>de novo</i> genome assembly. The assembly is further polished using both long and short read data, and linearized to start with the conventional Phenylalanine tRNA sequence.
