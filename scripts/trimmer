@@ -26,6 +26,7 @@ elif [ $1 == "-h" ]; then
 		-s the species name (e.g. Calypte_anna)
 		-i the VGP species ID (e.g. bCalAnn1)
 		-n the contig ID identified from the BLAST search by the script blastMT.sh
+		-z increase sensitivity of mummer overlap detection
 		-t the number of threads
 
 	Optional arguments are:	
