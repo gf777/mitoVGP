@@ -40,7 +40,7 @@ conda env create -f mitoVGP_conda_env_ONT.yml
 
 conda activate mitoVGP_pacbio #activate mitoVGP conda environment, use mitoVGP_ONT
 
-#run mitoVGP pipeline using 24 cores (example with M. armatus, Pacbio data)
+#run mitoVGP pipeline using 24 cores (example with M. armatus, Pacbio and 10x data)
 ./mitoVGP -a pacbio -s Mastacembelus_armatus -i fMasArm1 -r mtDNA_Mastacembelus_armatus.fasta -t 24 -b variantCaller
 ```
 
