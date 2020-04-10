@@ -111,8 +111,6 @@ fi
 
 CONTIG_NAME=$(cat ${W_URL}/freebayes_round1/${FNAME}.fasta | awk '$0 ~ ">" {print substr($0,2)}')
 
-
-
 if ! [[ -e "${W_URL}/trimmed" ]]; then
 
 	mkdir ${W_URL}/trimmed
@@ -141,7 +139,7 @@ if ! [[ -e "${W_URL}/trimmed/${FNAME}.delta" ]]; then
 
 fi
 
-NUCMER_OUT=$(show-coords "${W_URL}/trimmed/${FNAME}.delta" -lrcTHo | grep "BEGIN" | head -1)
+NUCMER_OUT=$(show-coords ${W_URL}/trimmed/${FNAME}.delta -lrcTHo | grep "BEGIN" | awk 'NR==1 {print}')
 
 if ! [[ -z ${NUCMER_OUT} ]]; then
 
