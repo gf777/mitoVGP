@@ -54,11 +54,11 @@ For chemistry 2.0 (default):
 ```
 ./mitoVGP -b gcpp
 ```
-For chemistry lower than 2.0 add:
+For chemistry lower than 2.0 use:
 ```
 ./mitoVGP -b variantCaller
 ```
-For very old RSII chemistries you may also want to align reads using blasr:
+For RSII chemistries you may also want to align reads using blasr:
 ```
 ./mitoVGP -b variantCaller -m blasr
 ```
