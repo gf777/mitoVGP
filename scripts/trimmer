@@ -20,7 +20,7 @@ elif [ $1 == "-h" ]; then
 	The script is still experimental.
 
 	It requires the following software (and their dependencies) installed:
-	bowtie2/2.1.0, samtools/1.7, mummer/3.23
+	bowtie2/2.1.0, samtools/1.7, mummer/3.23, muscle/3.8
 
 	Required arguments are:
 		-s the species name (e.g. Calypte_anna)
