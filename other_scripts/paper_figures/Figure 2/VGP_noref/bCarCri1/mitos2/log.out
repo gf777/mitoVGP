@@ -1,9 +1,0 @@
-missing:OL 
-duplicated:2x atp8 7x OH 2x trnE 2x trnP 2x cob 2x nad3 2x trnT 3x nad6 
-translational exceptions:
-	atp8,1,7935,8003 (CAT, CCC)
-	nad3,1,9504,9680 (None, AGT)
-	nad3,1,9682,9852 (GCA, GAA)
-	cob,1,17911,18081 (CAA, AAC)
-	nad6,-1,18253,18399 (GTT, None)
-	nad6,-1,18444,18773 (None, GGT)
