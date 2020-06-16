@@ -1,0 +1,94 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnF.cm
+# target sequence database:              VGP_notGenbank_only/bCarCri1//sequence.fas-0
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnF  [CLEN=67]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   2.1e-11   63.4   0.0  bCarCri1      1     68 +  cm    no 0.43  -
+  (2) !   0.00013   31.6   0.0  bCarCri1  14771  14840 +  cm    no 0.37  -
+  (3) !   0.00013   31.6   0.0  bCarCri1  18091  18160 +  cm    no 0.37  -
+  (4) !   0.00076   28.0   0.0  bCarCri1   5152   5084 -  cm    no 0.42  -
+
+
+Hit alignments:
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   2.1e-11   63.4   0.0  cm        1       67 []           1          68 + [. 1.00    no 0.43
+
+                  v                                         v           v   v      NC
+              (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<.____>>>>>))))))): CS
+      trnF  1 guuuauGUAGCUUAAauUAAAGCAuagCaCUGAAGAuGcuaAGAUGguca.aaaaugacCCauaaacA 67
+              GU:: ::UAGCUUA A+ AAAGCAUA:CACUGAAGAUG:UAAGA G U:: AAA+::A C:: ::ACA
+  bCarCri1  1 GUCCCCAUAGCUUACAACAAAGCAUAACACUGAAGAUGUUAAGACGCUGCuAAAUGCAUCUGAGGACA 68
+              ******************************************************************** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   0.00013   31.6   0.0  cm        1       67 []       14771       14840 + .. 0.94    no 0.37
+
+                                                                   v       v             NC
+                 (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,.<<<<<...____>>>>>))))))): CS
+      trnF     1 guuuauGUAGCUUAAauUAAAGCAuagCaCU*[5]*uGcuaAGAU.Gguca...aaaaugacCCauaaacA 67   
+                 ::U::::UAG:UUA A  AAA:CAU:G::CU     ::C:AAGA  GG::    +    ::CC::::A:: 
+  bCarCri1 14771 ACUCUAAUAGUUUACA-AAAAACAUUGGUCU*[5]*ACCAAAGAAcGGAGAucaUGCCCCUCCUUAGAGUU 14840
+                 ****************.***********986..9..9************98887777789*********** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   0.00013   31.6   0.0  cm        1       67 []       18091       18160 + .. 0.94    no 0.37
+
+                                                                   v       v             NC
+                 (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,.<<<<<...____>>>>>))))))): CS
+      trnF     1 guuuauGUAGCUUAAauUAAAGCAuagCaCU*[5]*uGcuaAGAU.Gguca...aaaaugacCCauaaacA 67   
+                 ::U::::UAG:UUA A  AAA:CAU:G::CU     ::C:AAGA  GG::    +    ::CC::::A:: 
+  bCarCri1 18091 ACUCUAAUAGUUUACA-AAAAACAUUGGUCU*[5]*ACCAAAGAAcGGAGAucaUGCCCCUCCUUAGAGUU 18160
+                 ****************.***********986..9..9************98887777789*********** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   0.00076   28.0   0.0  cm        1       67 []        5152        5084 - .. 0.93    no 0.42
+
+                   v                                                         v      NC
+                (((((((,,<<<<______>>>>,<<<<~~~~~>>>>,,,,<<<<<...____>>>>>))))))):  CS
+      trnF    1 guuuauGUAGCUUAAauUAAAGCAuagC*[9]*GcuaAGAUGguca...aaaaugacCCauaaacA  68  
+                ::: :: UA:CUUAA+ UAAAG:AU ::     :: AAGAUG :::   A+ +::: C :: :::A 
+  bCarCri1 5152 AAGGUCCUAGCUUAAU-UAAAGUAUCUG*[9]*CAGAAGAUGCAGGuuaAUGUCCUGCGGAGCUUA  5083
+                ****************.********865..8..568***********999999*************  PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (67 consensus positions)
+Target sequences:                                                1  (43236 residues searched)
+Target sequences re-searched for truncated hits:                 1  (444 residues re-searched)
+Windows   passing  local HMM SSV           filter:             175  (0.5325); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              37  (0.1125); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              14  (0.04892); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               7  (0.02466); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               7  (0.01129); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               5  (0.008036); expected (0.0001)
+Total CM hits reported:                                          4  (0.006342); includes 0 truncated hit(s)
+
+# CPU time: 0.14u 0.00s 00:00:00.14 Elapsed: 00:00:00.13
+//
+[ok]

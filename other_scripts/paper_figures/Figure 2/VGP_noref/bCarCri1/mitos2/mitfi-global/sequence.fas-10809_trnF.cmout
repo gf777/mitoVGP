@@ -1,0 +1,94 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnF.cm
+# target sequence database:              VGP_notGenbank_only/bCarCri1//sequence.fas-10809
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnF  [CLEN=67]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   2.1e-11   63.4   0.0  bCarCri1  10810  10877 +  cm    no 0.43  -
+  (2) !   0.00013   31.6   0.0  bCarCri1   3962   4031 +  cm    no 0.37  -
+  (3) !   0.00013   31.6   0.0  bCarCri1   7282   7351 +  cm    no 0.37  -
+  (4) !   0.00076   28.0   0.0  bCarCri1  15961  15893 -  cm    no 0.42  -
+
+
+Hit alignments:
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   2.1e-11   63.4   0.0  cm        1       67 []       10810       10877 + .. 1.00    no 0.43
+
+                     v                                         v           v   v      NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<.____>>>>>))))))): CS
+      trnF     1 guuuauGUAGCUUAAauUAAAGCAuagCaCUGAAGAuGcuaAGAUGguca.aaaaugacCCauaaacA 67   
+                 GU:: ::UAGCUUA A+ AAAGCAUA:CACUGAAGAUG:UAAGA G U:: AAA+::A C:: ::ACA
+  bCarCri1 10810 GUCCCCAUAGCUUACAACAAAGCAUAACACUGAAGAUGUUAAGACGCUGCuAAAUGCAUCUGAGGACA 10877
+                 ******************************************************************** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   0.00013   31.6   0.0  cm        1       67 []        3962        4031 + .. 0.94    no 0.37
+
+                                                                  v       v             NC
+                (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,.<<<<<...____>>>>>))))))): CS
+      trnF    1 guuuauGUAGCUUAAauUAAAGCAuagCaCU*[5]*uGcuaAGAU.Gguca...aaaaugacCCauaaacA 67  
+                ::U::::UAG:UUA A  AAA:CAU:G::CU     ::C:AAGA  GG::    +    ::CC::::A:: 
+  bCarCri1 3962 ACUCUAAUAGUUUACA-AAAAACAUUGGUCU*[5]*ACCAAAGAAcGGAGAucaUGCCCCUCCUUAGAGUU 4031
+                ****************.***********986..9..9************98887777789*********** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   0.00013   31.6   0.0  cm        1       67 []        7282        7351 + .. 0.94    no 0.37
+
+                                                                  v       v             NC
+                (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,.<<<<<...____>>>>>))))))): CS
+      trnF    1 guuuauGUAGCUUAAauUAAAGCAuagCaCU*[5]*uGcuaAGAU.Gguca...aaaaugacCCauaaacA 67  
+                ::U::::UAG:UUA A  AAA:CAU:G::CU     ::C:AAGA  GG::    +    ::CC::::A:: 
+  bCarCri1 7282 ACUCUAAUAGUUUACA-AAAAACAUUGGUCU*[5]*ACCAAAGAAcGGAGAucaUGCCCCUCCUUAGAGUU 7351
+                ****************.***********986..9..9************98887777789*********** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   0.00076   28.0   0.0  cm        1       67 []       15961       15893 - .. 0.93    no 0.42
+
+                    v                                                         v      NC
+                 (((((((,,<<<<______>>>>,<<<<~~~~~>>>>,,,,<<<<<...____>>>>>))))))):  CS
+      trnF     1 guuuauGUAGCUUAAauUAAAGCAuagC*[9]*GcuaAGAUGguca...aaaaugacCCauaaacA  68   
+                 ::: :: UA:CUUAA+ UAAAG:AU ::     :: AAGAUG :::   A+ +::: C :: :::A 
+  bCarCri1 15961 AAGGUCCUAGCUUAAU-UAAAGUAUCUG*[9]*CAGAAGAUGCAGGuuaAUGUCCUGCGGAGCUUA  15892
+                 ****************.********865..8..568***********999999*************  PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (67 consensus positions)
+Target sequences:                                                1  (43236 residues searched)
+Target sequences re-searched for truncated hits:                 1  (444 residues re-searched)
+Windows   passing  local HMM SSV           filter:             174  (0.5319); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              36  (0.1106); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              12  (0.04441); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               6  (0.02269); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               6  (0.00973); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               4  (0.006479); expected (0.0001)
+Total CM hits reported:                                          4  (0.006342); includes 0 truncated hit(s)
+
+# CPU time: 0.27u 0.00s 00:00:00.27 Elapsed: 00:00:00.27
+//
+[ok]

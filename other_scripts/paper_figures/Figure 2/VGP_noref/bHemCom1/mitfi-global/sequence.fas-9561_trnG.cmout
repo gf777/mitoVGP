@@ -1,0 +1,68 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnG.cm
+# target sequence database:              VGP_notGenbank_only/bHemCom1//sequence.fas-9561
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnG  [CLEN=68]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   1.7e-10   65.5   0.0  bHemCom1  19033  19101 +  cm    no 0.45  -
+  (2) !    0.0022   28.9   0.0  bHemCom1   2207   2277 +  cm    no 0.38  -
+
+
+Hit alignments:
+>> bHemCom1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   1.7e-10   65.5   0.0  cm        1       68 []       19033       19101 + .. 1.00    no 0.45
+
+                      v                  v             v                       v       NC
+                 (((((((,,<<<<_____>>>>,<<<<<_______>>>>>,,,,<<<<<_____._>>>>>))))))): CS
+      trnG     1 auuuuuuUAgUAuAAuuAgUAcAuuUGaCUUCCAAuCAaaaAGUcuuggUuaAA.uccaagaaaaaauA 68   
+                 ::U:: :UAGUA:A U A:UACA: UGACUUCCAAUCA :AA+ ::UGGU  AA +CCA::: ::A::A
+  bHemCom1 19033 GCUCCCCUAGUAUACUCAAUACAAUUGACUUCCAAUCACUAAAAUCUGGUGCAAcCCCAGAGAGGAGCA 19101
+                 ********************************************************************* PP
+
+>> bHemCom1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !    0.0022   28.9   0.0  cm        1       68 []        2207        2277 + .. 0.97    no 0.38
+
+                                         v                v                              NC
+                (((((((,,<<<<.._____>>>>,<<<<<___~~~~~>>>>>,,,,<<<<<_____._>>>>>))))))): CS
+      trnG    1 auuuuuuUAgUAu..AAuuAgUAcAuuUGaCUU*[4]*uCAaaaAGUcuuggUuaAA.uccaagaaaaaauA 68  
+                A:UUUU: AG A:   A UA:U CA U:G CUU      C:A + + CUUGGU  AA UCCAAG:AAAA:UA
+  bHemCom1 2207 ACUUUUAAAGGAUagUAGUAAUCCAUUGGUCUU*[4]*GCCACUCACCUUGGUGCAAaUCCAAGUAAAAGUA 2277
+                *************9989999**********997..9..9********************************* PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (68 consensus positions)
+Target sequences:                                                1  (38244 residues searched)
+Target sequences re-searched for truncated hits:                 1  (412 residues re-searched)
+Windows   passing  local HMM SSV           filter:             148  (0.4886); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              24  (0.09403); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:               7  (0.02644); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               2  (0.005821); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               2  (0.003622); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               2  (0.003622); expected (0.0001)
+Total CM hits reported:                                          2  (0.003622); includes 0 truncated hit(s)
+
+# CPU time: 0.09u 0.00s 00:00:00.09 Elapsed: 00:00:00.08
+//
+[ok]

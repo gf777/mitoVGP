@@ -1,0 +1,94 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnD.cm
+# target sequence database:              VGP_notGenbank_only/fCycLum1//sequence.fas-8641
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnD  [CLEN=70]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   1.1e-07   52.2   0.0  fCycLum1  16233  16305 +  cm    no 0.52  -
+  (2) !   1.2e-07   52.1   0.0  fCycLum1   3583   3651 +  cm    no 0.39  -
+  (3) !   1.2e-05   41.2   0.0  fCycLum1  14360  14292 -  cm    no 0.38  -
+  (4) !   1.8e-05   40.4   0.0  fCycLum1   1843   1911 +  cm    no 0.30  -
+
+
+Hit alignments:
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   1.1e-07   52.2   0.0  cm        1       70 []       16233       16305 + .. 0.93    no 0.52
+
+                            v             v    v             v                               NC
+                 (((((((,,<<<<.....______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnD     1 aAGguauUAGUaa.....AauaAAuuACAuuaccUUGUCAAgguaaAAUUacaggUUaAAauccuguauacCUua 70   
+                 :AG:UA:U GU A       UA+AU ACA: :CCUUGUC AGG: :A+UU:C:GGUU AA +CC:G::UA:CU:+
+  fCycLum1 16233 GAGGUACUGGUAAaaucg--UAUAUCACACCGCCUUGUCGAGGCCGAGUUGCGGGUUUAACCCCCGCGUAUCUUU 16305
+                 *************76553..345599************************************************* PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   1.2e-07   52.1   0.0  cm        1       70 []        3583        3651 + .. 0.99    no 0.39
+
+                                                                                       NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnD    1 aAGguauUAGUaaAauaAAuuACAuuaccUUGUCAAgguaaAAUUacaggUUaAAauccuguauacCUua 70  
+                : GG:::UA:U::AA AA ::A:AUUA::UUGU A ::UAAA+  A::GGUUA AAUCC::U:::CC : 
+  fCycLum1 3583 GUGGGUAUAGUUUAACAA-AAAUAUUAGAUUGUGAUUCUAAAGACAGGGGUUAGAAUCCCCUUACCCGCC 3651
+                ***************998.**************999********************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   1.2e-05   41.2   0.0  cm        1       70 []       14360       14292 - .. 0.95    no 0.38
+
+                                                                                        NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnD     1 aAGguauUAGUaaAauaAAuuACAuuaccUUGUCAAgguaaAAUUacaggUUaAAauccuguauacCUua 70   
+                 AAG: :UUA: ::AAU+A :: : U::::UU  CA ::::AA+ U:::GGUUA   UCC:::A: :CUUA
+  fCycLum1 14360 AAGGUUUUAGCUUAAUUA-AAGUGUCUGUUUUGCAUACAGAAGAUGUGGGUUAGUGUCCCGCAAGUCUUA 14292
+                 ***************999.*********99844555********************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   1.8e-05   40.4   0.0  cm        1       70 []        1843        1911 + .. 0.98    no 0.30
+
+                    v                                                           v      NC
+                (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnD    1 aAGguauUAGUaaAauaAAuuACAuuaccUU*[5]*gguaaAAUUacaggUUaAAauccuguauacCUua 70  
+                A:G  AUUAGU::AA AA ::AC UU:::UU     :::AAAA U  :GGUUAAAAUCC:  AU  C:UA
+  fCycLum1 1843 AGGUUAUUAGUUUAAGAA-AAACCUUUGAUU*[5]*UCAAAAACUUGUGGUUAAAAUCCAUAAUCACCUA 1911
+                ***************999.**********97..*..********************************** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (70 consensus positions)
+Target sequences:                                                1  (34564 residues searched)
+Target sequences re-searched for truncated hits:                 1  (548 residues re-searched)
+Windows   passing  local HMM SSV           filter:             102  (0.4946); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              19  (0.1018); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:               6  (0.03626); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               4  (0.02612); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               4  (0.008031); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               4  (0.008031); expected (0.0001)
+Total CM hits reported:                                          4  (0.007974); includes 0 truncated hit(s)
+
+# CPU time: 0.07u 0.00s 00:00:00.07 Elapsed: 00:00:00.06
+//
+[ok]

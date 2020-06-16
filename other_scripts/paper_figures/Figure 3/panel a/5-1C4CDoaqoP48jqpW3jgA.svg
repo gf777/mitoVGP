@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2151 1027.5" style="enable-background:new 0 0 2151 1027.5;" xml:space="preserve">
+<style type="text/css">
+	
+		.st0{fill:none;stroke:#AAAAAA;stroke-width:1.0763;stroke-linecap:round;stroke-miterlimit:2.1527;stroke-dasharray:1.0763,2.1527;stroke-dashoffset:2;}
+	.st1{font-family:'Arial-ItalicMT';}
+	.st2{font-size:17.2216px;}
+	.st3{fill:none;stroke:#66CDAA;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st4{fill:none;stroke:#FFD700;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st5{fill:none;stroke:#00FF00;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st6{fill:none;stroke:#000000;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st7{fill:none;stroke:#FF00FF;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st8{fill:none;stroke:#FF0000;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st9{fill:none;stroke:#1E90FF;stroke-width:1.2916;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	
+		.st10{fill:#A4A4A7;fill-opacity:0.8;stroke:#A4A4A7;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;stroke-opacity:0.8;}
+	.st11{stroke:#000000;stroke-width:0.2153;stroke-linecap:square;stroke-miterlimit:2.1527;}
+	.st12{fill:#0808DC;stroke:#0808DC;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st13{fill:#00FF00;stroke:#00FF00;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st14{fill:#FF8C00;stroke:#FF8C00;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st15{fill:#006400;stroke:#006400;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st16{fill:#BA55D3;stroke:#BA55D3;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st17{fill:#EEE8AA;stroke:#EEE8AA;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st18{fill:#8B0000;stroke:#8B0000;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st19{fill:#00FA9A;stroke:#00FA9A;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st20{fill:#FFA07A;stroke:#FFA07A;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st21{fill:#87CEFA;stroke:#87CEFA;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st22{fill:#090875;stroke:#090875;stroke-width:0.2153;stroke-linecap:round;stroke-miterlimit:2.1527;}
+	.st23{fill:#505050;}
+	.st24{font-family:'Arial-BoldMT';}
+	.st25{font-size:14px;}
+	.st26{fill:#A4A4A7;fill-opacity:0.8;stroke:#000000;stroke-width:0.1;stroke-miterlimit:2;}
+	.st27{font-family:'ArialMT';}
+	.st28{font-size:14.2365px;}
+	.st29{fill:#A4A4A7;fill-opacity:0.8;stroke:#000000;stroke-width:0.2017;stroke-miterlimit:4.0336;}
+	.st30{fill:#A4A4A7;fill-opacity:0.8;stroke:#000000;stroke-width:0.2983;stroke-miterlimit:5.9664;}
+	.st31{fill:#A4A4A7;fill-opacity:0.8;stroke:#000000;stroke-width:0.3992;stroke-miterlimit:7.9832;}
+	.st32{fill:#A4A4A7;fill-opacity:0.8;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st33{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st34{stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st35{fill:#0808DC;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st36{fill:#00FF00;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st37{fill:#FF8C00;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st38{fill:#006400;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st39{fill:#BA55D3;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st40{fill:#EEE8AA;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st41{fill:#8B0000;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st42{fill:#00FA9A;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st43{fill:#FFA07A;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st44{fill:#87CEFA;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st45{fill:#090875;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st46{fill:#1E90FF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st47{fill:#FF0000;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st48{fill:#FFD700;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st49{fill:#FF00FF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st50{fill:#66CDAA;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="mainHolder" transform="translate(1172.09103,493.06518) rotate(-150) scale(0.21527,0.21527)">
+	<g id="rangeHolder">
+	</g>
+	<g id="pruningHolder">
+	</g>
+	<g id="treeHolder">
+		<g>
+			<path class="st0" d="M806.5-837.6L620.8-644.7"/>
+			<text transform="matrix(-3.2221 3.3462 -3.3462 -3.2221 1057.5271 -1132.8657)" class="st1 st2">C. canorus</text>
+			<path class="st3" d="M620.8-644.7L513.7-533.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1125.4-375.5l239.9,80.1"/>
+			<text transform="matrix(-4.4065 -1.4704 1.4704 -4.4065 -1117.8069 -398.3049)" class="st1 st2">P. discolor</text>
+			<path class="st4" d="M-885.5-295.5l168.2,56.1"/>
+		</g>
+		<g>
+			<path class="st3" d="M46.9-808.2l-1,16.9 M85.1-805.1c-25.4-2.7-50.8-4.2-76.3-4.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-218.6-1214.3l67.2,373.4"/>
+			<text transform="matrix(0.8231 4.5718 -4.5718 0.8231 -298.1902 -1520.7996)" class="st1 st2">G. gallus</text>
+			<path class="st3" d="M-151.4-840.9l24.9,138.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M275.4-1024l-37.2,138.4"/>
+			<text transform="matrix(-1.2063 4.486 -4.486 -1.2063 379.2298 -1502.6436)" class="st1 st2">D. pubescens</text>
+			<path class="st3" d="M238.2-885.6l-33.5,124.5"/>
+		</g>
+		<g>
+			<path class="st5" d="M280.2,381.5L263,358.1 M206.7,425.8c51.7-25.1,98.4-59.4,137.8-101.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M1008,734.6L543.8,396.3"/>
+			<text transform="matrix(-3.7542 -2.7359 2.7359 -3.7542 1266.4556 893.2214)" class="st1 st2">E. lucius</text>
+			<path class="st5" d="M543.8,396.3L401.5,292.6"/>
+		</g>
+		<g>
+			<path class="st3" d="M228.5-754.3l-13.9,45.9 M252.2-746.7c-15.7-5.3-31.5-10.1-47.5-14.4"/>
+		</g>
+		<g>
+			<path class="st4" d="M-614.6-447.3l36.4,26.5 M-589.1-480.4c-17.7,21.6-34.1,44.2-49.3,67.7"/>
+		</g>
+		<g>
+			<path class="st4" d="M-683.8,43.6l34.9-2.2 M-685.2,5.9c0.2,25.2,1.8,50.3,4.8,75.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M517.2,946.2L437,799.5"/>
+			<text transform="matrix(2.2279 4.0762 -4.0762 2.2279 496.092 957.6828)" class="st1 st2">G. willdenowi</text>
+			<path class="st5" d="M437,799.5L288.7,528.2"/>
+		</g>
+		<g>
+			<path class="st4" d="M-484.2-727.2l25.2,37.8 M-461.1-742c-15.6,9.7-30.8,19.8-45.8,30.5"/>
+		</g>
+		<g>
+			<path class="st5" d="M75.2,540.9l-2.4-17.1 M49.6,543.8c17.1-1.6,34.2-3.9,51.1-7.1"/>
+		</g>
+		<g>
+			<path class="st3" d="M641.1-423.6l-10.2,6.7 M654.1-403.2c-8.5-13.7-17.4-27.2-26.7-40.4"/>
+		</g>
+		<g>
+			<path class="st6" d="M-300.5,200.9l26.4-17.6 M-355.8,64c17.8,98.9,76,186,160.6,240.2"/>
+		</g>
+		<g>
+			<path class="st3" d="M-148.5-698.1l5.1,23.9 M-126.5-702.4c-14.7,2.7-29.4,5.8-44,9.4"/>
+		</g>
+		<g>
+			<path class="st4" d="M-626.7-562.5l43.2,38.8 M-608.7-581.9c-12.2,12.8-24,25.9-35.4,39.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M1056.9,498.6L538.7,254.2"/>
+			<text transform="matrix(-4.2012 -1.9821 1.9821 -4.2012 1411.67 639.482)" class="st1 st2">P. nattereri</text>
+			<path class="st5" d="M538.7,254.2l-145.1-68.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-739.9-1038.7l183,256.9"/>
+			<text transform="matrix(-2.6952 -3.7835 3.7835 -2.6952 -720.3749 -1052.6405)" class="st1 st2">P. sinus</text>
+			<path class="st4" d="M-556.9-781.8l50.1,70.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M-998.7,249.4l132.6-33.1"/>
+			<text transform="matrix(-4.5069 1.1254 -1.1254 -4.5069 -1004.4894 226.0965)" class="st1 st2">S. carolinensis</text>
+			<path class="st4" d="M-866,216.3l99-24.7"/>
+		</g>
+		<g>
+			<path class="st5" d="M340.3,127.2l-31.5-11.8 M319.7,172.6c15.8-29.3,27.5-60.7,34.8-93.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M548.9-970.8l-99.4,175.9"/>
+			<text transform="matrix(-2.2864 4.0437 -4.0437 -2.2864 741.7872 -1360.6974)" class="st1 st2">F. naumanni</text>
+			<path class="st3" d="M449.5-794.9l-30.6,54.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-401.3-1043.7l131.8,342.9"/>
+			<text transform="matrix(1.6671 4.3359 -4.3359 1.6671 -578.4991 -1437.7372)" class="st1 st2">G. evgoodei</text>
+			<path class="st7" d="M-269.4-700.8l16.8,43.7"/>
+		</g>
+		<g>
+			<path class="st3" d="M442-727.2l-53.9,88.7 M464.6-713c-15-9.8-30.2-19-45.8-27.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M459.7,1170.4L278.6,709.3"/>
+			<text transform="matrix(1.6982 4.3238 -4.3238 1.6982 437.3655 1179.1946)" class="st1 st2">P. ranga</text>
+			<path class="st5" d="M278.6,709.3l-72.9-185.7"/>
+		</g>
+		<g>
+			<path class="st0" d="M192.1,1024.7l-54.6-291.1"/>
+			<text transform="matrix(0.856 4.5658 -4.5658 0.856 168.525 1029.1466)" class="st1 st2">A. testudineus</text>
+			<path class="st5" d="M137.5,733.6l-36.9-196.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1278.1,152.5l409.9-48.9"/>
+			<text transform="matrix(-4.6126 0.5504 -0.5504 -4.6126 -1280.9622 128.6672)" class="st1 st2">L. catta</text>
+			<path class="st4" d="M-868.2,103.6l187.8-22.4"/>
+		</g>
+		<g>
+			<path class="st5" d="M-29.2,574.3l1.6-30.8 M-56.3,572.3c18,1.8,36.1,2.7,54.2,2.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M-372.4,1129.6l123.3-374"/>
+			<text transform="matrix(-1.4545 4.4117 -4.4117 -1.4545 -395.2346 1122.1252)" class="st1 st2">C. lumpus</text>
+			<path class="st5" d="M-249.1,755.6l58.1-176.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-830.9-794.3l169.4,162"/>
+			<text transform="matrix(-3.3578 -3.21 3.21 -3.3578 -814.2799 -811.6483)" class="st1 st2">M. erminea</text>
+			<path class="st4" d="M-661.4-632.3l52.7,50.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M597.8,639l-100-106.9"/>
+			<text transform="matrix(-3.1736 -3.3922 3.3922 -3.1736 1076.163 1115.1741)" class="st1 st2">P. magnuspinnatus</text>
+			<path class="st5" d="M497.8,532.1L353.1,377.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M901.9-726.8L673-542.4"/>
+			<text transform="matrix(-3.6169 2.915 -2.915 -3.6169 1191.4617 -991.0466)" class="st1 st2">C. maguari</text>
+			<path class="st3" d="M673-542.4l-69,55.6"/>
+		</g>
+		<g>
+			<path class="st8" d="M-299,305.2l22-22.5 M-326.4,275.7c17.4,20.6,36.7,39.5,57.6,56.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-4,1100.4l1.1-319.2"/>
+			<text transform="matrix(-1.671431e-02 4.6453 -4.6453 -1.671431e-02 -27.9584 1100.3384)" class="st1 st2">E. naucrates</text>
+			<path class="st5" d="M-2.8,781.2L-2.1,575"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1003.2,820.5l288.3-235.8"/>
+			<text transform="matrix(-3.5959 2.9409 -2.9409 -3.5959 -1018.4448 801.9371)" class="st1 st2">B. bufo</text>
+			<path class="st8" d="M-714.9,584.7l163.4-133.6"/>
+		</g>
+		<g>
+			<path class="st3" d="M706.1-348l-26.4,13 M716.7-325.6c-6.8-15-14.1-29.9-21.9-44.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-598.8-963.6l101.4,163.2"/>
+			<text transform="matrix(-2.4517 -3.9457 3.9457 -2.4517 -578.4047 -976.3159)" class="st1 st2">T. truncatus</text>
+			<path class="st4" d="M-497.4-800.5l36.3,58.4"/>
+		</g>
+		<g>
+			<path class="st3" d="M787.6-217.1l-41.4,11.4 M794-192.2c-4-16.7-8.6-33.2-13.7-49.6"/>
+		</g>
+		<g>
+			<path class="st4" d="M-926.9-35.9l154.4,6 M-925.3-65c-1.4,19.4-2.1,38.9-2.3,58.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1081.9-144.9l189.8,25.4"/>
+			<text transform="matrix(-4.6042 -0.6167 0.6167 -4.6042 -1078.7587 -168.7034)" class="st1 st2">C. didactylus</text>
+			<path class="st4" d="M-892.2-119.5l174.3,23.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M346.6,1077.2L222.2,690.5"/>
+			<text transform="matrix(1.4228 4.4221 -4.4221 1.4228 323.736 1084.571)" class="st1 st2">A. calliptera</text>
+			<path class="st5" d="M222.2,690.5l-40.5-125.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M652.3-875.1L538.6-722.6"/>
+			<text transform="matrix(-2.7762 3.7245 -3.7245 -2.7762 906.8427 -1256.7375)" class="st1 st2">M. undulatus</text>
+			<path class="st3" d="M538.6-722.6l-56.2,75.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-998.2-840.6l289.4,243.7"/>
+			<text transform="matrix(-3.5532 -2.9924 2.9924 -3.5532 -982.7192 -858.9918)" class="st1 st2">L. lutra</text>
+			<path class="st4" d="M-708.8-596.9l64.7,54.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-605-1126.1l196.4,365.5"/>
+			<text transform="matrix(2.1985 4.0921 -4.0921 2.1985 -754.5285 -1353.678)" class="st1 st2">L. agilis</text>
+			<path class="st7" d="M-408.6-760.5l185.4,345.1"/>
+		</g>
+		<g>
+			<path class="st5" d="M51.8,569l-2.3-25.2 M33.9,570.3c12-0.7,23.9-1.8,35.8-3.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M1207.1,0L167.9,0"/>
+			<text transform="matrix(-4.6453 0 0 -4.6453 1549.5743 -24.0001)" class="st1 st2">A. radiata</text>
+			<path class="st9" d="M167.9,0L83.9,0"/>
+		</g>
+		<g>
+			<path class="st5" d="M309.8,318.5l-19.5-20.1 M263,358.1c33-24.2,62.5-52.9,87.6-85.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M1035.6-470.5L878-398.9"/>
+			<text transform="matrix(-4.2293 1.9214 -1.9214 -4.2293 1400.8735 -662.8007)" class="st1 st2">P. gutturalis</text>
+			<path class="st3" d="M878-398.9l-161.3,73.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M601.7,953l-193-305.6"/>
+			<text transform="matrix(-2.4801 -3.9279 3.9279 -2.4801 847.5815 1297.4419)" class="st1 st2">A. anableps</text>
+			<path class="st5" d="M408.7,647.3L305.4,483.7"/>
+		</g>
+		<g>
+			<path class="st0" d="M1224,398.7L655.7,213.6"/>
+			<text transform="matrix(-4.4169 -1.4387 1.4387 -4.4169 1480.8209 457.0831)" class="st1 st2">D. rerio</text>
+			<path class="st5" d="M655.7,213.6l-238.9-77.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M686-808.6l-94.3,111.1"/>
+			<text transform="matrix(-3.0051 3.5424 -3.5424 -3.0051 984.1384 -1197.1711)" class="st1 st2">S. habroptilus</text>
+			<path class="st3" d="M591.7-697.5l-69.5,81.9"/>
+		</g>
+		<g>
+			<path class="st6" d="M159.8,161.4l-41.7-42.1 M26.2,225.6c103.8-12.1,185.9-93.4,199.1-197"/>
+		</g>
+		<g>
+			<path class="st0" d="M-953.9,597.5l278.7-174.6"/>
+			<text transform="matrix(-3.9368 2.4659 -2.4659 -3.9368 -966.6454 577.161)" class="st1 st2">T. vulpecula</text>
+			<path class="st4" d="M-675.2,422.9l169.7-106.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M382.4-1132.4l-87.9,260.4"/>
+			<text transform="matrix(-1.4863 4.4012 -4.4012 -1.4863 473.0403 -1475.7986)" class="st1 st2">P. pusillus</text>
+			<path class="st3" d="M294.5-872.1l-42.3,125.3"/>
+		</g>
+		<g>
+			<path class="st5" d="M-230.4,525.9l5.7-13 M-263.1,510.4c21.4,11,43.5,20.7,66.2,29"/>
+		</g>
+		<g>
+			<path class="st5" d="M-12.3,528.7L-12,517 M-97.1,519.9c56.1,10.5,113.4,11.8,169.9,4"/>
+		</g>
+		<g>
+			<path class="st0" d="M12.2-1127.1L9.8-910.9"/>
+			<text transform="matrix(-5.014680e-02 4.6451 -4.6451 -5.014680e-02 -7.2737 -1549.7435)" class="st1 st2">C. ustulatus</text>
+			<path class="st3" d="M9.8-910.9L8.7-809.5"/>
+		</g>
+		<g>
+			<path class="st5" d="M163.8,570.1l-8.4-29.4 M145.8,575c12.1-3.1,24-6.5,35.9-10.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M-780.3,724.8l65.9-61.2"/>
+			<text transform="matrix(-3.4036 3.1614 -3.1614 -3.4036 -796.6342 707.1741)" class="st1 st2">R. temporaria</text>
+			<path class="st8" d="M-714.4,663.6L-430,399.4"/>
+		</g>
+		<g>
+			<path class="st5" d="M-58.9,598.6l2.6-26.4 M-77.7,596.5c12.5,1.6,25.1,2.9,37.7,3.7"/>
+		</g>
+		<g>
+			<path class="st5" d="M-209.2,573.2l12.3-33.8 M-227.2,566.3c11.9,4.8,23.9,9.2,36.1,13.2"/>
+		</g>
+		<g>
+			<path class="st6" d="M-158.2-444.3l10.7,30.1 M-89.5-463.1c-46.7,9-91.8,25.1-133.7,47.6"/>
+		</g>
+		<g>
+			<path class="st4" d="M-643.6-93l16.7,2.4 M-610.7-223.3c-31,84.6-44,174.8-38.2,264.7"/>
+		</g>
+		<g>
+			<path class="st0" d="M-65.2,978.2l13.6-203.7"/>
+			<text transform="matrix(-0.309 4.635 -4.635 -0.309 -89.1671 976.5834)" class="st1 st2">H. hippoglossus</text>
+			<path class="st5" d="M-51.6,774.4L-40,600.2"/>
+		</g>
+		<g>
+			<path class="st5" d="M334.9,393.7l-11.2-13.2 M315.9,409c12.9-9.9,25.3-20.5,37.2-31.6"/>
+		</g>
+		<g>
+			<path class="st5" d="M224.4,500.5l-12.8-28.6 M176.2,519.4c32.7-11.1,64.3-25.3,94.4-42.3"/>
+		</g>
+		<g>
+			<path class="st5" d="M384.4,204.1l-16.7-8.9 M374.4,222c7-11.8,13.4-23.9,19.3-36.3"/>
+		</g>
+		<g>
+			<path class="st3" d="M87.3-826.4l-2.3,21.4 M113.3-823.3c-17.3-2.4-34.6-4.2-52-5.5"/>
+		</g>
+		<g>
+			<path class="st5" d="M180.7,532.8l-4.5-13.4 M155.4,540.7c17-4.9,33.8-10.6,50.3-17.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1010.7,321.2l204.8-65.1"/>
+			<text transform="matrix(-4.4272 1.4068 -1.4068 -4.4272 -1017.9366 298.2906)" class="st1 st2">R. norvegicus</text>
+			<path class="st4" d="M-805.8,256.1l98.5-31.3"/>
+		</g>
+		<g>
+			<path class="st5" d="M-99.9,535l2.8-15.1 M-170.4,516.9c46.2,15.2,94.2,24.2,142.8,26.7"/>
+		</g>
+		<g>
+			<path class="st0" d="M-477.3-1040.7l176.7,385.2"/>
+			<text transform="matrix(1.9367 4.2224 -4.2224 1.9367 -667.8372 -1398.4768)" class="st1 st2">D. coriacea</text>
+			<path class="st7" d="M-300.7-655.5L-261-569"/>
+		</g>
+		<g>
+			<path class="st0" d="M140.3,1140.9L90.2,733.5"/>
+			<text transform="matrix(0.567 4.6106 -4.6106 0.567 116.4718 1143.8303)" class="st1 st2">M. armatus</text>
+			<path class="st5" d="M90.2,733.5L69.7,567.1"/>
+		</g>
+		<g>
+			<path class="st3" d="M2.3-792.6l-0.2,60.7 M46-791.2c-29.1-1.7-58.2-1.8-87.3-0.3"/>
+		</g>
+		<g>
+			<path class="st3" d="M651.1-370.2l-7.3,4.2 M693.6-282.7c-24.5-60.1-56.8-116.8-95.9-168.7"/>
+		</g>
+		<g>
+			<path class="st6" d="M152.8,69.5L76.4,34.7 M118.1,119.3c29.3-29,46.8-67.7,49.4-108.7"/>
+		</g>
+		<g>
+			<path class="st5" d="M218.2,449.3l-11.4-23.5 M98.8,489.6c83-16.7,160.4-54.3,224.8-109.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M-262.9-837.9l38.1,121.5"/>
+			<text transform="matrix(1.3909 4.4322 -4.4322 1.3909 -486.8724 -1471.2941)" class="st1 st2">G. flavomarginatus</text>
+			<path class="st7" d="M-224.8-716.4l14,44.7"/>
+		</g>
+		<g>
+			<path class="st3" d="M123.1-894.9l-9.9,71.7 M123.1-894.9L123.1-894.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M927.1,873.7l-409-385.4"/>
+			<text transform="matrix(-3.3808 -3.1858 3.1858 -3.3808 1144.2144 1045.2388)" class="st1 st2">Z. faber</text>
+			<path class="st5" d="M518.1,488.2L344.5,324.6"/>
+		</g>
+		<g>
+			<path class="st5" d="M337.8,437.4L315.9,409 M323.9,447.8c9.4-6.8,18.6-13.9,27.5-21.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M1079.8-410.7L811.9-308.8"/>
+			<text transform="matrix(-4.3419 1.6515 -1.6515 -4.3419 1439.8125 -573.3236)" class="st1 st2">P. apricaria</text>
+			<path class="st3" d="M811.9-308.8l-88.4,33.6"/>
+		</g>
+		<g>
+			<path class="st5" d="M282.2,497.6l-11.6-20.5 M258.4,510.3c16.1-8.1,31.8-17,47-26.7"/>
+		</g>
+		<g>
+			<path class="st0" d="M998.7,550.6L562.2,309.9"/>
+			<text transform="matrix(-4.0682 -2.2426 2.2426 -4.0682 1368.6266 727.0594)" class="st1 st2">A. ruthenus</text>
+			<path class="st5" d="M562.2,309.9l-144.6-79.7"/>
+		</g>
+		<g>
+			<path class="st6" d="M38.1,327.5l-11.9-102 M-274.1,183.2c68.8,102.9,189.3,158.6,312.2,144.3s227.5-96.2,270.8-212.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-945.6-530.2l77.5,43.4"/>
+			<text transform="matrix(-4.0519 -2.2718 2.2718 -4.0519 -933.9079 -551.1359)" class="st1 st2">P. pipistrellus</text>
+			<path class="st4" d="M-868.2-486.8l68.7,38.5"/>
+		</g>
+		<g>
+			<path class="st3" d="M362.9-641.8l-2.9,5.2 M421.8-604.7c-38.1-26.6-78.6-49.5-121.1-68.5"/>
+		</g>
+		<g>
+			<path class="st4" d="M-522.9,190.7l109.8-40.1 M-546.9,103.5c11.2,59.4,32.1,116.6,61.8,169.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M89-1204L67.6-914.2"/>
+			<text transform="matrix(-0.3424 4.6327 -4.6327 -0.3424 90.2731 -1547.129)" class="st1 st2">G. trichas</text>
+			<path class="st3" d="M67.6-914.2l-6.3,85.4"/>
+		</g>
+		<g>
+			<path class="st4" d="M-607.6-495.6l18.5,15.1 M-583.5-523.7c-16.5,18.4-32.1,37.5-46.8,57.4"/>
+		</g>
+		<g>
+			<path class="st6" d="M-389.6,70.1l33.8-6.1 M-358.2-168.4c-71.7,152.4-39.1,333.4,81.2,451.2"/>
+		</g>
+		<g>
+			<path class="st3" d="M735.7-240.7l-15.4,5 M746.2-205.7c-6.5-23.5-14.1-46.7-22.7-69.5"/>
+		</g>
+		<g>
+			<path class="st3" d="M331.9-638l-5.7,11 M470-544.2c-84.8-73.3-185.6-125.7-294.3-153.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M751.8,1039.4L461.2,637.6"/>
+			<text transform="matrix(-2.7223 -3.764 3.764 -2.7223 927.5541 1241.5287)" class="st1 st2">S. acus</text>
+			<path class="st5" d="M461.2,637.6L323.9,447.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M230.7-1139.6l-49.5,244.5"/>
+			<text transform="matrix(-0.9216 4.553 -4.553 -0.9216 283.9066 -1523.5345)" class="st1 st2">M. nubicus</text>
+			<path class="st3" d="M181.2-895.1l-34.3,169.6"/>
+		</g>
+		<g>
+			<path class="st3" d="M603.5-455.8l-5.8,4.4 M631-416.9c-17.5-26.5-36.7-51.9-57.4-76"/>
+		</g>
+		<g>
+			<path class="st0" d="M-797.4,840.1l267.1-281.4"/>
+			<text transform="matrix(-3.1979 3.3693 -3.3693 -3.1979 -814.8222 823.6215)" class="st1 st2">M. unicolor</text>
+			<path class="st8" d="M-530.3,558.7l132-139"/>
+		</g>
+		<g>
+			<path class="st0" d="M1212.5-375.7l-355,110"/>
+			<text transform="matrix(-4.4372 1.3749 -1.3749 -4.4372 1473.0365 -481.5717)" class="st1 st2">A. torda</text>
+			<path class="st3" d="M857.6-265.7l-77.2,23.9"/>
+		</g>
+		<g>
+			<path class="st5" d="M344.5,186l-24.8-13.4 M313.2,234.9c23.3-31.1,41.9-65.5,55.1-102"/>
+		</g>
+		<g>
+			<path class="st0" d="M-702.1-864.8L-574-707"/>
+			<text transform="matrix(-2.928 -3.6064 3.6064 -2.928 -683.4347 -879.8805)" class="st1 st2">B. musculus</text>
+			<path class="st4" d="M-574-707l52,64.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1029.9-204.6l144.9,28.8"/>
+			<text transform="matrix(-4.5563 -0.9052 0.9052 -4.5563 -1025.2324 -228.1591)" class="st1 st2">T. tetradactyla</text>
+			<path class="st4" d="M-885-175.8l174.6,34.7"/>
+		</g>
+		<g>
+			<path class="st8" d="M-565.5,433.5l99.6-76.4 M-578.8,415.5c8.7,12.2,17.8,24,27.3,35.6"/>
+		</g>
+		<g>
+			<path class="st4" d="M-520.8-490.1l10.7,10.1 M-455.1-551.7c-46.4,38.3-87.8,82.2-123.1,130.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M1151.6-278.8l-278.5,67.4"/>
+			<text transform="matrix(-4.5149 1.093 -1.093 -4.5149 1500.4265 -387.9142)" class="st1 st2">S. hirundo</text>
+			<path class="st3" d="M873.1-211.4L794-192.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M764.8,928.3L466.9,566.7"/>
+			<text transform="matrix(-2.9538 -3.5852 3.5852 -2.9538 1003.8531 1180.6915)" class="st1 st2">X. cancila</text>
+			<path class="st5" d="M466.9,566.7L351.4,426.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M929.3-572.8L733.8-452.3"/>
+			<text transform="matrix(-3.9545 2.4375 -2.4375 -3.9545 1306.5194 -833.5224)" class="st1 st2">B. regulorum</text>
+			<path class="st3" d="M733.8-452.3l-79.7,49.1"/>
+		</g>
+		<g>
+			<path class="st8" d="M-384.9,432l48.7-54.7 M-398.3,419.7c8.8,8.4,17.9,16.4,27.2,24.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M-313.7-1275.9l109.2,444"/>
+			<text transform="matrix(1.1092 4.511 -4.511 1.1092 -393.3129 -1499.0186)" class="st1 st2">C. olor</text>
+			<path class="st3" d="M-204.6-832l34.1,138.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M-49.5-947.9l2.1,39.4"/>
+			<text transform="matrix(0.2423 4.639 -4.639 0.2423 -104.7909 -1546.2118)" class="st1 st2">C. moneduloides</text>
+			<path class="st3" d="M-47.4-908.5l6.1,117"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1171.6-8.4l214.2,1.5"/>
+			<text transform="matrix(-4.6452 -3.343011e-02 3.343011e-02 -4.6452 -1171.397 -32.4327)" class="st1 st2">H. sapiens</text>
+			<path class="st4" d="M-957.4-6.9l29.8,0.2"/>
+		</g>
+		<g>
+			<path class="st5" d="M-175.4,531.9l4.9-15 M-224.7,513c32.3,14.2,65.9,25.2,100.3,33.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M1078.7,277.6L642.3,165.3"/>
+			<text transform="matrix(-4.4987 -1.1578 1.1578 -4.4987 1506.6498 362.984)" class="st1 st2">E. electricus</text>
+			<path class="st5" d="M642.3,165.3l-246.7-63.5"/>
+		</g>
+		<g>
+			<path class="st5" d="M333,249.8l-19.9-14.9 M290.3,298.4c31-30.2,57.1-65,77.4-103.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M971.3-686.6L739.6-522.9"/>
+			<text transform="matrix(-3.7932 2.6815 -2.6815 -3.7932 1251.4718 -914.0972)" class="st1 st2">C. cristata</text>
+			<path class="st3" d="M739.6-522.9l-112.2,79.3"/>
+		</g>
+		<g>
+			<path class="st3" d="M0.7-689.3L0.6-511.8 M144.9-673.9c-95-20.4-193.3-20.5-288.3-0.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M1135.1,71.6L304.3,19.2"/>
+			<text transform="matrix(-4.6361 -0.2923 0.2923 -4.6361 1548.015 73.5673)" class="st1 st2">P. pectinata</text>
+			<path class="st9" d="M304.3,19.2l-136.8-8.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1017.4,471.1l214.9-99.5"/>
+			<text transform="matrix(-4.2154 1.9518 -1.9518 -4.2154 -1027.448 449.2859)" class="st1 st2">T. aculeatus</text>
+			<path class="st4" d="M-802.5,371.6l111-51.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1156.7,212.6l299.3-55"/>
+			<text transform="matrix(-4.5688 0.8396 -0.8396 -4.5688 -1161.069 188.9546)" class="st1 st2">S. vulgaris</text>
+			<path class="st4" d="M-857.5,157.6l79.9-14.7"/>
+		</g>
+		<g>
+			<path class="st4" d="M-813.2-422.8l65.4,34 M-799.5-448.2c-9.4,16.8-18.3,33.9-26.6,51.2"/>
+		</g>
+		<g>
+			<path class="st5" d="M102.3,506.9l-3.5-17.3 M-12,517c77,1.8,153.4-13.6,223.6-45.1"/>
+		</g>
+		<g>
+			<path class="st4" d="M-699.9,246.9l121.2-42.8 M-707.3,224.8c4.7,14.8,9.9,29.5,15.5,44.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M874-800.2L676.4-619.3"/>
+			<text transform="matrix(-3.4263 3.1368 -3.1368 -3.4263 1126.7286 -1064.0641)" class="st1 st2">N. grandis</text>
+			<path class="st3" d="M676.4-619.3l-104.3,95.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1068.1-75.1l114.8,8.1"/>
+			<text transform="matrix(-4.6339 -0.3257 0.3257 -4.6339 -1066.4244 -99.0171)" class="st1 st2">P. troglodytes</text>
+			<path class="st4" d="M-953.3-67l28,2"/>
+		</g>
+		<g>
+			<path class="st0" d="M517.2-1066.2L381-785.6"/>
+			<text transform="matrix(-2.0274 4.1796 -4.1796 -2.0274 654.683 -1404.6874)" class="st1 st2">H. comata</text>
+			<path class="st3" d="M381-785.6l-47.7,98.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M-239.5,1228.5l84.6-433.8"/>
+			<text transform="matrix(-0.8888 4.5595 -4.5595 -0.8888 -263.0433 1223.9243)" class="st1 st2">S. argus</text>
+			<path class="st5" d="M-154.9,794.8l40.3-206.6"/>
+		</g>
+		<g>
+			<path class="st4" d="M-773,6.6l87.9-0.8 M-772.5-29.9c-0.9,24.3-0.7,48.7,0.6,73"/>
+		</g>
+		<g>
+			<path class="st0" d="M-287.1,1099.3l91.8-351.6"/>
+			<text transform="matrix(-1.174 4.4945 -4.4945 -1.174 -310.3564 1093.1842)" class="st1 st2">C. rostratus</text>
+			<path class="st5" d="M-195.3,747.6l43.8-167.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1002.7,543.4l225.6-122.2"/>
+			<text transform="matrix(-4.0842 2.2133 -2.2133 -4.0842 -1014.1027 522.2524)" class="st1 st2">O. anatinus</text>
+			<path class="st4" d="M-777.1,421.1l107.2-58.1"/>
+		</g>
+		<g>
+			<path class="st3" d="M478-553.5l-8,9.3 M577.5-448.8C518.1-525.2,444.2-589,360-636.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1083.8,421.2l267.7-104"/>
+			<text transform="matrix(-4.3299 1.6827 -1.6827 -4.3299 -1092.4642 398.8029)" class="st1 st2">A. niloticus</text>
+			<path class="st4" d="M-816,317.1l124.3-48.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M166.2-1207.6L123.4-897"/>
+			<text transform="matrix(-0.6333 4.602 -4.602 -0.6333 187.4622 -1538.3812)" class="st1 st2">T. guttata</text>
+			<path class="st3" d="M123.4-897l-0.3,2.1"/>
+		</g>
+		<g>
+			<path class="st5" d="M272,537.1l-13.5-26.7 M254.9,545.4c11.4-5.4,22.7-11.1,33.8-17.1"/>
+		</g>
+		<g>
+			<path class="st4" d="M-714.5-118.7l54,9 M-710.4-141.1c-3,14.9-5.5,29.9-7.5,45"/>
+		</g>
+		<g>
+			<path class="st3" d="M-41-730.7l1.4,25.1 M2.1-731.9c-28.8-0.1-57.6,1.5-86.2,4.8"/>
+		</g>
+		<g>
+			<path class="st3" d="M502.6-631.7l-37.3,46.9 M522.2-615.6c-12.9-11-26.2-21.5-39.8-31.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M1069.8,135.5L395.2,50"/>
+			<text transform="matrix(-4.6085 -0.5835 0.5835 -4.6085 1540.3176 170.8464)" class="st1 st2">C. carcharias</text>
+			<path class="st9" d="M395.2,50L225.3,28.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-565.4,881.3l202.5-315.7"/>
+			<text transform="matrix(-2.5083 3.91 -3.91 -2.5083 -585.591 868.3892)" class="st1 st2">E. calabaricus</text>
+			<path class="st5" d="M-362.9,565.6l167.7-261.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M-654,890.7l195.4-266.1"/>
+			<text transform="matrix(-2.7494 3.7444 -3.7444 -2.7494 -673.3463 876.4767)" class="st1 st2">R. bivittatum</text>
+			<path class="st8" d="M-458.6,624.5l159.4-217.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M989.7,392.8l-433.2-172"/>
+			<text transform="matrix(-4.3176 -1.7138 1.7138 -4.3176 1449.121 549.3716)" class="st1 st2">D. clupeoides</text>
+			<path class="st5" d="M556.5,220.9l-149.1-59.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M443.4,948.6l-107.5-230"/>
+			<text transform="matrix(1.967 4.2083 -4.2083 1.967 421.6419 958.7684)" class="st1 st2">M. boesemani</text>
+			<path class="st5" d="M335.9,718.6l-81-173.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M939.9-500.6l-140.5,74.8"/>
+			<text transform="matrix(-4.1 2.1838 -2.1838 -4.1 1356.3856 -749.6506)" class="st1 st2">A. chrysaetos</text>
+			<path class="st3" d="M799.5-425.8l-104.7,55.7"/>
+		</g>
+		<g>
+			<path class="st8" d="M-448.4,378.7l122-103 M-465.8,357.1c11.2,14.7,23.2,28.8,35.8,42.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1153.5-554.4l252.2,121.2"/>
+			<text transform="matrix(-4.1869 -2.0123 2.0123 -4.1869 -1143.0581 -576.0132)" class="st1 st2">P. kuhlii</text>
+			<path class="st4" d="M-901.3-433.2l75.2,36.2"/>
+		</g>
+		<g>
+			<path class="st0" d="M-879-233l14.9,4"/>
+			<text transform="matrix(-4.4903 -1.1902 1.1902 -4.4903 -872.8337 -256.1797)" class="st1 st2">R. ferrumequinum</text>
+			<path class="st4" d="M-864-229l158.8,42.1"/>
+		</g>
+		<g>
+			<path class="st7" d="M-231.8-664.7l25.7,73.6 M-210.8-671.7c-14.1,4.4-28.1,9.3-41.9,14.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M616.3-945.6L499.7-766.7"/>
+			<text transform="matrix(-2.5363 3.8918 -3.8918 -2.5363 825.9517 -1311.3162)" class="st1 st2">F. rusticolus</text>
+			<path class="st3" d="M499.7-766.7l-35,53.8"/>
+		</g>
+		<g>
+			<path class="st4" d="M-602.9,114.1l56.1-10.6 M-613.3,21.4c2.2,62.3,13.8,124,34.6,182.8"/>
+		</g>
+		<g>
+			<path class="st5" d="M412.3,148.8l-44.1-15.9 M407.5,161.7c3.4-8.6,6.5-17.2,9.4-26"/>
+		</g>
+		<g>
+			<path class="st6" d="M-97.1-502.5l7.6,39.4 M0.6-511.8c-65.7-0.1-130.8,12.5-191.7,37"/>
+		</g>
+		<g>
+			<path class="st0" d="M481-1174.7L347.1-847.6"/>
+			<text transform="matrix(-1.7603 4.2989 -4.2989 -1.7603 564.9821 -1443.1049)" class="st1 st2">C. anna</text>
+			<path class="st3" d="M347.1-847.6l-57.6,140.7"/>
+		</g>
+		<g>
+			<path class="st4" d="M-765.3-353.1l78.7,36.3 M-747.8-388.8c-12.2,23.6-23.4,47.7-33.3,72.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M976.8,810.7L484.8,402.3"/>
+			<text transform="matrix(-3.5746 -2.9667 2.9667 -3.5746 1207.7311 971.1583)" class="st1 st2">S. trutta</text>
+			<path class="st5" d="M484.8,402.3l-102.5-85"/>
+		</g>
+		<g>
+			<path class="st4" d="M-602-358.1l26.6,15.8 M-510.1-480.1c-70.2,74.6-123.2,163.7-155.2,260.9"/>
+		</g>
+		<g>
+			<path class="st4" d="M-491-666.9l46.2,62.7 M-459-689.3c-21.7,14.5-42.7,29.9-63,46.4"/>
+		</g>
+		<g>
+			<path class="st4" d="M-628.8-230l18.1,6.6 M-575.5-342.3c-42.6,71.6-71.4,150.4-85,232.5"/>
+		</g>
+		<g>
+			<path class="st3" d="M148.6-691l-3.7,17 M326.2-627c-112.7-58.6-239-85.8-365.8-78.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-857.9,615.8l80-57.4"/>
+			<text transform="matrix(-3.7738 2.7088 -2.7088 -3.7738 -871.8896 596.2835)" class="st1 st2">D. ebraccatus</text>
+			<path class="st8" d="M-777.9,558.4l199.1-142.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M1067.8,204.2l-272.2-52.1"/>
+			<text transform="matrix(-4.5627 -0.8724 0.8724 -4.5627 1526.5084 267.4432)" class="st1 st2">A. maculatus</text>
+			<path class="st5" d="M795.6,152.1L401.3,76.7"/>
+		</g>
+		<g>
+			<path class="st5" d="M392.1,305.1l-41.5-32.3 M382.3,317.3c6.7-8,13.1-16.3,19.2-24.7"/>
+		</g>
+		<g>
+			<path class="st5" d="M-279.1,541.5l16-31.1 M-296,532.4c11.2,6.2,22.5,12.1,34.1,17.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-409.7,1021.4l131.9-328.8"/>
+			<text transform="matrix(-1.7293 4.3115 -4.3115 -1.7293 -431.9633 1012.4761)" class="st1 st2">S. umbrosus</text>
+			<path class="st5" d="M-277.8,692.7l50.7-126.3"/>
+		</g>
+		<g>
+			<path class="st3" d="M584.8-454.4l-7.3,5.7 M643.8-366c-35.1-61.8-78.9-118.2-130.1-167.4"/>
+		</g>
+		<g>
+			<path class="st0" d="M254.1,1002.1l-74.3-293.2"/>
+			<text transform="matrix(1.1416 4.5029 -4.5029 1.1416 230.8009 1007.9839)" class="st1 st2">A. centrarchus</text>
+			<path class="st5" d="M179.7,708.9l-34-133.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M-886.7-573.3l131.9,85.3"/>
+			<text transform="matrix(-3.9009 -2.5223 2.5223 -3.9009 -873.6592 -593.4861)" class="st1 st2">L. canadensis</text>
+			<path class="st4" d="M-754.8-488l116.4,75.3"/>
+		</g>
+		<g>
+			<path class="st4" d="M-681,341.8l148-74.3 M-691.4,320.2c6.7,14.5,13.9,28.8,21.5,42.9"/>
+		</g>
+		<g>
+			<path class="st0" d="M-140.2-1212.5l37.7,325.6"/>
+			<text transform="matrix(0.5338 4.6146 -4.6146 0.5338 -201.8932 -1536.5526)" class="st1 st2">A. chloris</text>
+			<path class="st3" d="M-102.6-886.9L-84.1-727"/>
+		</g>
+		<g>
+			<path class="st0" d="M-717.3,857.9l160-191.4"/>
+			<text transform="matrix(-2.9796 3.5639 -3.5639 -2.9796 -735.6638 842.5216)" class="st1 st2">G. seraphini</text>
+			<path class="st8" d="M-557.2,666.5l186.1-222.6"/>
+		</g>
+		<g>
+			<path class="st4" d="M-477.5-578.7l22.3,27.1 M-444.9-604.1c-22.2,16.3-43.5,33.9-63.7,52.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1174.3,65.6l222.1-12.4"/>
+			<text transform="matrix(-4.6381 0.259 -0.259 -4.6381 -1175.6033 41.605)" class="st1 st2">C. jacchus</text>
+			<path class="st4" d="M-952.2,53.2l180.3-10.1"/>
+		</g>
+		<g>
+			<path class="st3" d="M701.7-286.1l-8.2,3.3 M720.2-235.7c-11.1-34-24.7-67.2-40.5-99.3"/>
+		</g>
+		<g>
+			<path class="st0" d="M-1118.9-453.5l225.8,91.5"/>
+			<text transform="matrix(-4.3052 -1.7448 1.7448 -4.3052 -1109.9266 -475.7283)" class="st1 st2">M. myotis</text>
+			<path class="st4" d="M-893.1-362l112,45.4"/>
+		</g>
+		<g>
+			<path class="st3" d="M311.5-697.4l-10.8,24.2 M333.3-687.2c-14.4-7-29.1-13.5-43.9-19.6"/>
+		</g>
+		<g>
+			<path class="st0" d="M-809.6-599l69.5,51.4"/>
+			<text transform="matrix(-3.7344 -2.7628 2.7628 -3.7344 -795.3484 -618.2731)" class="st1 st2">Z. californianus</text>
+			<path class="st4" d="M-740.1-547.5l109.8,81.2"/>
+		</g>
+		<g>
+			<path class="st5" d="M398.7,89.3l-44.1-9.9 M395.7,101.8c2.1-8.3,4-16.7,5.6-25.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-833.4-903.8l228,247.2"/>
+			<text transform="matrix(-3.1491 -3.415 3.415 -3.1491 -815.7849 -920.0686)" class="st1 st2">B. taurus</text>
+			<path class="st4" d="M-605.5-656.6l96.9,105"/>
+		</g>
+		<g>
+			<path class="st6" d="M-397.9-187.1l39.7,18.7 M-147.4-414.2C-257.8-374.9-348-293.2-397.9-187.1s-55.3,227.6-15.2,337.7"/>
+		</g>
+		<g>
+			<path class="st3" d="M427.5-612.9l-5.7,8.2 M465.2-584.8c-24.6-19.5-50.3-37.5-77.1-53.8"/>
+		</g>
+		<g>
+			<path class="st8" d="M-318,392.8l49.2-60.7 M-336.2,377.4c11.9,10.6,24.3,20.6,37.1,30"/>
+		</g>
+		<g>
+			<path class="st3" d="M180.9-717.7l-5.2,20.5 M214.6-708.4c-22.3-6.8-44.9-12.5-67.8-17.1"/>
+		</g>
+		<g>
+			<path class="st7" d="M-233.8-580.7l42.7,106 M-206.2-591.1c-18.6,6.5-36.9,13.9-54.8,22.1"/>
+		</g>
+		<g>
+			<path class="st0" d="M-146,1120.6l52.2-401"/>
+			<text transform="matrix(-0.6001 4.6064 -4.6064 -0.6001 -169.7948 1117.5475)" class="st1 st2">T. trachurus</text>
+			<path class="st5" d="M-93.7,719.6l16-123.1"/>
+		</g>
+		<g>
+			<path class="st4" d="M-519.8,292.4l34.7-19.5 M-533.1,267.5c8.4,16.8,17.6,33.2,27.6,49.1"/>
+		</g>
+		<g>
+			<path class="st4" d="M-693-228.2l27.6,9.1 M-678.3-268.7c-10.6,26.7-19.6,54-26.9,81.8"/>
+		</g>
+		<g>
+			<path class="st0" d="M-595.2,1070.6l211.6-380.7"/>
+			<text transform="matrix(-2.2572 4.0601 -4.0601 -2.2572 -616.1808 1058.9315)" class="st1 st2">S. aurata</text>
+			<path class="st5" d="M-383.6,689.9l87.5-157.5"/>
+		</g>
+		<g>
+			<path class="st0" d="M-486.5,1021.7l138.3-290.5"/>
+			<text transform="matrix(-1.9972 4.1941 -4.1941 -1.9972 -508.195 1011.3535)" class="st1 st2">N. celidotus</text>
+			<path class="st5" d="M-348.2,731.2l86.3-181.2"/>
+		</g>
+		<g>
+			<path class="st3" d="M588.3-505.5l-14.7,12.7 M603.9-486.7c-10.2-12.7-20.8-25-31.8-37"/>
+		</g>
+		<g>
+			<path class="st4" d="M-703-278.5l24.7,9.8 M-686.6-316.8c-11.6,25.2-21.9,51.1-30.7,77.4"/>
+		</g>
+		<g>
+			<path class="st5" d="M-133.1,584.3l8.7-38.2 M-151.4,579.8c12.2,3.2,24.4,6,36.8,8.4"/>
+		</g>
+		<g>
+			<path class="st4" d="M-633,22.1l19.7-0.7 M-626.9-90.6C-637.7-15.8-635,60.2-619,134"/>
+		</g>
+		<g>
+			<path class="st0" d="M872.2,555.1L536.1,341.2"/>
+			<text transform="matrix(-3.919 -2.4942 2.4942 -3.919 1320.1539 811.7493)" class="st1 st2">M. cyprinoides</text>
+			<path class="st5" d="M536.1,341.2L402.3,256"/>
+		</g>
+		<g>
+			<path class="st0" d="M69.7,1172.5L46.4,781.1"/>
+			<text transform="matrix(0.2757 4.6371 -4.6371 0.2757 45.7443 1173.925)" class="st1 st2">T. rubripes</text>
+			<path class="st5" d="M46.4,781.1L33.9,570.3"/>
+		</g>
+		<g>
+			<path class="st5" d="M410.2,243.3L374.4,222 M402.3,256c5.4-8.4,10.5-17.1,15.3-25.8"/>
+		</g>
+		<g>
+			<path class="st4" d="M-772.7,167.3L-619,134 M-777.5,142.9c3,16.3,6.5,32.5,10.5,48.7"/>
+		</g>
+		<g>
+			<path class="st6" d="M82,17.8L0,0 M76.4,34.7c5-10.9,7.5-22.8,7.5-34.7"/>
+		</g>
+	</g>
+	<g id="scaleHolder">
+	</g>
+	<g id="bootstrapHolder">
+		<circle class="st10" cx="46.5" cy="-799.7" r="24.9"/>
+		<circle class="st10" cx="271.6" cy="369.8" r="25"/>
+		<circle class="st10" cx="221.6" cy="-731.4" r="25"/>
+		<circle class="st10" cx="-596.4" cy="-434" r="25"/>
+		<circle class="st10" cx="-666.4" cy="42.5" r="25"/>
+		<circle class="st10" cx="-471.6" cy="-708.2" r="25"/>
+		<circle class="st10" cx="74" cy="532.4" r="23.3"/>
+		<circle class="st10" cx="636" cy="-420.2" r="14.8"/>
+		<circle class="st10" cx="-287.3" cy="192.1" r="24.9"/>
+		<circle class="st10" cx="-146" cy="-686.2" r="24.9"/>
+		<circle class="st10" cx="-605.1" cy="-543.1" r="25"/>
+		<circle class="st10" cx="324.6" cy="121.3" r="25"/>
+		<circle class="st10" cx="415" cy="-682.9" r="25"/>
+		<circle class="st10" cx="-28.4" cy="558.9" r="25"/>
+		<circle class="st10" cx="-288" cy="294" r="25"/>
+		<circle class="st10" cx="692.9" cy="-341.5" r="25"/>
+		<circle class="st10" cx="766.9" cy="-211.4" r="25"/>
+		<circle class="st10" cx="-849.7" cy="-32.9" r="25"/>
+		<circle class="st10" cx="50.7" cy="556.4" r="23.9"/>
+		<circle class="st10" cx="300" cy="308.5" r="25"/>
+		<circle class="st10" cx="138.9" cy="140.3" r="25"/>
+		<circle class="st10" cx="-227.6" cy="519.5" r="20.8"/>
+		<circle class="st10" cx="-12.2" cy="522.9" r="5"/>
+		<circle class="st10" cx="159.6" cy="555.4" r="25"/>
+		<circle class="st10" cx="-57.6" cy="585.5" r="22.5"/>
+		<circle class="st10" cx="-203" cy="556.3" r="25"/>
+		<circle class="st10" cx="-152.8" cy="-429.3" r="25"/>
+		<circle class="st10" cx="-635.2" cy="-91.8" r="6.6"/>
+		<circle class="st10" cx="329.3" cy="387.1" r="14.1"/>
+		<circle class="st10" cx="218" cy="486.2" r="25"/>
+		<circle class="st10" cx="376.1" cy="199.7" r="22.1"/>
+		<circle class="st10" cx="86.2" cy="-815.7" r="25"/>
+		<circle class="st10" cx="178.5" cy="526.1" r="14.3"/>
+		<circle class="st10" cx="-98.5" cy="527.4" r="24.9"/>
+		<circle class="st10" cx="2.2" cy="-762.2" r="25"/>
+		<circle class="st10" cx="647.5" cy="-368.1" r="19.9"/>
+		<circle class="st10" cx="212.5" cy="437.6" r="25"/>
+		<circle class="st10" cx="118.2" cy="-859.1" r="25"/>
+		<circle class="st10" cx="326.9" cy="423.2" r="24.8"/>
+		<circle class="st10" cx="276.4" cy="487.3" r="24.9"/>
+		<circle class="st10" cx="32.2" cy="276.6" r="25"/>
+		<circle class="st10" cx="361.4" cy="-639.2" r="17.8"/>
+		<circle class="st10" cx="-468" cy="170.7" r="25"/>
+		<circle class="st10" cx="-598.3" cy="-488" r="24.9"/>
+		<circle class="st10" cx="-372.7" cy="67.1" r="25"/>
+		<circle class="st10" cx="727.9" cy="-238.2" r="25"/>
+		<circle class="st10" cx="329" cy="-632.5" r="21.7"/>
+		<circle class="st10" cx="600.6" cy="-453.6" r="20.9"/>
+		<circle class="st10" cx="332.1" cy="179.3" r="25"/>
+		<circle class="st10" cx="-515.6" cy="395.3" r="25"/>
+		<circle class="st10" cx="-515.5" cy="-485.1" r="16.1"/>
+		<circle class="st10" cx="-360.6" cy="404.7" r="25"/>
+		<circle class="st10" cx="-172.9" cy="524.4" r="24.9"/>
+		<circle class="st10" cx="323.1" cy="242.4" r="25"/>
+		<circle class="st10" cx="0.6" cy="-600.6" r="25"/>
+		<circle class="st10" cx="-780.5" cy="-405.8" r="25"/>
+		<circle class="st10" cx="100.5" cy="498.3" r="22.4"/>
+		<circle class="st10" cx="-639.3" cy="225.5" r="25"/>
+		<circle class="st10" cx="-729.1" cy="6.2" r="25"/>
+		<circle class="st10" cx="474" cy="-548.9" r="25"/>
+		<circle class="st10" cx="265.2" cy="523.7" r="17.4"/>
+		<circle class="st10" cx="-687.5" cy="-114.2" r="25"/>
+		<circle class="st10" cx="-40.3" cy="-718.2" r="25"/>
+		<circle class="st10" cx="483.9" cy="-608.2" r="25"/>
+		<circle class="st10" cx="-387.4" cy="327.2" r="25"/>
+		<circle class="st10" cx="-219" cy="-627.9" r="25"/>
+		<circle class="st10" cx="-574.9" cy="108.8" r="25"/>
+		<circle class="st10" cx="390.3" cy="140.9" r="25"/>
+		<circle class="st10" cx="-93.3" cy="-482.8" r="25"/>
+		<circle class="st10" cx="-725.9" cy="-334.9" r="25"/>
+		<circle class="st10" cx="-588.8" cy="-350.2" r="25"/>
+		<circle class="st10" cx="-467.9" cy="-635.5" r="25"/>
+		<circle class="st10" cx="-619.8" cy="-226.7" r="25"/>
+		<circle class="st10" cx="146.7" cy="-682.4" r="19"/>
+		<circle class="st10" cx="371.4" cy="289" r="25"/>
+		<circle class="st10" cx="-271.1" cy="525.9" r="25"/>
+		<circle class="st10" cx="581.1" cy="-451.6" r="24.9"/>
+		<circle class="st10" cx="-607" cy="304.6" r="25"/>
+		<circle class="st10" cx="-466.3" cy="-565.2" r="25"/>
+		<circle class="st10" cx="697.7" cy="-284.4" r="23.5"/>
+		<circle class="st10" cx="306.1" cy="-685.3" r="25"/>
+		<circle class="st10" cx="376.6" cy="84.4" r="24.3"/>
+		<circle class="st10" cx="-378" cy="-177.8" r="25"/>
+		<circle class="st10" cx="424.6" cy="-608.8" r="21.8"/>
+		<circle class="st10" cx="-293.4" cy="362.4" r="25"/>
+		<circle class="st10" cx="178.4" cy="-707.5" r="25"/>
+		<circle class="st10" cx="-212.5" cy="-527.7" r="25"/>
+		<circle class="st10" cx="-502.5" cy="282.6" r="25"/>
+		<circle class="st10" cx="-679.2" cy="-223.7" r="25"/>
+		<circle class="st10" cx="581" cy="-499.2" r="25"/>
+		<circle class="st10" cx="-690.6" cy="-273.6" r="23.9"/>
+		<circle class="st10" cx="-128.8" cy="565.2" r="25"/>
+		<circle class="st10" cx="-623.1" cy="21.7" r="24.8"/>
+		<circle class="st10" cx="392.3" cy="232.6" r="25"/>
+		<circle class="st10" cx="-695.8" cy="150.7" r="25"/>
+	</g>
+	<g id="branchlengthHolder">
+	</g>
+	<g id="datasetHolder">
+		
+			<rect x="1217.4" y="-1021.9" transform="matrix(0.7786 -0.6275 0.6275 0.7786 901.6001 556.8591)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-521.2" y="1489.9" transform="matrix(0.3131 -0.9497 0.9497 0.3131 -1778.9382 565.3034)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1422.7" y="736.2" transform="matrix(-0.4764 -0.8792 0.8792 -0.4764 -2734.4075 -110.7553)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-615.4" y="1455.5" transform="matrix(0.3723 -0.9281 0.9281 0.3723 -1744.0121 377.5985)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1603.9" y="166.1" transform="matrix(-0.1185 -0.993 0.993 -0.1185 -1956.0457 -1359.1677)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1173.7" y="-1123.1" transform="matrix(0.691 -0.7228 0.7228 0.691 439.7962 -1172.1161)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="559.6" y="1459.8" transform="matrix(-0.3656 -0.9308 0.9308 -0.3656 -584.6571 2566.1367)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1152.1" y="-1098" transform="matrix(0.7376 -0.6753 0.6753 0.7376 1034.4176 510.9831)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-686.5" y="-1470.1" transform="matrix(-0.4169 -0.9089 0.9089 -0.4169 375.0131 -2654.5393)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="270.9" y="1542.7" transform="matrix(-0.1843 -0.9829 0.9829 -0.1843 -1190.9415 2142.1597)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1316.3" y="906.1" transform="matrix(0.8124 -0.5831 0.5831 0.8124 -784.2432 -580.1976)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-594.1" y="-1509" transform="matrix(-0.3589 -0.9334 0.9334 -0.3589 610.8201 -2553.3811)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1541.7" y="276.5" transform="matrix(0.1878 -0.9822 0.9822 0.1878 976.6871 1779.3064)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="761.3" y="-1408.9" transform="matrix(0.4922 -0.8705 0.8705 0.4922 1604.8064 -21.6614)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1277.9" y="-941.9" transform="matrix(0.8166 -0.5773 0.5773 0.8166 769.2278 582.0425)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-128.5" y="1566.5" transform="matrix(6.652202e-02 -0.9978 0.9978 6.652202e-02 -1684.4052 1377.6135)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1519.7" y="374.4" transform="matrix(0.2492 -0.9684 0.9684 0.2492 773.4742 1791.626)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1333.1" y="-858.2" transform="matrix(0.8513 -0.5247 0.5247 0.8513 640.1154 587.085)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1264.5" y="915.4" transform="matrix(0.5889 -0.8082 0.8082 0.5889 -228.9626 1425.7043)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1189.4" y="1061.3" transform="matrix(0.7327 -0.6806 0.6806 0.7327 -1049.4957 -504.4112)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1007.7" y="-1237" transform="matrix(0.6469 -0.7626 0.7626 0.6469 1289.8481 356.8287)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1533.2" y="-526.7" transform="matrix(0.3165 -0.9486 0.9486 0.3165 -554.309 -1777.5277)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1082.1" y="-1169.7" transform="matrix(0.6936 -0.7203 0.7203 0.6936 1164.799 444.2382)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="487" y="-1531.4" transform="matrix(0.3199 -0.9474 0.9474 0.3199 1776.0447 -543.3455)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1372.2" y="822.8" transform="matrix(0.8475 -0.5308 0.5308 0.8475 -654.619 -587.5022)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="847" y="-1356.8" transform="matrix(0.546 -0.8378 0.8378 0.546 1512.5707 122.7359)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1584.6" y="-332.9" transform="matrix(0.1949 -0.9808 0.9808 0.1949 -953.2489 -1781.9468)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1321" y="832.5" transform="matrix(0.5369 -0.8436 0.8436 0.5369 -99.204 1529.4218)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1240.7" y="-1048.4" transform="matrix(0.6442 -0.7649 0.7649 0.6442 351.2201 -1296.7732)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-776.3" y="-1425.5" transform="matrix(-0.4733 -0.8809 0.8809 -0.4733 125.3793 -2730.8364)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1562" y="-430.6" transform="matrix(0.2562 -0.9666 0.9666 0.2562 -750.5815 -1791.5052)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1457.9" y="-712.4" transform="matrix(0.4332 -0.9013 0.9013 0.4332 -191.8024 -1684.7434)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="293.4" y="-1583.5" transform="matrix(0.1984 -0.9801 0.9801 0.1984 1783.1462 -941.5462)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1383" y="-771.2" transform="matrix(-0.4701 -0.8826 0.8826 -0.4701 2727.178 139.9665)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1411.7" y="-801.4" transform="matrix(0.4891 -0.8723 0.8723 0.4891 -30.4172 -1609.613)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1457.7" y="565" transform="matrix(0.3689 -0.9295 0.9295 0.3689 388.0361 1746.5796)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1498.5" y="-620.7" transform="matrix(0.3756 -0.9268 0.9268 0.3756 -367.1986 -1741.3771)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1302.8" y="-969.7" transform="matrix(0.5947 -0.8039 0.8039 0.5947 242.6104 -1413.0713)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1359.9" y="-887.3" transform="matrix(0.543 -0.8397 0.8397 0.543 114.9499 -1518.233)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1372.1" y="746.3" transform="matrix(0.4828 -0.8758 0.8758 0.4828 48.0856 1619.0658)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="1466" y="-588.7" transform="matrix(-0.3555 -0.9347 0.9347 -0.3555 2546.8904 623.8212)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-499.4" y="-1542.1" transform="matrix(-0.2994 -0.9541 0.9541 -0.2994 830.1609 -2429.4265)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="-1255.3" y="985.7" transform="matrix(0.7741 -0.6331 0.6331 0.7741 -916.8103 -552.6703)" class="st11" width="45.1" height="45.1"/>
+		
+			<rect x="368.8" y="1521.2" transform="matrix(-0.2458 -0.9693 0.9693 -0.2458 -1008.7889 2302.4868)" class="st11" width="45.1" height="45.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1659.1455 -119.6204)" class="st12" cx="726" cy="-1496.7" rx="5.1" ry="5.1"/>
+		<circle class="st12" cx="1588.9" cy="-492.4" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1551.568 599.7577)" class="st12" cx="1295.2" cy="-1043.8" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1289.5376 1050.7927)" class="st12" cx="1554.8" cy="-591.4" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1463.9364 789.9129)" class="st12" cx="1416.1" cy="-872.8" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1648.3284 -223.8002)" class="st12" cx="630.3" cy="-1539.4" rx="5.1" ry="5.1"/>
+		
+			<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1335.4835 -991.7444)" class="st12" cx="-191.1" cy="-1652.4" rx="5.1" ry="5.1"/>
+		<circle class="st12" cx="1616.8" cy="-391.4" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1510.7471 696.2155)" class="st12" cx="1358.3" cy="-960.2" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1706.1565 -123.0097)" class="st13" cx="746.5" cy="-1539.1" rx="5.1" ry="5.1"/>
+		<circle class="st13" cx="1633.9" cy="-506.3" r="23.6"/>
+		<circle class="st13" cx="1331.9" cy="-1073.4" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1326.0758 1080.5664)" class="st13" cx="1598.8" cy="-608.1" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1505.4163 812.2947)" class="st13" cx="1456.2" cy="-897.6" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1695.0328 -230.1414)" class="st13" cx="648.2" cy="-1583" rx="5.1" ry="5.1"/>
+		
+			<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1373.3236 -1019.8448)" class="st13" cx="-196.5" cy="-1699.3" rx="5.1" ry="5.1"/>
+		<circle class="st13" cx="1662.6" cy="-402.5" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1553.5532 715.9423)" class="st13" cx="1396.8" cy="-987.4" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1753.1674 -126.3991)" class="st14" cx="767.1" cy="-1581.5" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1290.0348 1193.8939)" class="st14" cx="1679" cy="-520.3" rx="5.1" ry="5.1"/>
+		<circle class="st14" cx="1368.6" cy="-1103" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1362.6143 1110.3398)" class="st14" cx="1642.9" cy="-624.9" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1546.8961 834.6765)" class="st14" cx="1496.3" cy="-922.3" rx="5.1" ry="5.1"/>
+		
+			<ellipse transform="matrix(0.5046 -0.8634 0.8634 0.5046 1526.8944 -854.4268)" class="st14" cx="19" cy="-1757.6" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1741.7372 -236.4827)" class="st14" cx="666.1" cy="-1626.6" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1411.1637 -1047.9453)" class="st14" cx="-202" cy="-1746.1" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1596.3593 735.6692)" class="st14" cx="1435.3" cy="-1014.7" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -867.7675 1420.7974)" class="st14" cx="796.6" cy="1461.9" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1800.1782 -129.7885)" class="st15" cx="787.7" cy="-1623.9" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1324.6268 1225.908)" class="st15" cx="1724" cy="-534.2" rx="5.1" ry="5.1"/>
+		<circle class="st15" cx="1405.3" cy="-1132.5" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1399.1525 1140.1135)" class="st15" cx="1686.9" cy="-641.6" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1588.376 857.0581)" class="st15" cx="1536.4" cy="-947" rx="5.1" ry="5.1"/>
+		
+			<ellipse transform="matrix(0.4951 -0.8688 0.8688 0.4951 1577.837 -894.2399)" class="st15" cx="19.5" cy="-1804.7" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1788.4417 -242.8239)" class="st15" cx="683.9" cy="-1670.2" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1449.004 -1076.046)" class="st15" cx="-207.4" cy="-1792.9" rx="5.1" ry="5.1"/>
+		<circle class="st15" cx="1754.2" cy="-424.7" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1639.1655 755.3961)" class="st15" cx="1473.8" cy="-1041.9" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1847.1893 -133.1779)" class="st16" cx="808.3" cy="-1666.3" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1359.2189 1257.922)" class="st16" cx="1769" cy="-548.2" rx="5.1" ry="5.1"/>
+		<circle class="st16" cx="1442" cy="-1162.1" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1435.6908 1169.8872)" class="st16" cx="1731" cy="-658.4" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1629.8557 879.4398)" class="st16" cx="1576.5" cy="-971.8" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1613.7677 -908.6243)" class="st16" cx="20" cy="-1851.9" rx="5.1" ry="5.1"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1835.1461 -249.1652)" class="st16" cx="701.8" cy="-1713.9" rx="5.1" ry="5.1"/>
+		
+			<ellipse transform="matrix(0.5 -0.866 0.866 0.5 1486.8441 -1104.1465)" class="st16" cx="-212.8" cy="-1839.7" rx="5.1" ry="5.1"/>
+		<circle class="st16" cx="1800" cy="-435.7" r="23.6"/>
+		<circle class="st16" cx="1512.3" cy="-1069.1" r="23.6"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -1640.1515 341.7048)" class="st17" cx="-524.2" cy="1591.3" rx="5.1" ry="5.1"/>
+		<circle class="st18" cx="305" cy="1643.5" r="23.6"/>
+		<circle class="st18" cx="-1641.3" cy="-324.6" r="23.6"/>
+		<circle class="st18" cx="1844.4" cy="-446.8" r="23.6"/>
+		<circle class="st18" cx="-965.7" cy="-1357.7" r="23.6"/>
+		<circle class="st19" cx="1633.8" cy="314.7" r="23.6"/>
+		<circle class="st20" cx="-1418.4" cy="887.6" r="23.6"/>
+		<circle class="st21" cx="1680.3" cy="326.9" r="23.6"/>
+		<circle class="st22" cx="312.6" cy="1688.9" r="23.6"/>
+	</g>
+</g>
+<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -156.9924 1431.0496)" class="st12" cx="1160.8" cy="851.5" rx="5.1" ry="5.1"/>
+<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -165.8078 1435.7809)" class="st13" cx="1160.5" cy="861.5" rx="5.1" ry="5.1"/>
+<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -174.4681 1440.7809)" class="st14" cx="1160.5" cy="871.5" rx="5.1" ry="5.1"/>
+<text transform="matrix(1 0 0 1 789.0178 872.442)" class="st23 st24 st25">Tree scale: 0.1</text>
+<g>
+	<g>
+		<circle class="st26" cx="1569.8" cy="762.6" r="1.9"/>
+		<text transform="matrix(1 0 0 1 1588.7449 766.8815)" class="st27 st28">0.048</text>
+	</g>
+	<g>
+		<circle class="st29" cx="1569.8" cy="787.1" r="3.8"/>
+		<text transform="matrix(1 0 0 1 1588.7449 791.349)" class="st27 st28">0.29</text>
+	</g>
+	<g>
+		<circle class="st30" cx="1569.8" cy="811.5" r="5.7"/>
+		<text transform="matrix(1 0 0 1 1588.7449 815.8166)" class="st27 st28">0.52</text>
+	</g>
+	<g>
+		<circle class="st31" cx="1569.8" cy="836" r="7.6"/>
+		<text transform="matrix(1 0 0 1 1588.7449 840.2841)" class="st27 st28">0.76</text>
+	</g>
+	<g>
+		<circle class="st32" cx="1569.8" cy="862" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1588.7449 866.2885)" class="st27 st28">1</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1560.2722 738.9243)" class="st24 st28">Support values</text>
+		<path class="st33" d="M1558.4,747h106.4"/>
+	</g>
+</g>
+<g>
+	<rect x="1565.7" y="332.6" class="st34" width="19" height="19"/>
+	<text transform="matrix(1 0 0 1 1594.1619 346.3665)" class="st27 st28">repeat</text>
+</g>
+<g>
+	<g>
+		<circle class="st35" cx="1575.2" cy="420" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 424.2789)" class="st27 st28">cob</text>
+	</g>
+	<g>
+		<circle class="st36" cx="1575.2" cy="446.6" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 450.8801)" class="st27 st28">trnT</text>
+	</g>
+	<g>
+		<circle class="st37" cx="1575.2" cy="473.2" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 477.4806)" class="st27 st28">trnP</text>
+	</g>
+	<g>
+		<circle class="st38" cx="1575.2" cy="499.9" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 504.0817)" class="st27 st28">nad6</text>
+	</g>
+	<g>
+		<circle class="st39" cx="1575.2" cy="526.5" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 530.7823)" class="st27 st28">trnE</text>
+	</g>
+	<g>
+		<circle class="st40" cx="1575.2" cy="553.1" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 557.3838)" class="st27 st28">trnL1</text>
+	</g>
+	<g>
+		<circle class="st41" cx="1575.2" cy="579.7" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 583.9844)" class="st27 st28">trnL2</text>
+	</g>
+	<g>
+		<circle class="st42" cx="1575.2" cy="606.4" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 610.685)" class="st27 st28">trnV</text>
+	</g>
+	<g>
+		<circle class="st43" cx="1575.2" cy="633" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 637.2856)" class="st27 st28">trnG</text>
+	</g>
+	<g>
+		<circle class="st44" cx="1575.2" cy="659.6" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 663.887)" class="st27 st28">rrnL</text>
+	</g>
+	<g>
+		<circle class="st45" cx="1575.2" cy="686.2" r="9.5"/>
+		<text transform="matrix(1 0 0 1 1594.1619 690.4877)" class="st27 st28">nad1</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1565.6882 394.778)" class="st24 st28">Duplication</text>
+		<path class="st33" d="M1563.8,402.8h89.2"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="1565.7" y="168.1" class="st46" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 174.68)" class="st27 st28">Sharks</text>
+	</g>
+	<g>
+		<rect x="1565.7" y="192.5" class="st36" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 199.1476)" class="st27 st28">Fish</text>
+	</g>
+	<g>
+		<rect x="1565.7" y="216.9" class="st47" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 223.6156)" class="st27 st28">Amphians</text>
+	</g>
+	<g>
+		<rect x="1565.7" y="241.4" class="st48" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 248.0831)" class="st27 st28">Mammals</text>
+	</g>
+	<g>
+		<rect x="1565.7" y="265.9" class="st49" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 272.5511)" class="st27 st28">Reptiles</text>
+	</g>
+	<g>
+		<rect x="1565.7" y="290.3" class="st50" width="19" height="4.7"/>
+		<text transform="matrix(1 0 0 1 1594.1619 297.0191)" class="st27 st28">Birds</text>
+	</g>
+	<g>
+		<path class="st33" d="M1563.8,154.8h95.6"/>
+		<text transform="matrix(1 0 0 1 1564.739 148.8023)" class="st24 st28">Taxon</text>
+	</g>
+</g>
+</svg>

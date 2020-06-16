@@ -1,0 +1,4 @@
+missing:OL 
+duplicated:2x rrnL 2x trnV 
+translational exceptions:
+	atp8,1,9013,9144 (None, AAT)

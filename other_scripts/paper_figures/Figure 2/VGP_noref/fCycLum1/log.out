@@ -1,0 +1,5 @@
+duplicated:2x trnL1 2x nad5 4x OH 
+translational exceptions:
+	nad5,1,12461,13555 (ACC, CCC)
+	nad5,1,13527,14252 (AAA, CTA)
+internal stops: nad5

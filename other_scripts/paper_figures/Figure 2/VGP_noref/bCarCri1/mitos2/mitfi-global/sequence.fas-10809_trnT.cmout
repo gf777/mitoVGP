@@ -1,0 +1,146 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnT.cm
+# target sequence database:              VGP_notGenbank_only/bCarCri1//sequence.fas-10809
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnT  [CLEN=69]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   3.1e-13   70.4   0.0  bCarCri1   3962   4031 +  cm    no 0.37  -
+  (2) !   3.1e-13   70.4   0.0  bCarCri1   7282   7351 +  cm    no 0.37  -
+  (3) !   4.6e-06   37.4   0.0  bCarCri1    784    853 +  cm    no 0.37  -
+  (4) !     4e-05   33.1   0.0  bCarCri1   4118   4048 -  cm    no 0.51  -
+  (5) !     4e-05   33.1   0.0  bCarCri1   7438   7368 -  cm    no 0.51  -
+  (6) !   0.00047   28.2   0.0  bCarCri1  15959  15895 -  cm    no 0.45  -
+  (7) !     0.005   23.4   0.0  bCarCri1  17795  17721 -  cm    no 0.47  -
+  (8) !    0.0061   23.0   0.0  bCarCri1  18556  18613 +  cm    no 0.48  -
+
+
+Hit alignments:
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   3.1e-13   70.4   0.0  cm        1       69 []        3962        4031 + .. 0.98    no 0.37
+
+                                                                                        NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAA.auccucCcuaaagCU 69  
+                :CU:UA:UAG:UUA +AA AA:CAUUGGUCUUGUAAACCAA +AA+GGAG:U A  ++:CUCC:UA:AG:U
+  bCarCri1 3962 ACUCUAAUAGUUUACAAA-AAACAUUGGUCUUGUAAACCAAaGAACGGAGAUCAUgCCCCUCCUUAGAGUU 4031
+                **************9999.*******************************98888*99************* PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   3.1e-13   70.4   0.0  cm        1       69 []        7282        7351 + .. 0.98    no 0.37
+
+                                                                                        NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAA.auccucCcuaaagCU 69  
+                :CU:UA:UAG:UUA +AA AA:CAUUGGUCUUGUAAACCAA +AA+GGAG:U A  ++:CUCC:UA:AG:U
+  bCarCri1 7282 ACUCUAAUAGUUUACAAA-AAACAUUGGUCUUGUAAACCAAaGAACGGAGAUCAUgCCCCUCCUUAGAGUU 7351
+                **************9999.*******************************98888*99************* PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   4.6e-06   37.4   0.0  cm        1       69 []         784         853 + .. 0.96    no 0.37
+
+                  v                        v       v                            v     NC
+               (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT   1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCU*[5]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69 
+               GC: :::UAG:UU A+   AA:CAUU:G CU      C:AAAAAU:GA:GUUA  ++C:UC:::: :GC 
+  bCarCri1 784 GCAAGUAUAGUUUUAACCCAAACAUUAGACU*[5]*CCUAAAAAUAGAAGUUAGaCCCUUCUUACCUGCC 853
+               ****************998*********765..*..7********************************* PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !     4e-05   33.1   0.0  cm        1       69 []        4118        4048 - .. 0.97    no 0.51
+
+                                                                                          NC
+                (((((((,,<<<<______.>>>>,<<<<<____~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaa.aAgCAuuGGuCUUG*[3]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69  
+                 ::: AGUA::UUA    A AA:: :::G:+UUG     :C::: +AU G:GGUU A  UCC:C CU :::  
+  bCarCri1 4118 CAGAGAGUAGUUUAGCGCAaAAAUGCCAGCUUUG*[3]*GCUGGCGAUGGGGGUUUAaGUCCCCUCUUUCUGA 4048
+                ***************99979************98..7..********************************** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (5) !     4e-05   33.1   0.0  cm        1       69 []        7438        7368 - .. 0.97    no 0.51
+
+                                                                                          NC
+                (((((((,,<<<<______.>>>>,<<<<<____~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaa.aAgCAuuGGuCUUG*[3]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69  
+                 ::: AGUA::UUA    A AA:: :::G:+UUG     :C::: +AU G:GGUU A  UCC:C CU :::  
+  bCarCri1 7438 CAGAGAGUAGUUUAGCGCAaAAAUGCCAGCUUUG*[3]*GCUGGCGAUGGGGGUUUAaGUCCCCUCUUUCUGA 7368
+                ***************99979************98..7..********************************** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (6) !   0.00047   28.2   0.0  cm        1       69 []       15959       15895 - .. 0.94    no 0.45
+
+                    v                                                             v     NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaaAaaUGgagguUAA.auccucCcuaaagCU 69   
+                 G   U: UA:CUUAAU+A AAG:AU: G  UUG A  C :AA+AUG AGGUUAA  UCCU C :A   CU
+  bCarCri1 15959 G--GUCCUAGCUUAAUUA-AAGUAUCUGGGUUGCAUUCAGAAGAUGCAGGUUAAuGUCCUGCGGAG--CU 15895
+                 *..8888**********9.*********988887769*************************8888..** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (7) !     0.005   23.4   0.0  cm        1       69 []       17795       17721 - .. 0.94    no 0.47
+
+                                                                                        NC
+                 (((((((,,<<<<~~~~~~>>>>,<<<<<_______>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUu*[ 6]*aAgCAuuGGuCUUGUAAaCCaaAaaUGgagguUAA.auccucCcuaaagCU 69   
+                 :::::AG AGC:U      A:GC :  G CUUG AA C  :A+ UG: GGUU    UCC :CCU::::: 
+  bCarCri1 17795 AAGAAAGAAGCAU*[11]*AUGCGGUUGGCUUGAAACCAGCAGGUGAGGGUUCGaUUCCUUCCUUUCUUG 17721
+                 ************9...6..9************************************************** PP
+
+>> bCarCri1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (8) !    0.0061   23.0   0.0  cm        5       64 ..       18556       18613 + .. 0.96    no 0.48
+
+                         v      v                                              NC
+                 (((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<______>>>>>))) CS
+      trnT     5 uagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAAauccucCcua 64   
+                 :AG AGCU    A+  AGCA:U:G:CUU UAA:C:A: +A  G::GGU    +CC::CCU:
+  bCarCri1 18556 AAGAAGCUAUGCAU-CAGCACUAGCCUUUUAAGCUAGaGAGAGAGGGUGU--CCCCUCCUU 18613
+                 ********988888.9*********************9999******999..7******** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (69 consensus positions)
+Target sequences:                                                1  (43236 residues searched)
+Target sequences re-searched for truncated hits:                 1  (404 residues re-searched)
+Windows   passing  local HMM SSV           filter:             236  (0.6456); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              51  (0.1486); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              23  (0.07812); expected (0.02)
+Windows   passing glocal HMM Forward       filter:              13  (0.06716); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:              15  (0.02477); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               9  (0.01473); expected (0.0001)
+Total CM hits reported:                                          8  (0.0126); includes 0 truncated hit(s)
+
+# CPU time: 0.40u 0.00s 00:00:00.40 Elapsed: 00:00:00.40
+//
+[ok]

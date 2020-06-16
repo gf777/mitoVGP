@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="452" width="452">
+<script type="text/ecmascript">
+      <![CDATA[
+        var shown = 1;
+        function click() {
+             var seq = document.getElementById("seq");
+             if (shown==1) {
+               seq.setAttribute("style", "visibility: hidden");
+               shown = 0;
+             } else {
+               seq.setAttribute("style", "visibility: visible");
+               shown = 1;
+             }
+         }
+        ]]>
+</script>
+  <rect style="stroke: white; fill: white" height="452" x="0" y="0" width="452" onclick="click(evt)" />
+  <g transform="scale(2.133523,2.133523) translate(5.928101,114.356201)">
+    <polyline style="stroke: black; fill: none; stroke-width: 1.5" id="outline" points="
+      92.500,-109.356
+      92.500,-94.356
+      92.500,-79.356
+      92.500,-64.356
+      92.500,-49.356
+      92.500,-34.356
+      92.500,-19.356
+      92.500,-4.356
+      92.500,10.644
+      78.337,16.099
+      67.103,26.306
+      60.318,39.883
+      58.900,54.994
+      63.041,69.596
+      72.180,81.714
+      85.081,89.709
+      100.000,92.500
+      114.919,89.709
+      127.820,81.714
+      136.959,69.596
+      141.100,54.994
+      139.682,39.883
+      132.897,26.306
+      121.663,16.099
+      107.500,10.644
+      107.500,-4.356
+      107.500,-19.356
+      107.500,-34.356
+      107.500,-49.356
+      107.500,-64.356
+      107.500,-79.356
+      107.500,-94.356
+      107.500,-109.356
+    " />
+    <g style="stroke: black; stroke-width: 1" id="pairs">
+      <line id="1,33" x1="92.500" y1="-109.356" x2="107.500" y2="-109.356" />
+      <line id="2,32" x1="92.500" y1="-94.356" x2="107.500" y2="-94.356" />
+      <line id="3,31" x1="92.500" y1="-79.356" x2="107.500" y2="-79.356" />
+      <line id="4,30" x1="92.500" y1="-64.356" x2="107.500" y2="-64.356" />
+      <line id="5,29" x1="92.500" y1="-49.356" x2="107.500" y2="-49.356" />
+      <line id="6,28" x1="92.500" y1="-34.356" x2="107.500" y2="-34.356" />
+      <line id="7,27" x1="92.500" y1="-19.356" x2="107.500" y2="-19.356" />
+      <line id="8,26" x1="92.500" y1="-4.356" x2="107.500" y2="-4.356" />
+      <line id="9,25" x1="92.500" y1="10.644" x2="107.500" y2="10.644" />
+    </g>
+    <g style="font-family: SansSerif" transform="translate(-4.6, 4)" id="seq">
+      <text x="92.500" y="-109.356">U</text>
+      <text x="92.500" y="-94.356">C</text>
+      <text x="92.500" y="-79.356">C</text>
+      <text x="92.500" y="-64.356">C</text>
+      <text x="92.500" y="-49.356">C</text>
+      <text x="92.500" y="-34.356">C</text>
+      <text x="92.500" y="-19.356">G</text>
+      <text x="92.500" y="-4.356">C</text>
+      <text x="92.500" y="10.644">C</text>
+      <text x="78.337" y="16.099">U</text>
+      <text x="67.103" y="26.306">G</text>
+      <text x="60.318" y="39.883">U</text>
+      <text x="58.900" y="54.994">C</text>
+      <text x="63.041" y="69.596">G</text>
+      <text x="72.180" y="81.714">U</text>
+      <text x="85.081" y="89.709">A</text>
+      <text x="100.000" y="92.500">C</text>
+      <text x="114.919" y="89.709">A</text>
+      <text x="127.820" y="81.714">G</text>
+      <text x="136.959" y="69.596">G</text>
+      <text x="141.100" y="54.994">U</text>
+      <text x="139.682" y="39.883">A</text>
+      <text x="132.897" y="26.306">G</text>
+      <text x="121.663" y="16.099">A</text>
+      <text x="107.500" y="10.644">G</text>
+      <text x="107.500" y="-4.356">G</text>
+      <text x="107.500" y="-19.356">C</text>
+      <text x="107.500" y="-34.356">G</text>
+      <text x="107.500" y="-49.356">G</text>
+      <text x="107.500" y="-64.356">G</text>
+      <text x="107.500" y="-79.356">G</text>
+      <text x="107.500" y="-94.356">G</text>
+      <text x="107.500" y="-109.356">A</text>
+    </g>
+  </g>
+</svg>

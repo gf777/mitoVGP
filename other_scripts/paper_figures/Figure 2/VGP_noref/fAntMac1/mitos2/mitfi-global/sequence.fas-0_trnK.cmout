@@ -1,0 +1,94 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnK.cm
+# target sequence database:              VGP_notGenbank_only/fAntMac1//sequence.fas-0
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnK  [CLEN=69]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   2.6e-12   62.3   0.0  fAntMac1   8851   8923 +  cm    no 0.45  -
+  (2) !   1.5e-05   33.1   0.0  fAntMac1      1     69 +  cm    no 0.46  -
+  (3) !   1.8e-05   32.7   0.0  fAntMac1   6080   6148 +  cm    no 0.41  -
+  (4) !   0.00015   28.8   0.0  fAntMac1   1797   1865 +  cm    no 0.45  -
+
+
+Hit alignments:
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   2.6e-12   62.3   0.0  cm        1       69 []        8851        8923 + .. 0.96    no 0.45
+
+                     v                                                             v       NC
+                (((((((,,<<<<_____....>>>>,<<<<<_______>>>>>,,,,.<<<<<_______>>>>>))))))): CS
+      trnK    1 CauuagGaAGCUuAAuau....aAGCauUaGcCUUUUAAgCuAaAgAU.GGuggcuaccaaccaCCCcuaauGA 69  
+                CA:U: G+AGCU:AA ++    :AGC+UUAGCCUUUUAAGCUAAAGAU GGUG    +CAA CACCC :A:UG 
+  fAntMac1 8851 CACUGAGUAGCUAAACUGacuaAAGCGUUAGCCUUUUAAGCUAAAGAUuGGUGG-CUACAAUCACCCGCAGUGG 8923
+                ****************98***********************************9.55677889*********** PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   1.5e-05   33.1   0.0  cm        1       69 []           1          69 + [. 0.96    no 0.46
+
+                  v                                            v       v      v      NC
+              (((((((,,<<<<_____.>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnK  1 CauuagGaAGCUuAAuau.aAGCauUaGcCU*[5]*gCuAaAgAUGGuggcuaccaaccaCCCcuaauGA 69
+              :::U  G+AGCUUAA++  AAGC+U:: :CU     : ::AA AUGG:G   +  AA C:CCC  A:::A
+  fAntMac1  1 GCCUACGUAGCUUAAAUCaAAGCGUAGCACU*[5]*UGCUAAUAUGGAGC-CCUUAAACUCCCGAAGGCA 69
+              ****************98**********997..*..9************7.8889999************ PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   1.8e-05   32.7   0.0  cm        1       69 []        6080        6148 + .. 0.97    no 0.41
+
+                                                                v       v             NC
+                (((((((,,<<<<_____>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnK    1 CauuagGaAGCUuAAuauaAGCauUaGcCUUUUAAgCuAaAgAUGGuggcuaccaaccaCCCcuaauGA 69  
+                :::::  +A: UUAA A AA :AU::GCCUU  AAGC::AA+AUG::G C A+CA  C::C  ::::: 
+  fAntMac1 6080 AGAAGCUUAAGUUAACAAAACUAUAGGCCUUCAAAGCCUAAAAUGAGGUCAAACACCCCUCAGCUUCUG 6148
+                *****************9************96677********************************** PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   0.00015   28.8   0.0  cm        1       69 []        1797        1865 + .. 0.92    no 0.45
+
+                            v      v                                                    NC
+                (((((((,,<<<<_____.>>>>,<<<<<_______>>>>>,,,,.<<<<<_______>>>>>))))))): CS
+      trnK    1 CauuagGaAGCUuAAuau.aAGCauUaGcCUUUUAAgCuAaAgAU.GGuggcuaccaaccaCCCcuaauGA 69  
+                CAUU: :+AGCU A U+   AGC+:UAG  UU UAA CUA:AG U G :GG+U+ + +CC: C: :AAUG 
+  fAntMac1 1797 CAUUG-AUAGCUUAGUUCaUAGCGAUAGUUUUGUAAGCUAUAGGUcGGGGGUUCGACUCCCUCU-CAAUGC 1865
+                **985.69********88*********************************9988888888885.589*** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (69 consensus positions)
+Target sequences:                                                1  (38376 residues searched)
+Target sequences re-searched for truncated hits:                 1  (536 residues re-searched)
+Windows   passing  local HMM SSV           filter:             160  (0.6689); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              53  (0.2452); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              27  (0.1302); expected (0.02)
+Windows   passing glocal HMM Forward       filter:              15  (0.1186); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:              15  (0.03379); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               4  (0.007684); expected (0.0001)
+Total CM hits reported:                                          4  (0.007196); includes 0 truncated hit(s)
+
+# CPU time: 0.16u 0.00s 00:00:00.16 Elapsed: 00:00:00.17
+//
+[ok]

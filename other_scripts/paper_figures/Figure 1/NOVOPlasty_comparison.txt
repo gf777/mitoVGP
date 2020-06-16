@@ -1,0 +1,48 @@
+VGP dataset	Latin name	Common name	Assembly	Contig	VGP length	NOVOPlasty length	N_ short mitoreads NOVOPlasty	Identity (%)	Identity no-IUPAC (%)	Rounding	VGP_repeat	NOVOplasty_repeat	NOVOPlasty_missing	NOVOPlasty_duplicated	NOVOPlasty_missing count	NOVOPlasty_duplicated count	VGP_missing	VGP_duplicated	VGP_missing count	VGP_duplicated count
+aDenEbr1	Dendropsophus ebraccatus	Hourglass Treefrog	Multiple contigs	Contig01+526406391	19264	16250	80528	99.948	100.021	100										
+bAcaChl1	Acanthisitta chloris	Rifleman	Circular	Contig1	19029	16941	15864	99.8237	99.8611	99.8611	479	340	NA	NA	0	0	NA	cob trnT trnP nad6 trnE	5	5
+bAlcTor1	Alca torda	Razorbill	Multiple contigs	Contig01+113237721	19110	16679	1072744	99.5003	99.5374	99.5374										
+bAquChr1	Aquila chrysaetos	European golden eagle	Multiple contigs	Contig01+388165732	18265	13943	95132	99.8565	99.9764	99.9764										
+bCygOlo1	Cygnus olor	Mute Swan	Circular	Contig1	16733	16732	809740	99.9734	99.9794	99.9794	235	233	NA	NA	0	0	NA	NA	0	0
+bGalGal1	Gallus gallus	Chicken	Multiple contigs	Contig09+13094	16784	4319	3320	99.37	102.959	100										
+bGeoTri1	Geothlypis trichas	Common Yellowthroat	Circular	Contig1	16814	16813	1079786	99.99	99.99	99.99	186	185	NA	NA	0	0	NA	NA	0	0
+bHemCom1	Hemiprocne comata	Whiskered Treeswift	Multiple contigs	Contig04+1626	19122	22001	1958580	99.8081	99.9992	99.9992										
+bMelUnd1	Melopsittacus undulatus	Budgerigar	Multiple contigs	Contig01+1806165252	18200	11152	1763682	99.9753	100.456	100										
+bPluApr1	Pluvialis apricaria	Eurasian Golden Plover	Multiple contigs	Contig01+33857381	20624	15840	4354306	99.9908	100.05	100										
+bPogPus1	Pogoniulus pusillus	Red-fronted tinkerbird	Multiple contigs	Contig04+0647991261	19935	11331	6988	99.93	100.168	100										
+bTaeGut1	Taeniopygia guttata	Zebra Finch (male)	Multiple contigs	Contig01+7503152	16855	19362	1935204	99.9826	100.107	100										
+bTaeGut2	Taeniopygia guttata	Zebra Finch (female)	Circular	Contig1	16856	16854	4155698	99.9893	99.9893	99.9893	301	299	NA	NA	0	0	NA	NA	0	0
+eAstRub1	Asterias rubens	Common starfish	Circular	Contig1	16418	16418	140746	100	100	100	1504	1504	NA	NA	0	0	NA	NA	0	0
+fAnaAna1	Anableps anableps	Largescale Four-Eyed Fish	Circular	Contig1	16511	16511	14980	99.995	100.001	100	146	146	NA	NA	0	0	NA	NA	0	0
+fAnaTes1	Anabas testudineus	Climbing perch	Multiple contigs	Contig01+1705852	17111	17111	52866	99.8484	99.8825	99.8825										
+fAntMac1	Antennarius maculatus	Warty Frogfish	Multiple contigs	Contig05+12808	19188	14861	231326	99.6522	100.309	100										
+fArcCen1	Archocentrus centrarchus	Flier cichlid	Multiple contigs	Contig02+18164	16663	9713	13778	99.99	100.011	100										
+fAstCal1	Astatotilapia calliptera	Eastern happy	Circular	Contig1	16582	16582	539710	100	100	100	210	210	NA	NA	0	0	NA	NA	0	0
+fCheRos1	Chelmon rostratus	Copperband butterflyfish	Circular	Contig1	16523	16523	809110	100	100	100	552	552	NA	NA	0	0	NA	NA	0	0
+fCycLum1	Cyclopterus lumpus	Lumpfish	Single contig	Contig01+734935451	17282	17293	64972	99.9783	99.9956	99.9956										
+fDenClu1	Denticeps clupeoides	Denticle herring	Circular	Contig1	16916	16881	535012	100	100	100	875	833	NA	NA	0	0	NA	NA	0	0
+fEcheNa1	Echeneis naucrates	Live sharksucker	Circular	Contig1	16610	16610	160318	100	100	100	366	366	NA	NA	0	0	NA	NA	0	0
+fEleEle1	Electrophorus electricus	Electric eel	Multiple contigs	Contig01+139047401	17309	16395	368514	99.9302	99.9363	99.9363										
+fEsoLuc1	Esox lucius	Northern pike	Single contig	Contig01+67567772	17081	22003	121522	99.99	99.9959	99.9959										
+fGouWil2	Gouania willdenowi	Blunt-snouted clingfish	Multiple contigs	Contig01+434542411	19076	9335	645888	99.9816	100.114	100										
+fHipHip1	Hippoglossus hippoglossus	Atlantic Halibut	Circular	Contig1	17607	17180	180084	99.9595	99.9653	99.9653	880	444	NA	NA	0	0	NA	NA	0	0
+fMasArm1	Mastacembelus armatus	Tire track eel	Circular	Contig1	16490	16490	285938	100	100	100	365	365	NA	NA	0	0	NA	NA	0	0
+fMegCyp1	Megalops cyprinoides	Indo-pacific tarpon	Multiple contigs	Contig01+338222332	17143	17308	200108	100	100	100										
+fMelBoe1	Melanotaenia boesemani	Boesman’s rainbowfish	Single contig	Contig01+72903272	16541	22081	240296	99.9799	99.9934	99.9934										
+fNotCel1	Notolabrus celidotus	Spotty Wrasse	Circular	Contig1	16525	16525	203642	100	100	100	77	77	NA	NA	0	0	NA	NA	0	0
+fParRan2	Parambassis ranga	Indian glassy fish	Single contig	Contig01+32722342	17024	17703	44636	100	100.012	100										
+fPerMag1	Periophthalmus magnuspinnatus	Korean giant-fin mudskipper	Circular	Contig1	16496	16496	48510	100	100	100	173	173	NA	NA	0	0	NA	NA	0	0
+fPygNat1	Pygocentrus nattereri	Red-bellied piranha	Circular	Contig1	16708	16708	94090	100	100	100	275	275	NA	NA	0	0	NA	NA	0	0
+fScaArg1	Scatophagus argus	Spotted scat	Single contig	Contig01+450396612	16771	22031	111800	99.9818	99.9818	99.9818										
+fSebUmb1	Sebastes umbrosus	Honeycomb rockfish	Multiple contigs	Contig01+270410571	17611	17498	48018	99.9321	99.9321	99.9321										
+fSpaAur1	Sparus aurata	Gilthead seabream	Circular	Contig1	16652	16650	695358	99.9859	99.9859	99.9859	134	134	NA	NA	0	0	NA	NA	0	0
+fSynAcu1	Syngnathus acus	Greater pipefish	Circular	Contig1	16454	16454	1501492	100	100	100	43	43	NA	NA	0	0	NA	NA	0	0
+fTakRub1	Takifugu rubripes	Japanese puffer (Torafugu)	Circular	Contig1	16448	16448	265624	99.9946	100.001	100	152	152	NA	NA	0	0	NA	NA	0	0
+fTraTra1	Trachurus trachurus	Atlantic horse mackerel	Circular	Contig1	16561	16561	537744	100	100	100	164	164	NA	NA	0	0	NA	NA	0	0
+fXenCan1	Xenentodon cancila	Needlefish	Circular	Contig1	16452	16451	52294	99.9947	100.001	100	147	147	NA	NA	0	0	NA	NA	0	0
+fZeuFab1	Zeus faber	John dory	Circular	Contig1	16722	16723	5936	99.9945	99.9945	99.9945	407	407	NA	NA	0	0	NA	NA	0	0
+kPetMar1	Petromyzon marinus	Sea Lamprey	Multiple contigs	Contig01+1281132	16230	16500	140810	99.9908	100.003	100										
+mMyoMyo1	Myotis myotis	Greater Mouse-Eared Bat	Multiple contigs	Contig14+11880	17308	7672	3778	99.84	101.991	100										
+mPipKuh1	Pipistrellus kuhlii	Kuhl's Pipistrelle	Multiple contigs	Contig01+106787631	17207	16292	511214	99.8966	99.8966	99.8966										
+mRhiFer1	Rhinolophus ferrumequinum	Greater Horseshoe Bat	Single contig	Contig01+1044023602	16848	22022	22763966	99.9835	99.9835	99.9835										
+rLacAgi1	Lacerta agilis	Sand lizard	Circular	Contig1	19093	16988	45074	99.9887	99.9887	99.9887	888	670	NA	NA	0	0	NA	trnP cob trnT	3	3

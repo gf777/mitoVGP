@@ -1,0 +1,120 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnL2.cm
+# target sequence database:              VGP_notGenbank_only/fCycLum1//sequence.fas-8641
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnL2  [CLEN=71]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   1.6e-11   63.2   0.0  fCycLum1  11417  11490 +  cm    no 0.50  -
+  (2) !     6e-08   46.6   0.0  fCycLum1  14606  14538 -  cm    no 0.48  -
+  (3) !   3.4e-06   38.4   0.0  fCycLum1  16229  16159 -  cm    no 0.46  -
+  (4) !   1.2e-05   36.0   0.0  fCycLum1   3583   3651 +  cm    no 0.39  -
+  (5) !   9.1e-05   31.8   0.0  fCycLum1  11724  11785 +  cm    no 0.48  -
+  (6) !    0.0027   24.9   0.0  fCycLum1   7510   7441 -  cm    no 0.40  -
+
+
+Hit alignments:
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   1.6e-11   63.2   0.0  cm        1       71 []       11417       11490 + .. 1.00    no 0.50
+
+                      v                                                             v       NC
+                 (((((((,,<<<<______..._>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+     trnL2     1 acUAaugUGGCAgAauauG...aaUGCAauaGaUUUAAAAuCuauuuAUAgaggUUCAAaUccucUcauUAguA 71   
+                 ::U:  GUGGCA:A+   G   A:UGCAA:AGA+ UAA++UCU:U  A AGAGGUUCAA UCCUCUC  :A::+
+  fCycLum1 11417 GUUGGAGUGGCAGAGCCCGguaAUUGCAAAAGACCUAAGCUCUUUCCACAGAGGUUCAAGUCCUCUCCUCAACU 11490
+                 ************************************************************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !     6e-08   46.6   0.0  cm        1       71 []       14606       14538 - .. 0.96    no 0.48
+
+                                                                                         NC
+                 (((((((,,<<<<_______>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<_______>>>>>))))))): CS
+     trnL2     1 acUAaugUGGCAgAauauGaaUGCAauaGaUU*[5]*uCuauuuAUAgaggUUCAAaUccucUcauUAguA 71   
+                 : UA ::UGGC GA+U U  A GC+:U:G:UU     :C:A:+ A AGAGGUU AA UCCUCU:: UA :A
+  fCycLum1 14606 GGUAGGAUGGCUGAGUUU--AAGCGGUGGAUU*[5]*CCCAUAGACAGAGGUUUAAGUCCUCUUCUUACCA 14538
+                 *****************9..**********98..6..********************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   3.4e-06   38.4   0.0  cm        1       71 []       16229       16159 - .. 0.99    no 0.46
+
+                 v                                                                    v  NC
+                 (((((((,,<<<<_______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+     trnL2     1 acUAaugUGGCAgAauauGaaUGCAauaGaUUUAAAAuCuauuuAUAgaggUUCAAaUccucUcauUAguA 71   
+                  : AA::UG:CAGA+     AUG:+:::GA+UU AAAUC:::UUA :G GGUUC A UCC C:::UU :  
+  fCycLum1 16229 AAGAAAAUGACAGAGCGGUUAUGUGGCUGACUUGAAAUCAGCUUAAGGGGGUUCGACUCCUCCUUUUCUCG 16159
+                 ***************99889*************************************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   1.2e-05   36.0   0.0  cm        1       71 []        3583        3651 + .. 0.98    no 0.39
+
+                                                                                        NC
+                (((((((,,<<<<_______>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<_______>>>>>))))))): CS
+     trnL2    1 acUAaugUGGCAgAauauGaaUGCAauaGaUU*[5]*uCuauuuAUAgaggUUCAAaUccucUcauUAguA 71  
+                :  ::U:U :: :AA A+  : ::A:UAGAUU     UCUA:+ A AG:GGUU  AAUCC:CU:A::  : 
+  fCycLum1 3583 GUGGGUAUAGUUUAACAA--AAAUAUUAGAUU*[5]*UCUAAAGACAGGGGUUAGAAUCCCCUUACCCGCC 3651
+                *****************8..**********97..9..********************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (5) !   9.1e-05   31.8   0.0  cm        8       63 ..       11724       11785 + .. 0.97    no 0.48
+
+                                                                                NC
+                 ,,<<<<______..._>>>>,<<<<<_______>>>>>,,,,<<<<<_______...>>>>> CS
+     trnL2     8 UGGCAgAauauG...aaUGCAauaGaUUUAAAAuCuauuuAUAgaggUUCAAaU...ccucU 63   
+                 UGGCA:A    G   A:UGCAA:AGA+ UA+++UCU:UU A A AGGUUCAA U   CCU U
+  fCycLum1 11724 UGGCAGACCCCGguaAUUGCAAAAGACCUAGGCUCUUUUCACAGAGGUUCAACUaccCCUUU 11785
+                 ************9*99**********************************9988888***** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (6) !    0.0027   24.9   0.0  cm        1       71 []        7510        7441 - .. 0.98    no 0.40
+
+                                                                                        NC
+                (((((((,,<<<<_______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+     trnL2    1 acUAaugUGGCAgAauauGaaUGCAauaGaUUUAAAAuCuauuuAUAgaggUUCAAaUccucUcauUAguA 71  
+                :::A:::U ::  A+  U A  :: :UA: UUU ++  :UA:   U G::GUU AAAUC::C :::U:::A
+  fCycLum1 7510 CAAAGAAUAGUUUAGCUU-AGAAUCCUAGCUUUGGGGGUUAGGGGUGGGAGUUUAAAUCUCCUUUCUUUGA 7441
+                **************9998.899***********8888********************************** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (71 consensus positions)
+Target sequences:                                                1  (34564 residues searched)
+Target sequences re-searched for truncated hits:                 1  (676 residues re-searched)
+Windows   passing  local HMM SSV           filter:              91  (0.5167); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              31  (0.1869); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              22  (0.1376); expected (0.02)
+Windows   passing glocal HMM Forward       filter:              11  (0.09733); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:              13  (0.03161); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               6  (0.0128); expected (0.0001)
+Total CM hits reported:                                          6  (0.01178); includes 0 truncated hit(s)
+
+# CPU time: 0.19u 0.01s 00:00:00.20 Elapsed: 00:00:00.19
+//
+[ok]

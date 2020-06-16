@@ -1,0 +1,57 @@
+bStrHab1	16723	17706	r	983	blood
+bPogPus1	15157	19583	rd	4426	blood
+bPluApr1	19147	20622	r	1475	muscle
+bNycGra1	15621	21150	rd	5529	muscle
+bMerNub1	15302	18360	rd	3058	blood
+bFalRus1	17355	18488	r	1133	blood
+bFalNau1	17082	17645	r1	563	blood
+bFalNau1	14924	15214	r2	290	blood
+bCucCan1	15958	18602	r	2644	blood
+bCicMag1	14266	20551	dr	6285	muscle
+bCarCri1	14591	21164	dr	6573	blood
+bBalReg1	18887	19234	r	347	blood
+bAquChr1	17203	18262	r	1059	heart
+aRanTem1	15335	19169	dr	3834	liver
+aRanTem1	20602	22236	r	1634	liver
+aDenEbr1	17976	19042	r1	1066	brain
+aDenEbr1	15511	16197	r2	686	brain
+aBufBuf1	15209	16003	r1	794	heart
+aBufBuf1	17130	17470	r2	340	heart
+fAciRut3	15728	16011	r	283	whole body
+fAnaTes1	14843	15027	r	184	muscle
+fAntMac1	17787	19133	r1	1346	muscle
+fAntMac1	16714	17222	r2	508	muscle
+fArcCen1	16493	16655	r	162	liver
+fCycLum1	2777	3251	r	474	muscle
+fDenClu1	15740	16063	r	323	whole body
+fEleEle1	15645	16116	r1	471	brain
+fEleEle1	16934	17245	r2	311	brain
+fEsoLuc1	16540	17077	r	537	liver
+fHipHip1	16547	17363	r	816	muscle
+fMegCyp1	15770	16472	r	702	whole body
+fParRan2	16505	16908	r	403	whole body
+fSebUmb1	16439	17610	r	1171	muscle
+kPetMar1	14739	14946	r	207	sperm
+mLemCat1	16237	16635	r1	398	spleen
+mLemCat1	15544	15711	r2	167	spleen
+mLutLut1	16035	16260	r	225	muscle
+mLynCan4	15625	15934	r1	309	muscle
+mLynCan4	16422	16742	r2	320	muscle
+mMusErm1	16024	16220	r	196	spleen
+mMyoMyo1	15616	16173	r1	557	muscle
+mMyoMyo1	16736	17035	r2	299	muscle
+mOrnAna1	16447	16663	r	216	liver
+mPhyDis1	16227	16404	r	177	muscle
+mPipKuh1	15468	16100	r1	632	muscle
+mPipKuh1	16636	16935	r2	299	muscle
+mPipPip1	15466	15902	r1	436	spleen
+mPipPip1	16442	16653	r2	211	spleen
+mRhiFer1	16290	16506	r1	216	lung
+mTamTet1	16167	16390	r	223	brain
+mTriVul1	16803	17039	r1	236	muscle
+mTriVul1	16256	16664	r2	408	muscle
+mZalCal1	16066	16402	r	336	blood
+rDerCor1	16386	16623	r	237	blood
+rGopEvg1	16387	16845	r	458	blood
+rGopFla2	16391	16497	r	106	blood
+rLacAgi1	17055	19055	dr	2000	blood

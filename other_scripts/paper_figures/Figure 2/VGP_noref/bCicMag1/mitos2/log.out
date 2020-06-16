@@ -1,0 +1,6 @@
+missing:OL 
+duplicated:2x OH 2x trnE 2x trnP 2x cob 2x nad3 2x trnT 2x nad6 
+translational exceptions:
+	nad3,1,9552,9728 (None, AGT)
+	nad3,1,9730,9900 (GCA, GAA)
+	cob,1,17502,18059 (AGT, AAC)

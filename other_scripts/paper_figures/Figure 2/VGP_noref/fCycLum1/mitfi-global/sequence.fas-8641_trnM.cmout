@@ -1,0 +1,68 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnM.cm
+# target sequence database:              VGP_notGenbank_only/fCycLum1//sequence.fas-8641
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnM  [CLEN=70]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   9.3e-15   78.0   0.0  fCycLum1  13105  13173 +  cm    no 0.43  -
+  (2) !    0.0018   26.0   0.0  fCycLum1  14606  14538 -  cm    no 0.48  -
+
+
+Hit alignments:
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   9.3e-15   78.0   0.0  cm        1       70 []       13105       13173 + .. 1.00    no 0.43
+
+                                                                                        NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+      trnM     1 aGuAaggUAAGCUAAaUAaAGCUauuGGGCUCAUACCCCaaAaAUGgaggUUAAAuUccucCccuUaCuA 70   
+                 AG:AA:GU AGCUAA+UA AGCU UUGGGC+CAUACCCCAAA AUG::GGUUAAA UCC::CC:UU:CUA
+  fCycLum1 13105 AGUAAGGUCAGCUAAUUA-AGCUCUUGGGCCCAUACCCCAAACAUGUUGGUUAAACUCCUUCCUUUGCUA 13173
+                 ******************.*************************************************** PP
+
+>> fCycLum1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !    0.0018   26.0   0.0  cm        1       70 []       14606       14538 - .. 0.96    no 0.48
+
+                             v      v                                                NC
+                 (((((((,,<<<<______>>>>,<<<<~~~~~>>>>,,,,<<<<<_______>>>>>))))))):  CS
+      trnM     1 aGuAaggUAAGCUAAaUAaAGCUauuGG*[9]*CCaaAaAUGgaggUUAAAuUccucCccuUaCuA  71   
+                 :GUA G:U : : A +U+  : :  UGG     CCA A+A :GAGGUU AA UCCUC::C UAC:A 
+  fCycLum1 14606 GGUAGGAUGGCUGAGUUU-AAGCGGUGG*[9]*CCAUAGACAGAGGUUUAAGUCCUCUUCUUACCA  14537
+                 ************999999.9*******9..8..9********************************  PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (70 consensus positions)
+Target sequences:                                                1  (34564 residues searched)
+Target sequences re-searched for truncated hits:                 1  (1012 residues re-searched)
+Windows   passing  local HMM SSV           filter:              69  (0.6106); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              19  (0.1837); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              12  (0.1124); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               4  (0.04483); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               4  (0.009276); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               2  (0.003879); expected (0.0001)
+Total CM hits reported:                                          2  (0.003879); includes 0 truncated hit(s)
+
+# CPU time: 0.06u 0.00s 00:00:00.06 Elapsed: 00:00:00.06
+//
+[ok]

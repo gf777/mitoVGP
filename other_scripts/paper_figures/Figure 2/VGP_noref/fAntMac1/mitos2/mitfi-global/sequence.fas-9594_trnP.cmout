@@ -1,0 +1,94 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnP.cm
+# target sequence database:              VGP_notGenbank_only/fAntMac1//sequence.fas-9594
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnP  [CLEN=68]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   7.5e-13   74.3   0.0  fAntMac1   7126   7057 -  cm    no 0.34  -
+  (2) !   7.6e-07   44.3   0.0  fAntMac1  15812  15744 -  cm    no 0.33  -
+  (3) !   1.4e-05   38.0   0.0  fAntMac1   1467   1536 +  cm    no 0.36  -
+  (4) !    0.0014   28.0   0.0  fAntMac1   3209   3270 +  cm    no 0.34  -
+
+
+Hit alignments:
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   7.5e-13   74.3   0.0  cm        1       68 []        7126        7057 - .. 1.00    no 0.34
+
+                                                                                       NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<.._____>>>>>))))))): CS
+      trnP    1 CAgaaaaUAGUUuAAauUAaAAUacuagCUUUGGGaGcuagaGaUggggg..aaAaUcccccuuuucUGA 68  
+                CA:AAAAUA:UU:AA+ UA:AA:AC:AG:UUUGGG+:CU:G+ +UG:GGG  AAA+UCCC:CUUUU:UGA
+  fAntMac1 7126 CAAAAAAUAAUUUAAUGUAGAAUACCAGUUUUGGGGACUGGUAGUGGGGGuuAAAUUCCCUCUUUUUUGA 7057
+                ********************************************************************** PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   7.6e-07   44.3   0.0  cm        1       68 []       15812       15744 - .. 0.99    no 0.33
+
+                                                                                        NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<.._____>>>>>))))))): CS
+      trnP     1 CAgaaaaUAGUUuAAauUAaAAUacuagCUUUGGGaGcuagaGaUggggg..aaAaUcccccuuuucUGA 68   
+                  AG::::UA: UU A +UAAA :A:U:G UUUG +A C:A:AGAUG ::G  AA AUC:: C::::CU A
+  fAntMac1 15812 GAGGUUUUAGCUU-AGAUAAAGCAUUUGUUUUGCAAGCAAAAGAUGUAAGguAAGAUCUUGCAAACCUUA 15744
+                 *************.*******************999********************************** PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   1.4e-05   38.0   0.0  cm        1       68 []        1467        1536 + .. 0.98    no 0.36
+
+                                                                                        NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,.<<<<<.._____>>>>>))))))): CS
+      trnP    1 CAgaaaaUAGUUuAAauUAaAAUacuagCUUUGGGaGcuagaGaU.ggggg..aaAaUcccccuuuucUGA 68  
+                :::AA::UAGUUU AA+ AAAAUACU:G UUU G+  C:AGAGA  ::::G  AAAA C::::::UU::: 
+  fAntMac1 1467 UGAAAGUUAGUUU-AAACAAAAUACUUGAUUUCGACUCAAGAGACcCUCAGcgAAAACCUGAGACUUUCAU 1536
+                *************.******************9998********76************************* PP
+
+>> fAntMac1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !    0.0014   28.0   0.0  cm        4       64 ..        3209        3270 + .. 0.96    no 0.34
+
+                                                                                NC
+                ((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<.._____>>>>>)))) CS
+      trnP    4 aaaaUAGUUuAAauUAaAAUacuagCUUUGGGaGcuagaGaUggggg..aaAaUcccccuuuu 64  
+                :A:AUA:UUU AAU+AAAA:AC AG UU  G++ CU G+ A ::GGG  AAAA CCC::U:U:
+  fAntMac1 3209 GACAUAGUUU-AAUAAAAACACUAGAUUGUGAUUCUGGUAACAAGGGuuAAAACCCCUUUGUC 3270
+                **********.***************9977888***************999999********* PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (68 consensus positions)
+Target sequences:                                                1  (38376 residues searched)
+Target sequences re-searched for truncated hits:                 1  (456 residues re-searched)
+Windows   passing  local HMM SSV           filter:             200  (0.7013); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              55  (0.2226); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              22  (0.08717); expected (0.02)
+Windows   passing glocal HMM Forward       filter:              14  (0.07901); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:              14  (0.02544); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               5  (0.008987); expected (0.0001)
+Total CM hits reported:                                          4  (0.006979); includes 0 truncated hit(s)
+
+# CPU time: 0.27u 0.01s 00:00:00.28 Elapsed: 00:00:00.27
+//
+[ok]

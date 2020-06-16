@@ -1,0 +1,81 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnC.cm
+# target sequence database:              VGP_notGenbank_only/bCatUst1//sequence.fas-9363
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnC  [CLEN=68]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   1.4e-09   52.5   0.0  bCatUst1  14681  14616 -  cm    no 0.47  -
+  (2) !   7.9e-07   40.0   0.0  bCatUst1   5446   5514 +  cm    no 0.32  -
+  (3) !   0.00023   28.9   0.0  bCatUst1  14534  14468 -  cm    no 0.43  -
+
+
+Hit alignments:
+>> bCatUst1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   1.4e-09   52.5   0.0  cm        1       68 []       14681       14616 - .. 1.00    no 0.47
+
+                                                                                      NC
+                 (((((((,,<<<<_____>>>>,<<<<<_______>>>>>,,,,<<<<<______>>>>>))))))): CS
+      trnC     1 aGcccuGUAgUguAauuAacAcaUuagAUUGCAAAUcuaAAGAaGcagauuAauaucugCCagggCuU 68   
+                 : C:C:GUA:UG:A    :CA:+ U: :UUGCAAA: :A  GA+G:::AUU A AU:::CC:G:G :U
+  bCatUst1 14681 GGCUCUGUAGUGAA--GUUCAUGGUGGGUUGCAAACUCAUCGAUGUGUAUUGACAUACACCGGAGUCU 14616
+                 *************9..**************************************************** PP
+
+>> bCatUst1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   7.9e-07   40.0   0.0  cm        1       68 []        5446        5514 + .. 0.94    no 0.32
+
+                                                                                        NC
+                (((((((,,<<<<_____>>>>,<<<<<._______>>>>>,,,,.<<<<<_._____>>>>>))))))): CS
+      trnC    1 aGcccuGUAgUguAauuAacAcaUuagA.UUGCAAAUcuaAAGAa.Gcagau.uAauaucugCCagggCuU 68  
+                A :C:::UAGU:U AU+AA:ACAUU:G  UUG AA  C:AAAGA+ G:AGA+  AA  UCU:C:::G: UU
+  bCatUst1 5446 ACUCUAAUAGUUU-AUAAAAACAUUGGUcUUGUAA-GCCAAAGAUuGAAGACuCAACCUCUUCUUAGAGUU 5514
+                *************.99***********63776555.9********************************** PP
+
+>> bCatUst1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   0.00023   28.9   0.0  cm        1       68 []       14534       14468 - .. 0.94    no 0.43
+
+                                                                                        NC
+                 (((((((,,<<<<_____>>>>,<<<<.<_______>>>>>,,,,<<<<<_._____>>>>>))))))): CS
+      trnC     1 aGcccuGUAgUguAauuAacAcaUuag.AUUGCAAAUcuaAAGAaGcagau.uAauaucugCCagggCuU 68   
+                 AG ::: UAG::UAAUUAA::CA:::G  UUGCA   C:::AGA+GCAG:  + +++:CUGC ::: CUU
+  bCatUst1 14534 AGGUUC-UAGCUUAAUUAAAGCAUCUGgGUUGCAU-UCAGGAGAUGCAGGGuAGUAUCCUGC-GAAUCUU 14468
+                 ***987.9******************736****97.8*************************.789**** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (68 consensus positions)
+Target sequences:                                                1  (37452 residues searched)
+Target sequences re-searched for truncated hits:                 1  (580 residues re-searched)
+Windows   passing  local HMM SSV           filter:              91  (0.4178); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:               7  (0.0457); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:               4  (0.02335); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               2  (0.01788); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:               3  (0.005732); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               3  (0.005679); expected (0.0001)
+Total CM hits reported:                                          3  (0.005311); includes 0 truncated hit(s)
+
+# CPU time: 0.10u 0.00s 00:00:00.10 Elapsed: 00:00:00.09
+//
+[ok]

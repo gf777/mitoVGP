@@ -1,0 +1,167 @@
+(
+(
+'Lacerta agilis':4,
+(
+(
+'Gopherus evgoodei':4,
+'Gopherus flavomarginatus':4
+)Gopherus:4,
+'Dermochelys coriacea':4
+)Testudines:4,
+'Erpetoichthys calabaricus':4,
+(
+'Pristis pectinata':4,
+'Amblyraja radiata':4,
+'Carcharodon carcharias':4
+)Chondrichthyes:4,
+(
+(
+'Phyllostomus discolor':4,
+'Rhinolophus ferrumequinum':4,
+(
+(
+'Pipistrellus pipistrellus':4,
+'Pipistrellus kuhlii':4
+)Pipistrellus:4,
+'Myotis myotis':4
+)Vespertilionidae:4
+)Chiroptera:4,
+(
+'Tamandua tetradactyla':4,
+'Choloepus didactylus':4
+)Pilosa:4,
+(
+(
+'Sciurus vulgaris':4,
+'Sciurus carolinensis':4
+)Sciurus:4,
+(
+'Arvicanthis niloticus':4,
+'Rattus norvegicus':4
+)Muridae:4
+)Rodentia:4,
+(
+'Phocoena sinus':4,
+'Bos taurus':4,
+'Balaenoptera musculus':4,
+'Tursiops truncatus':4
+)Artiodactyla:4,
+(
+'Lynx canadensis':4,
+'Zalophus californianus':4,
+(
+'Mustela erminea':4,
+'Lutra lutra':4
+)Mustelidae:4
+)Carnivora:4,
+(
+(
+'Homo sapiens':4,
+'Pan troglodytes':4
+)Hominidae:4,
+'Callithrix jacchus':4,
+'Lemur catta':4
+)Primates:4,
+'Trichosurus vulpecula':4,
+(
+'Tachyglossus aculeatus':4,
+'Ornithorhynchus anatinus':4
+)Monotremata:4
+)Mammalia:4,
+(
+'Balearica regulorum':4,
+(
+'Falco naumanni':4,
+'Falco rusticolus':4
+)Falco:4,
+(
+'Pogoniulus pusillus':4,
+'Picoides pubescens':4
+)Piciformes:4,
+'Merops nubicus':4,
+(
+'Corvus moneduloides':4,
+'Geothlypis trichas':4,
+'Catharus ustulatus':4,
+'Taeniopygia guttata':4,
+'Acanthisitta chloris':4
+)Passeriformes:4,
+'Cuculus canorus':4,
+'Cariama cristata':4,
+(
+'Pterocles gutturalis':4,
+'Ciconia maguari':4
+)Ciconiiformes:4,
+'Nyctibius grandis':4,
+(
+'Pluvialis apricaria':4,
+'Sterna hirundo':4,
+'Alca torda':4
+)Charadriiformes:4,
+(
+'Strigops habroptila':4,
+'Melopsittacus undulatus':4
+)Psittaciformes:4,
+(
+'Hemiprocne comata':4,
+'Calypte anna':4
+)Apodiformes:4,
+'Gallus gallus':4,
+'Aquila chrysaetos':4,
+'Cygnus olor':4
+)Aves:4,
+(
+(
+'Microcaecilia unicolor':4,
+'Geotrypetes seraphini':4,
+'Rhinatrema bivittatum':4
+)Gymnophiona:4,
+(
+'Dendropsophus ebraccatus':4,
+'Rana temporaria':4,
+'Bufo bufo':4
+)Anura:4
+)Amphibia:4,
+(
+'Melanotaenia boesemani':4,
+'Notolabrus celidotus':4,
+'Antennarius maculatus':4,
+'Gouania willdenowi':4,
+'Periophthalmus magnuspinnatus':4,
+'Denticeps clupeoides':4,
+'Parambassis ranga':4,
+'Mastacembelus armatus':4,
+'Anableps anableps':4,
+'Syngnathus acus':4,
+'Xenentodon cancila':4,
+'Megalops cyprinoides':4,
+'Chelmon rostratus':4,
+'Scatophagus argus':4,
+'Anabas testudineus':4,
+'Zeus faber':4,
+'Pygocentrus nattereri':4,
+(
+'Echeneis naucrates':4,
+'Trachurus trachurus':4
+)Carangiformes:4,
+'Takifugu rubripes':4,
+'Hippoglossus hippoglossus':4,
+'Sparus aurata':4,
+(
+'Archocentrus centrarchus':4,
+'Astatotilapia calliptera':4
+)Cichlidae:4,
+(
+'Sebastes umbrosus':4,
+'Cyclopterus lumpus':4
+)Perciformes:4,
+'Salmo trutta':4,
+'Esox lucius':4,
+'Electrophorus electricus':4,
+'Danio rerio':4,
+'Acipenser ruthenus':4
+)Actinopteri:4,
+'Petromyzon marinus':4
+)Chordata:4,
+'Asterias rubens':4
+)Metazoa:4;

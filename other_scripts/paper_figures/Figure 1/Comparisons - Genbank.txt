@@ -1,0 +1,67 @@
+VGP dataset	Latin name	Common name	Genbank ID	length1	gc1	length2	gc2	VGP_repeat	Genbank_repeat	Genbank_missing	Genbank_duplicated	 Genbank_missing count	Genbank_duplicated count	VGP_missing	VGP_duplicated	VGP_missing count	VGP_duplicated count	Tissue
+aGeoSer1	Geotrypetes seraphini	Gaboon caecilian	AY954505.1	16291	32.1	16293	32.08	1612	1706	NA	NA	0	0	NA	NA	0	0	liver
+aMicUni1	Microcaecilia unicolor	Tiny Cayenne Caecilian	NC_023515.1	16008	36.52	16007	36.52	707	707	NA	NA	0	0	NA	NA	0	0	liver
+aRanTem1	Rana temporaria	European common frog	NC_042226.1	22664	40.47	16061	43.91	2056	219	NA	NA	0	0	NA	NA	0	0	liver
+aRhiBiv1	Rhinatrema bivittatum	Two-lined caecilian	AY456252.1	16407	43.05	16422	42.99	466	515	NA	NA	0	0	NA	NA	0	0	liver
+bAcaChl1	Acanthisitta chloris	Rifleman	AY325307.1	19029	46.18	16069	46.71	434	267	trnF	NA	1	0	NA	cob trnT trnP nad6 trnE	0	5	blood
+bAquChr1	Aquila chrysaetos	European golden eagle	NC_024087.1	18265	45.79	17332	46.67	1140	237	NA	NA	0	0	NA	NA	0	0	heart
+bBalReg1	Balearica regulorum	Grey crowned-crane	FJ769841.1	19234	44.96	16802	44.92	663	470	NA	NA	0	0	NA	cob trnT trnP nad6 trnE	0	5	blood
+bCygOlo1	Cygnus olor	Mute Swan	NC_027096.1	16733	47.77	16739	47.77	247	271	NA	NA	0	0	NA	NA	0	0	muscle
+bFalRus1	Falco rusticolus	Gyrfalcon	NC_029359.1	18488	44.16	18218	44.5	1548	1275	NA	NA	0	0	NA	NA	0	0	blood
+bGalGal1	Gallus gallus	Chicken	NC_040970.1	16784	45.95	16785	46.06	424	435	NA	NA	0	0	NA	NA	0	0	blood
+bMelUnd1	Melopsittacus undulatus	Budgerigar	NC_009134.1	18200	44.64	18193	44.68	373	384	NA	NA	0	0	NA	NA	0	0	blood
+bMerNub1	Merops nubicus	Carmine Bee-eater	MK060137.1	18687	47.87	14932	48.96	530	260	trnP nad6 trnE	NA	3	0	NA	NA	0	0	blood
+bNycGra1	Nyctibius grandis	Great Potoo	EU344977.1	21413	46.8	14396	45.21	2962	0	trnE trnF trnP nad6	NA	4	0	NA	NA	0	0	muscle
+bPteGut1	Pterocles gutturalis	Yellow-throated Sandgrouse	KX902237.1	24468	40.45	15637	40.37	4737	0	trnP trnE	NA	2	0	NA	NA	0	0	blood
+bSteHir1	Sterna hirundo	Common Tern	NC_036345.1	19053	44.38	16707	44.19	215	159	NA	NA	0	0	NA	cob trnT trnL2 nad6 trnE	0	5	blood
+bStrHab1	Strigops habroptilus	Kakapo	NC_005931.1	17830	41.69	15599	43.23	452	90	NA	NA	0	0	NA	NA	0	0	blood
+bTaeGut1	Taeniopygia guttata	Zebra Finch (male)	DQ422742.1	16855	45.84	16853	45.94	215	215	NA	NA	0	0	NA	NA	0	0	muscle
+bTaeGut2	Taeniopygia guttata	Zebra Finch (female)	DQ422742.1	16856	45.84	16853	45.94	227	235	NA	NA	0	0	NA	NA	0	0	muscle
+fAciRut3	Acipenser ruthenus	Sterlet	NC_022453.1	16706	45.34	16790	45.24	110	110	NA	NA	0	0	NA	NA	0	0	whole body
+fAnaTes1	Anabas testudineus	Climbing perch	NC_024752.1	17111	45.65	16603	45.58	169	169	NA	NA	0	0	NA	nad1 trnL2	0	2	muscle
+fAstCal1	Astatotilapia calliptera	Eastern happy	JN628855.1	16582	45.83	16578	45.9	119	97	NA	NA	0	0	NA	NA	0	0	brain, testes
+fCheRos1	Chelmon rostratus	Copperband butterflyfish	NC_025953.1	16523	43.06	16538	43.02	549	558	NA	NA	0	0	NA	NA	0	0	liver
+fDenClu1	Denticeps clupeoides	Denticle herring	NC_007889.1	16916	39.24	17156	39.02	642	872	NA	NA	0	0	NA	NA	0	0	whole body
+fDreSAT1	Danio rerio	Zebrafish SAT strain	NC_002333.2	16596	39.88	16596	39.93	376	376	NA	NA	0	0	NA	NA	0	0	cells
+fEcheNa1	Echeneis naucrates	Live sharksucker	NC_022508.1	16610	40.48	16612	40.47	477	480	NA	NA	0	0	NA	NA	0	0	muscle
+fEleEle1	Electrophorus electricus	Electric eel	AP011978.1	17309	39.34	16913	39.4	712	596	NA	NA	0	0	NA	NA	0	0	brain
+fErpCal1	Erpetoichthys calabaricus	Reedfish	NC_005251.1	16619	37.63	16674	37.62	912	942	NA	NA	0	0	NA	NA	0	0	liver
+fEsoLuc1	Esox lucius	Northern pike	CM015599.1	17081	42.89	16698	43.96	820	451	NA	NA	0	0	NA	NA	0	0	liver
+fMasArm1	Mastacembelus armatus	Tire track eel	NC_023977.1	16490	44.71	16486	45.58	213	167	NA	NA	0	0	NA	NA	0	0	muscle
+fMegCyp1	Megalops cyprinoides	Indo-pacific tarpon	NC_005799.1	17143	44.68	16412	45.16	711	476	NA	NA	0	0	NA	NA	0	0	whole body
+fMelBoe1	Melanotaenia boesemani	Boesman‚Äôs rainbowfish	NC_028208.1	16541	44.99	16493	45.66	161	211	NA	NA	0	0	NA	NA	0	0	whole body
+fPerMag1	Periophthalmus magnuspinnatus	Korean giant-fin mudskipper	NC_028157.1	16496	44.16	16497	44.2	151	151	NA	NA	0	0	NA	NA	0	0	gills
+fPygNat1	Pygocentrus nattereri	Red-bellied piranha	NC_015840.1	16708	47.44	16706	47.55	377	385	NA	NA	0	0	NA	NA	0	0	liver
+fSalTru1	Salmo trutta	Brown trout	MF621763.1	16677	45.96	16676	45.92	72	72	NA	NA	0	0	NA	NA	0	0	muscle
+fScaArg1	Scatophagus argus	Spotted scat	KC790398.1	16771	44.39	16783	44.03	105	141	NA	NA	0	0	NA	NA	0	0	whole body
+fSpaAur1	Sparus aurata	Gilthead seabream	KT805959.1	16652	45.96	16652	45.97	137	137	NA	NA	0	0	NA	NA	0	0	testis
+fTakRub1	Takifugu rubripes	Japanese puffer (Torafugu)	NC_004299.1	16448	44.34	16447	44.24	169	168	NA	NA	0	0	NA	NA	0	0	muscle
+fTraTra1	Trachurus trachurus	Atlantic horse mackerel	AB108498.1	16561	46.51	16559	46.52	160	160	NA	NA	0	0	NA	NA	0	0	muscle
+fZeuFab1	Zeus faber	John dory	AP002941.1	16722	42.36	16715	42.44	442	442	NA	NA	0	0	NA	NA	0	0	muscle
+mBalMus1	Balaenoptera musculus	Blue Whale	MF409242.1	16403	40.68	16403	40.69	166	169	NA	NA	0	0	NA	NA	0	0	cells
+mBosTau1	Bos taurus	Cow (Angus/Braham Hybrid)	NC_006853.1	16339	39.45	16338	39.42	286	265	NA	NA	0	0	NA	NA	0	0	lung
+mCalJac1	Callithrix jacchus	Common marmoset	NC_025586.1	16489	40.34	16499	40.31	239	239	trnR	NA	1	0	trnR	NA	1	0	muscle
+mChoDid1	Choloepus didactylus	Linnaeus's Two Toed Sloth	AY960980.1	16499	43.28	16543	43.26	226	245	NA	NA	0	0	NA	NA	0	0	spleen
+mHomSap3	Homo sapiens	Human	NC_012920.1	16566	44.45	16569	44.36	81	92	NA	NA	0	0	NA	NA	0	0	blood
+mLemCat1	Lemur catta	Ring-tailed lemur	NC_004025.1	17086	38.03	17036	38.09	649	583	NA	NA	0	0	NA	NA	0	0	spleen
+mLutLut1	Lutra lutra	Eurasian otter	FJ236015.1	16536	41.9	16536	42.01	235	180	NA	NA	0	0	NA	NA	0	0	muscle
+mLynCan4	Lynx canadensis	Canada Lynx	NC_028313.1	17044	41.12	16666	41.2	475	233	trnE	NA	1	0	trnE	NA	1	0	muscle
+mMusErm1	Mustela erminea	Stoat	NC_025516.1	16482	39.96	16471	39.94	259	257	NA	NA	0	0	NA	NA	0	0	spleen
+mMyoMyo1	Myotis myotis	Greater Mouse-Eared Bat	KT901455.1	17308	35.26	17213	35.33	1254	1197	NA	NA	0	0	NA	NA	0	0	muscle
+mOrnAna1	Ornithorhynchus anatinus	Platypus	NC_000891.1	16841	37.31	17019	37.13	666	808	NA	NA	0	0	NA	NA	0	0	liver
+mPanTro1	Pan troglodytes	Chimpanzee	JF727179.2	16558	43.85	16563	43.74	31	51	NA	NA	0	0	NA	NA	0	0	cells
+mPipPip1	Pipistrellus pipistrellus	Common pipistrelle	MN122927.1	16925	37.62	16033	37.67	1056	855	NA	NA	0	0	NA	NA	0	0	spleen
+mRatNor1	Rattus norvegicus	Brown rat	AY172581.1	16313	38.57	16313	38.57	511	511	NA	NA	0	0	NA	NA	0	0	kidney
+mRhiFer1	Rhinolophus ferrumequinum	Greater Horseshoe Bat	JX084273.1	16848	42.94	16870	42.8	226	243	NA	NA	0	0	NA	NA	0	0	lung
+mSciVul1	Sciurus vulgaris	Eurasian red squirrel	NC_002369.1	16511	37.09	16507	37.03	451	442	NA	NA	0	0	NA	NA	0	0	spleen
+mTacAcu1	Tachyglossus aculeatus	Short-beaked echidna	NC_003321.1	16381	39.94	16360	40.06	123	113	NA	NA	0	0	NA	NA	0	0	muscle
+mTamTet1	Tamandua tetradactyla	Southern tamandua	KT818552.1	16394	39.04	16393	39.07	327	296	trnS1	trnL2	1	1	trnS1	trnL2	1	1	brain
+mTriVul1	Trichosurus vulpecula	Common brushtail possum	AF357238.1	17277	37.23	17191	37.33	1086	1021	trnK trnD	trnG	2	1	trnK trnD	trnG	2	1	muscle
+mTurTru1	Tursiops truncatus	Bottlenose dolphin	NC_012059.1	16389	38.86	16388	38.92	292	269	NA	NA	0	0	NA	NA	0	0	spleen
+mZalCal1	Zalophus californianus	Californian Sea Lion	NC_008416.1	16715	40.39	16677	40.39	598	560	NA	NA	0	0	NA	NA	0	0	blood
+rDerCor1	Dermochelys coriacea	Leatherback Sea Turtle	JX454992.1	16625	37.93	16680	37.82	695	750	NA	NA	0	0	NA	NA	0	0	blood
+rGopEvg1	Gopherus evgoodei	Goode's Thornscrub tortoise	CM017320.1	16845	38.79	16845	38.79	567	567	NA	NA	0	0	NA	NA	0	0	blood
+rLacAgi1	Lacerta agilis	Sand lizard	NC_021766.1	19093	38.3	17090	39.69	1115	774	NA	NA	0	0	NA	trnP cob trnT	0	3	blood
+sAmbRad1	Amblyraja radiata	Thorny Skate	AF106038.1	16785	40.22	16783	40.28	478	514	NA	NA	0	0	NA	NA	0	0	testis
+sCarCar2	Carcharodon carcharias	Great white shark	KX389266.1	16745	40.75	16745	40.73	476	486	NA	NA	0	0	NA	NA	0	0	blood
+sPriPec2	Pristis pectinata	Smalltooth sawfish	MF682494.1	16803	39.06	16803	39.06	168	168	NA	NA	0	0	NA	NA	0	0	spleen

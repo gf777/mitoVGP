@@ -1,0 +1,5 @@
+missing:OL 
+duplicated:2x trnP 2x OH 3x nad6 2x trnE 
+translational exceptions:
+	nad6,-1,14964,15158 (TGA, None)
+	nad6,-1,15212,15481 (None, TAT)

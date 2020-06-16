@@ -1,0 +1,159 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.2 (July 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute.
+# Freely distributed under a BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         ./refseq81m//ncRNA/trnT.cm
+# target sequence database:              VGP_notGenbank_only/bPluApr1//sequence.fas-0
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.01
+# maximum DP search matrix size:         80000.0 Mb
+# HMM gFwd biased comp filter:           off
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnT  [CLEN=69]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   5.9e-14   73.6   0.0  bPluApr1  14784  14853 +  cm    no 0.31  -
+  (2) !   5.9e-14   73.6   0.0  bPluApr1  17227  17296 +  cm    no 0.31  -
+  (3) !   1.1e-07   44.8   0.0  bPluApr1  11608  11677 +  cm    no 0.34  -
+  (4) !   7.8e-07   40.8   0.0  bPluApr1  14940  14871 -  cm    no 0.40  -
+  (5) !   7.8e-07   40.8   0.0  bPluApr1  17383  17314 -  cm    no 0.40  -
+  (6) !   6.3e-06   36.7   0.0  bPluApr1   7748   7818 +  cm    no 0.44  -
+  (7) !   0.00022   29.5   0.0  bPluApr1   5019   5088 +  cm    no 0.39  -
+  (8) !   0.00038   28.5   0.0  bPluApr1      1     69 +  cm    no 0.45  -
+  (9) !    0.0023   24.9   0.0  bPluApr1   5155   5092 -  cm    no 0.48  -
+
+
+Hit alignments:
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !   5.9e-14   73.6   0.0  cm        1       69 []       14784       14853 + .. 0.99    no 0.31
+
+                                                                                         NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAA.auccucCcuaaagCU 69   
+                 :CU:UA:UAG:UUA + A AA:CAUUGGUCUUGUAAACCAA +A+UG:AG:UUA  ++:CU:C:UA:AG:U
+  bPluApr1 14784 ACUCUAAUAGUUUAUACA-AAACAUUGGUCUUGUAAACCAAaGAUUGAAGAUUACaCCCCUUCUUAGAGUU 14853
+                 *****************9.**********************99999********9**************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !   5.9e-14   73.6   0.0  cm        1       69 []       17227       17296 + .. 0.99    no 0.31
+
+                                                                                         NC
+                 (((((((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAA.auccucCcuaaagCU 69   
+                 :CU:UA:UAG:UUA + A AA:CAUUGGUCUUGUAAACCAA +A+UG:AG:UUA  ++:CU:C:UA:AG:U
+  bPluApr1 17227 ACUCUAAUAGUUUAUACA-AAACAUUGGUCUUGUAAACCAAaGAUUGAAGAUUACaCCCCUUCUUAGAGUU 17296
+                 *****************9.**********************99999********9**************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   1.1e-07   44.8   0.0  cm        1       69 []       11608       11677 + .. 0.99    no 0.34
+
+                  v                                                                 v   NC
+                 (((((((,,<<<<______>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCU*[5]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69   
+                 G :::::UAG:UUAA A AAA:CAUU:G:CU     :C:AAAAA+:GA:GUUAA ++C:UC:::::: C 
+  bPluApr1 11608 GCAGGUAUAGUUUAACACAAAACAUUAGACU*[5]*UCUAAAAACAGAAGUUAAaCCCUUCUUACCUACC 11677
+                 ******************9**********97..9..********************************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   7.8e-07   40.8   0.0  cm        1       69 []       14940       14871 - .. 0.98    no 0.40
+
+                                                                                          NC
+                 (((((((,,<<<<______>>>>,<<<<<____~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUG*[3]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69   
+                  ::: A:UA::UUA U +AAA::A:::G:+UUG     :C:::A+AU GAGGUU A  UCCUC :U :::  
+  bPluApr1 14940 CAGAGAAUAGUUUAGUGUAAAAUACCAGCUUUG*[3]*GCUGGAGAUGGAGGUUUAaGUCCUCUUUUUCUGA 14871
+                 ******************9************98..7..********************************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (5) !   7.8e-07   40.8   0.0  cm        1       69 []       17383       17314 - .. 0.98    no 0.40
+
+                                                                                          NC
+                 (((((((,,<<<<______>>>>,<<<<<____~~~~~>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT     1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUG*[3]*aCCaaAaaUGgagguUAA.auccucCcuaaagCU 69   
+                  ::: A:UA::UUA U +AAA::A:::G:+UUG     :C:::A+AU GAGGUU A  UCCUC :U :::  
+  bPluApr1 17383 CAGAGAAUAGUUUAGUGUAAAAUACCAGCUUUG*[3]*GCUGGAGAUGGAGGUUUAaGUCCUCUUUUUCUGA 17314
+                 ******************9************98..7..********************************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (6) !   6.3e-06   36.7   0.0  cm        1       69 []        7748        7818 + .. 0.96    no 0.44
+
+                            v      v                                                     NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>.,,,,<<<<<____..__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaa.AaaUGgagguUAA..auccucCcuaaagCU 69  
+                 :UU:AG AGCU   UA+  AGCA:U:G:CUU UAA:C:A: +AA G::G:      ++:C::CCU:AA:  
+  bPluApr1 7748 CAUUAAGAAGCUAUGUAU-CAGCACUAGCCUUUUAAGCUAGaGAAAGAGGACGCCcaCCUCCUCCUUAAUGA 7818
+                ************998888.********************************98888888************* PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (7) !   0.00022   29.5   0.0  cm        1       69 []        5019        5088 + .. 0.97    no 0.39
+
+                           v        v                                                  NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaaAaaUGgagguUAA.auccucCcuaaagCU 69  
+                :::::::UAG  UA   +AA  C ::GG:CUU  AA:CC::AAA+::::GUUAA +UC::::::::::: 
+  bPluApr1 5019 AGAAACUUAGGAUAGCCUAAACCGAAGGCCUUCAAAGCCUUAAACAAGAGUUAAaCUCUCUUAGUUUCUG 5088
+                ******************9************93367********************************** PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (8) !   0.00038   28.5   0.0  cm        1       69 []           1          69 + [. 0.93    no 0.45
+
+                 v                                           v            v    v     NC
+              (((((((,,<<<<______.>>>>,<<<<<__~~~~~>>>>>,,,,<<<<<______>>>>>))))))): CS
+      trnT  1 GcuuuagUAGcUuAAuaaa.aAgCAuuGGuCU*[5]*aCCaaAaaUGgagguUAAauccucCcuaaagCU 69
+              G:: ::GUAGCUUAAU A  AAGCAU:G :CU     : C:AA+AUG  ::    A+::  CC:: ::C 
+  bPluApr1  1 GUCCCUGUAGCUUAAUGACaAAGCAUAGCACU*[5]*UGCUAAGAUGUUACCAC-ACGUACCCAGAGACA 69
+              ******************7*********9987..*..99********9998655.469999********* PP
+
+>> bPluApr1  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (9) !    0.0023   24.9   0.0  cm        1       69 []        5155        5092 - .. 0.92    no 0.48
+
+                 v  v                                                           v  v   NC
+                (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<____.__>>>>>))))))): CS
+      trnT    1 GcuuuagUAGcUuAAuaaaaAgCAuuGGuCUUGUAAaCCaaAaaUGgagguUAA.auccucCcuaaagCU 69  
+                G ::   UAGCUUAAU+A AAGC  : G  UUG A  C : A+AUG AGGUUAA  UCCU C   :: CU
+  bPluApr1 5155 GUCC---UAGCUUAAUUA-AAGCGUCUGGGUUGCAUUCAGGAGAUGCAGGUUAAuGUCCUGC--GGGUCU 5092
+                *887...79********9.*****99998888866689999*********************..6788** PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (69 consensus positions)
+Target sequences:                                                1  (41248 residues searched)
+Target sequences re-searched for truncated hits:                 1  (404 residues re-searched)
+Windows   passing  local HMM SSV           filter:             189  (0.5785); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:              19  (0.0727); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:              15  (0.05731); expected (0.02)
+Windows   passing glocal HMM Forward       filter:              11  (0.05011); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:              11  (0.01947); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               9  (0.01604); expected (0.0001)
+Total CM hits reported:                                          9  (0.01498); includes 0 truncated hit(s)
+
+# CPU time: 0.34u 0.00s 00:00:00.34 Elapsed: 00:00:00.34
+//
+[ok]
