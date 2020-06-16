@@ -50,7 +50,7 @@ rm ${ID}/raw_data/*
 dw_date=`date "+%Y%m%d-%H%M%S"`
 printf "Reads collated at: $dw_date\n\n"
 
-/rugpfs/fs0/vgl/store/gformenti/bin/proc10xG/process_10xReads.py -a -1 $ID/trimmed/fw.fastq.gz -2 $ID/trimmed/rv.fastq.gz -o $ID/trimmed/trimmed
+/bin/proc10xG/process_10xReads.py -a -1 $ID/trimmed/fw.fastq.gz -2 $ID/trimmed/rv.fastq.gz -o $ID/trimmed/trimmed
 
 mv $ID/trimmed/trimmed_R1_001.fastq.gz $ID/trimmed/fw.fastq.gz
 mv $ID/trimmed/trimmed_R2_001.fastq.gz $ID/trimmed/rv.fastq.gz

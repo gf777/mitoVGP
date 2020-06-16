@@ -11,7 +11,7 @@ cd genomic_data/10x/
 ls *R1*fastq.gz > R1.fofn
 ls *R2*fastq.gz > R2.fofn
 
-sbatch --partition=vgl $tools/merqury/_submit_build_10x.sh 31 R1.fofn R2.fofn ${2} mem=F
+sbatch /merqury/_submit_build_10x.sh 31 R1.fofn R2.fofn ${2} mem=F
 
 wait_file() {
   local file="$1"; shift
@@ -34,4 +34,4 @@ ln -s genomic_data/10x/${2}.k31.gt100.meryl
 ln -s ../${3}
 ass=$(basename ${3})
 
-$tools/merqury/_submit_merqury.sh ${2}.k31.gt100.meryl $ass ${2}
+/merqury/_submit_merqury.sh ${2}.k31.gt100.meryl $ass ${2}

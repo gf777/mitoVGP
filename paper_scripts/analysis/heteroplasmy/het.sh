@@ -124,9 +124,9 @@ samtools sort region.bam -o sorted_region.bam
 
 samtools index sorted_region.bam
 
-java -jar /rugpfs/fs0/vgl/store/gformenti/bin/jvarkit/dist/pcrclipreads.jar -B coords.bed sorted_region.bam |samtools view -q 1 -F 4 -Sbu - |samtools sort -o clipped.bam - && samtools index clipped.bam
+java -jar /bin/jvarkit/dist/pcrclipreads.jar -B coords.bed sorted_region.bam |samtools view -q 1 -F 4 -Sbu - |samtools sort -o clipped.bam - && samtools index clipped.bam
 
-java -jar /rugpfs/fs0/vgl/store/gformenti/bin/jvarkit/dist/biostar84452.jar clipped.bam -o hard_clipped.bam
+java -jar /bin/jvarkit/dist/biostar84452.jar clipped.bam -o hard_clipped.bam
 
 ref=$(awk '{print $3-$2}' coords.bed)
 
