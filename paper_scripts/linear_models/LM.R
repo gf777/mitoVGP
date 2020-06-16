@@ -21,6 +21,12 @@ out2<-with(mitoVGP, table(`Tissue type (Pacbio)`, Success))
 out3<-with(mitoVGP, table(`Size selection kbp (Pacbio)`, Success))
 out4<-with(mitoVGP, table(`Size selection cutoff`, Success))
 
+out5<-with(mitoVGP, table(`VGP repeat type`, `Tissue type (Pacbio)`))
+out6<-with(mitoVGP, table(`VGP duplicated genes`, `Tissue type (Pacbio)`))
+
+fisher.test(out5,simulate.p.value=TRUE)
+fisher.test(out6,simulate.p.value=TRUE)
+
 write.table(out1, file='../Supplementary Tables/ST3.tsv', quote=FALSE, sep='\t')
 write.table(out2, file='../Supplementary Tables/ST5.tsv', quote=FALSE, sep='\t')
 write.table(out3, file='../Supplementary Tables/ST6a.tsv', quote=FALSE, sep='\t')
