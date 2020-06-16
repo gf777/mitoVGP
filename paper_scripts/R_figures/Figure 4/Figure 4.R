@@ -1,4 +1,4 @@
-setwd("~/Documents/VGP/com/papers/mitoVGP/submission_version/Figure 4/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 library(ggplot2)
 library(dplyr)

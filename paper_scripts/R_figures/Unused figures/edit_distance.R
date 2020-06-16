@@ -1,6 +1,6 @@
 library(ggplot2)
 
-setwd("~/Documents/VGP/com/papers/mitoVGP/submission_version/Unused figures/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 summary<-read.csv("summary_bCalAnn1.txt", na.strings = c(".", "N"), sep="\t", header = TRUE)
 

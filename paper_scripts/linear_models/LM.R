@@ -4,7 +4,7 @@ library(broom)
 library(lawstat)
 library("readxl")
 
-setwd("~/Documents/VGP/com/papers/mitoVGP/submission_version/LM/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 mitoVGP <- read_excel("../Supplementary Tables/Supplementary Tables.xlsx", sheet = "ST1")
 

@@ -5,7 +5,7 @@ library(waffle)
 library(ggthemes)
 library(RColorBrewer)
 
-setwd("~/Documents/VGP/com/papers/mitoVGP/Supplementary Figure 1/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 mitoVGP <- read.csv("NOVOPlasty_results.tsv", header = TRUE, sep = "\t", na.strings="")
 

@@ -2,7 +2,7 @@ library(shape)
 library(randomcoloR)
 library(DescTools)
 
-setwd("~/Documents/VGP/com/papers/mitoVGP/submission_version/Figure 2/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 linMap <- function(x)
   (x*3/max(x))
