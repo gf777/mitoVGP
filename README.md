@@ -7,6 +7,10 @@ mitoVGP is distributed under the <a href="LICENSE.txt">BSD 3-Clause License</a>.
 
 VGP samples and data come from a variety of sources. To support fair and productive use of this data, please abide by the <a href="https://genome10k.soe.ucsc.edu/data-use-policies/">Data Use Policy</a> and contact us with any questions.
 
+If you use mitoVGP please cite:
+
+<i>Complete vertebrate mitogenomes reveal widespread gene duplications and repeats. </i><a href="https://doi.org/10.1101/2020.06.30.177956">https://doi.org/10.1101/2020.06.30.177956</a>
+
 <b>Content Description:</b>
 
 - canu-1.8.Linux-amd64.tar.xz - the popular long read assembler employed in the pipeline
