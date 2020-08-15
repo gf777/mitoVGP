@@ -11,11 +11,9 @@ setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # import data
 
-mitoVGP.All <- read_excel("../Supplementary Tables/Supplementary Tables.xlsx", sheet = "ST1")
+mitoVGP <- read_excel("../Supplementary Tables/Supplementary Tables.xlsx", sheet = "ST1")
 
 names(mitoVGP.All)
-# select relevant variables for analyses
-mitoVGP <- mitoVGP.All[,c(1, 7, 8, 9, 11, 13, 15, 17, 25, 28)]
 
 # set factors and numbers
 mitoVGP <- mitoVGP %>% mutate_if(is.character, as.factor)
@@ -173,7 +171,7 @@ ml<-cbind(af, PctExp=afss/sum(afss)*100)
 ml
 
 # check significance with permutation approach
-mod.mitoVGP.perm <- lm(Available.Pacbio.mtDNA.reads ~ Tissue.type.Pacbio + Taxonomic.group + 
+mod.mitoVGP.perm <- lmp(Available.Pacbio.mtDNA.reads ~ Tissue.type.Pacbio + Taxonomic.group + 
                          Size.selection.kbp.Pacbio + DNA.extraction.Pacbio + 
                          Library.prep.fragmentation.Pacbio + 
                          Library.prep.Pacbio + Total.raw.data.Gbp, data=filtered_mitoVGP)
@@ -205,3 +203,4 @@ chisq.test(out4)
 # possible alternative tests
 chisq.test(out4, simulate.p.value = TRUE, B = 10000)
 fisher.test(out4) 
+
