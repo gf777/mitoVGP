@@ -174,7 +174,7 @@ ml
 mod.mitoVGP.perm <- lmp(Available.Pacbio.mtDNA.reads ~ Tissue.type.Pacbio + Taxonomic.group + 
                          Size.selection.kbp.Pacbio + DNA.extraction.Pacbio + 
                          Library.prep.fragmentation.Pacbio + 
-                         Library.prep.Pacbio + Total.raw.data.Gbp, data=filtered_mitoVGP)
+                         Library.prep.Pacbio + Total.raw.data.Gbp, data=filtered_mitoVGP,  perm="Exact")
 summary(mod.mitoVGP.perm)
 anova(mod.mitoVGP.perm)
 
