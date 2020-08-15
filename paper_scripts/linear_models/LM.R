@@ -13,7 +13,7 @@ setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 mitoVGP <- read_excel("../Supplementary Tables/Supplementary Tables.xlsx", sheet = "ST1")
 
-names(mitoVGP.All)
+names(mitoVGP)
 
 # set factors and numbers
 mitoVGP <- mitoVGP %>% mutate_if(is.character, as.factor)
