@@ -6,6 +6,7 @@ channels:
   - yuxiang
   - conda-forge
   - bioconda
+  - ehmoussi
 dependencies:
   - _libgcc_mutex=0.1=main
   - _r-mutex=1.0.1=anacondar_1
@@ -45,7 +46,7 @@ dependencies:
   - freetype=2.9.1=h8a8886c_1
   - fribidi=1.0.5=h7b6447c_0
   - gast=0.3.2=py_0
-  - gcc_impl_linux-64=7.3.0=habb00fd_2
+  - gcc_impl_linux-64=7.3.0
   - gcc_linux-64=7.3.0=h553295d_15
   - gfortran_impl_linux-64=7.3.0=hdf63c60_2
   - glib=2.63.1=h5a9c865_0
