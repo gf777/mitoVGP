@@ -18,7 +18,7 @@ elif [ $1 == "-h" ]; then
 	This script (linearizePhe) is used to allow the final sequence generated to start with the Phenylalanine tRNA sequence.
 
 	It requires the following software (and their dependencies) installed:
-	samtools/1.9, pbmm2/1.0.0, variantCaller/2.2.2, picard/2.18.22
+	tRNAscan-SE 2.0
 
 	For picard to work, it requires the absolute file to the jar to be defined in the code.
 
@@ -92,58 +92,58 @@ printf "Working directory: $W_URL\n\n"
 
 FNAME="${ID}.${CONTIG}_polish2_10x1_trim1_10x2"
 
-if ! [[ -e "${W_URL}/linearizeGln" ]]; then
+if ! [[ -e "${W_URL}/linearizePhe" ]]; then
 
-	mkdir -p ${W_URL}/linearizeGln
+	mkdir -p ${W_URL}/linearizePhe
 
 fi
 
 printf "\n--Annotating tRNAs:\n\n"
 
-if ! [[ -e "${W_URL}/linearizeGln/tRNAscan-SE.out" ]]; then
+if ! [[ -e "${W_URL}/linearizePhe/tRNAscan-SE.out" ]]; then
 
-	tRNAscan-SE ${W_URL}/trimmed2/${FNAME}_trim2.fasta -M vert -q > ${W_URL}/linearizeGln/tRNAscan-SE.out
+	tRNAscan-SE ${W_URL}/trimmed2/${FNAME}_trim2.fasta -M vert -q > ${W_URL}/linearizePhe/tRNAscan-SE.out
 
 fi
 
 printf "\n\n"
 
-cat ${W_URL}/linearizeGln/tRNAscan-SE.out
+cat ${W_URL}/linearizePhe/tRNAscan-SE.out
 
 printf "\n\n"
 
 printf "Phenylalanine coordinates:\n\n"
 
-grep "Phe" ${W_URL}/linearizeGln/tRNAscan-SE.out
+grep "Phe" ${W_URL}/linearizePhe/tRNAscan-SE.out
 
-GLN_START=$(grep "Phe" ${W_URL}/linearizeGln/tRNAscan-SE.out | awk '{print $3}')
-GLN_END=$(grep "Phe" ${W_URL}/linearizeGln/tRNAscan-SE.out | awk '{print $4}')
+PHE_START=$(grep "Phe" ${W_URL}/linearizePhe/tRNAscan-SE.out | awk '{print $3}')
+PHE_END=$(grep "Phe" ${W_URL}/linearizePhe/tRNAscan-SE.out | awk '{print $4}')
 GSIZE=$(awk 'BEGIN {FS="\t"} $0 !~ ">" {sum+=length($0)} END {print sum}' ${W_URL}/trimmed2/${FNAME}_trim2.fasta)
 
-if (( ${GLN_START} > ${GLN_END} )); then
+if (( ${PHE_START} > ${PHE_END} )); then
 
 	printf "\nThe sequence is likely reversed. Generating reverse-complement.\n\n"
 
-	printf "$(sed -n 1p ${W_URL}/trimmed2/${FNAME}_trim2.fasta)\n$(grep -v ">" ${W_URL}/trimmed2/${FNAME}_trim2.fasta | tr -d "\n " | tr "[ATGCUatgcuNnYyRrSsWwKkMmBbDdHhVv]" "[TACGAtacgaNnRrYySsWwMmKkVvHhDdBb]" | rev)" > ${W_URL}/linearizeGln/${FNAME}_trim2_rv.fasta
+	printf "$(sed -n 1p ${W_URL}/trimmed2/${FNAME}_trim2.fasta)\n$(grep -v ">" ${W_URL}/trimmed2/${FNAME}_trim2.fasta | tr -d "\n " | tr "[ATGCUatgcuNnYyRrSsWwKkMmBbDdHhVv]" "[TACGAtacgaNnRrYySsWwMmKkVvHhDdBb]" | rev)" > ${W_URL}/linearizePhe/${FNAME}_trim2_rv.fasta
 
-	tRNAscan-SE ${W_URL}/linearizeGln/${FNAME}_trim2_rv.fasta -M vert -q > ${W_URL}/linearizeGln/tRNAscan-SE_rv.out
+	tRNAscan-SE ${W_URL}/linearizePhe/${FNAME}_trim2_rv.fasta -M vert -q > ${W_URL}/linearizePhe/tRNAscan-SE_rv.out
 	
-	GLN_START=$(grep "Phe" ${W_URL}/linearizeGln/tRNAscan-SE_rv.out | awk '{print $3}')
-	GLN_END=$(grep "Phe" ${W_URL}/linearizeGln/tRNAscan-SE_rv.out | awk '{print $4}')
+	PHE_START=$(grep "Phe" ${W_URL}/linearizePhe/tRNAscan-SE_rv.out | awk '{print $3}')
+	PHE_END=$(grep "Phe" ${W_URL}/linearizePhe/tRNAscan-SE_rv.out | awk '{print $4}')
 	
-	printf "$(sed -n 1p ${W_URL}/linearizeGln/${FNAME}_trim2_rv.fasta)\n$(sed -n 2p ${W_URL}/linearizeGln/${FNAME}_trim2_rv.fasta | cut -c${GLN_START}-${G_SIZE})$(sed -n 2p ${W_URL}/linearizeGln/${FNAME}_trim2_rv.fasta | cut -c1-$((${GLN_START} - 1)))" > ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
+	printf "$(sed -n 1p ${W_URL}/linearizePhe/${FNAME}_trim2_rv.fasta)\n$(sed -n 2p ${W_URL}/linearizePhe/${FNAME}_trim2_rv.fasta | cut -c${PHE_START}-${G_SIZE})$(sed -n 2p ${W_URL}/linearizePhe/${FNAME}_trim2_rv.fasta | cut -c1-$((${PHE_START} - 1)))" > ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
 
 else
 
-	printf "$(sed -n 1p ${W_URL}/trimmed2/${FNAME}_trim2.fasta)\n$(sed -n 2p ${W_URL}/trimmed2/${FNAME}_trim2.fasta | cut -c${GLN_START}-${G_SIZE})$(sed -n 2p ${W_URL}/trimmed2/${FNAME}_trim2.fasta | cut -c1-$((${GLN_START} - 1)))" > ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
+	printf "$(sed -n 1p ${W_URL}/trimmed2/${FNAME}_trim2.fasta)\n$(sed -n 2p ${W_URL}/trimmed2/${FNAME}_trim2.fasta | cut -c${PHE_START}-${G_SIZE})$(sed -n 2p ${W_URL}/trimmed2/${FNAME}_trim2.fasta | cut -c1-$((${PHE_START} - 1)))" > ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
 
 fi
 
 printf "\n" >> ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
 
 printf "\nFinal coordinates are:\n"
-printf "\nGln start:${GLN_START}\n"
-printf "Gln end:${GLN_END}\n"
+printf "\nPhe start:${PHE_START}\n"
+printf "Phe end:${PHE_END}\n"
 
 printf "\nFinal sequence:\n\n"
 cat ${SPECIES}/${ID}/assembly_MT_rockefeller/${ID}.MT.$(date "+%Y%m%d").fasta
