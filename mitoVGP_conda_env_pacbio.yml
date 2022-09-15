@@ -108,7 +108,7 @@ dependencies:
   - python-dateutil=2.8.1=py_0
   - pytz=2019.3=py_0
   - pyyaml=5.2=py27h516909a_0
-  - r-base=3.2.2=0
+  - r-base
   - readline=8.0=hf8c457e_0
   - requests=2.22.0=py27_1
   - rsa=3.4.2=py_1
