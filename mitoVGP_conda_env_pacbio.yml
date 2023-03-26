@@ -80,7 +80,7 @@ dependencies:
   - mummer=3.23=pl526_8
   - muscle=3.8.1551=h6bb024c_4
   - ncurses=6.1=hf484d3e_1002
-  - numpy=1.16.5=py27h95a1406_0
+  - numpy=1.16.6=pypi_0
   - openjdk=11.0.1=h46a85a0_1017
   - openssl=1.1.1d=h516909a_0
   - pango=1.42.4=ha030887_1

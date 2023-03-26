@@ -280,11 +280,11 @@ if ! [[ -e "${W_URL}/tgs_MT_extracted_reads" ]]; then
 			
 			if [[ ${PLATFORM} == "pacbio" ]]; then
 			
-				mv ${W_URL}/tgs_MT_extracted_reads/${filename} ${W_URL}/tgs_MT_extracted_reads/${filename}.int.fastq
+				mv ${W_URL}/tgs_MT_extracted_reads/${filename}* ${W_URL}/tgs_MT_extracted_reads/${filename}.int.fastq
 			
 			elif [[ ${PLATFORM} == "ONT" ]]; then
 			
-				mv ${W_URL}/tgs_MT_extracted_reads/${filename} ${W_URL}/tgs_MT_extracted_reads/${filename}.int.fastq					
+				mv ${W_URL}/tgs_MT_extracted_reads/${filename}* ${W_URL}/tgs_MT_extracted_reads/${filename}.int.fastq					
 			
 			fi
 
